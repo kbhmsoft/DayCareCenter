@@ -12,6 +12,7 @@ class Member extends Backend_Controller {
 
       $this->load->model('Common_model');
       $this->load->model('Member_model');
+      $this->load->model('Dashboard_model');
       $this->load->model('Site/Site_model');
       $this->img_path = realpath(APPPATH . '../member_img');
       $this->img_path_payment = realpath(APPPATH . '../assets/images/member_img');
@@ -35,7 +36,7 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member List';
-      $this->data['meta_title'] = 'সদস্য তালিকা';
+      $this->data['meta_title'] = 'শিশু তালিকা';
       $this->data['subview'] = 'member/index';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -46,10 +47,62 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member Request/Application';
-      $this->data['meta_title'] = 'সদস্য অনুরোধ / আবেদন';
+      $this->data['meta_title'] = 'আবেদন কৃত শিশুর তালিকা';
       $this->data['subview'] = 'member/request';
       $this->load->view('backend/_layout_main', $this->data);
    }
+
+   public function verified_request($status){ 
+
+
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+
+      foreach ($this->data['day_care_list'] as $item) {
+         $data_arr[$item->id] = $this->dc_verified_applicant($item->database_name, $status);
+         //$gtotal['application'] = $data_arr[$item->id]['total_application'];
+      }
+
+      $this->data['results'] = $data_arr;     
+      // echo "<pre>"; print_r($this->data['results']); exit;
+
+      //Load page
+      // $this->data['meta_title'] = 'Member Request/Application';
+      if ($status == 3) {
+         $this->data['meta_title'] = 'ভর্তির জন্য উপযুক্ত আবেদন কৃত শিশুর তালিকা';
+         $this->data['subview'] = 'member/verified_application_list';
+
+      }elseif ($status == 5){
+
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র অ্যাডমিন দ্বারা প্রত্যাখ্যাত শিশুদের তালিকা';
+         $this->data['subview'] = 'member/verified_application_list';
+
+      }elseif ($status == 2){
+
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র ছেড়ে যাওয়া শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_complete_list';
+
+      }elseif ($status == 1){
+
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশু শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_running_list';
+
+      }elseif ($status == 4){
+
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_complete_list';
+
+      }
+      $this->load->view('backend/_layout_main', $this->data);
+   }  
+
+   public function dc_verified_applicant($database_other, $status){
+      // Database Load
+      $this->Dashboard_model->loadCustomerDatabase($database_other);
+      // $results = $this->Member_model->get_data_all(0);
+      $results = $this->Dashboard_model->get_all_member($status);
+
+      return $results;
+   } 
 
    public function completed(){      
       $this->data['results'] = $this->Member_model->get_data(2); 
@@ -107,7 +160,7 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member Completed';
-      $this->data['meta_title'] = 'সদস্যের বিবরণ';
+      $this->data['meta_title'] = 'শিশুের বিবরণ';
       $this->data['subview'] = 'member/subsidies_approve';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -167,7 +220,7 @@ class Member extends Backend_Controller {
       }
 
       // $this->data['meta_title'] = 'Member Edit';
-      $this->data['meta_title'] = 'সদস্য সম্পাদনা করুন';
+      $this->data['meta_title'] = 'শিশু সম্পাদনা করুন';
       $this->data['subview'] = 'member/edit2';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -315,7 +368,7 @@ class Member extends Backend_Controller {
    }
 
 
-    public function approve($id){
+   public function approve($id){
       $this->data['info'] = $this->Member_model->get_info($id);
       $dcID = $this->data['info']->day_cares_id;
       $groupID = $this->data['info']->child_admit_interest;
@@ -330,34 +383,96 @@ class Member extends Backend_Controller {
       if ($this->form_validation->run() == true){
 
          $form_data['status'] = $this->input->post('is_verified');
+         $form_data['comments'] = $this->input->post('comments');
          // print_r($form_data); exit;
 
          if($this->Member_model->edit_otherdb('members', $id, 'id', $form_data)){
-            if($this->input->post('is_verified')){
+            /*if($this->input->post('is_verified')){
                $row = $this->Common_model->get_row('users', $this->data['info']->registrations_id);
                // Send Message
                $mobile = '+88'.$row->phone;
                $message = 'Your application approve successfully. Please contact us as soon as possible. Thank You!';
                $this->send_sms($mobile, $message);
-            }
+            }*/
             $this->session->set_flashdata('success', 'Approve member status change successfully.');
             redirect('index.php/adminpanel/member');
          }
       }
 
       // $this->data['meta_title'] = 'Member Approve';
-      $this->data['meta_title'] = 'সদস্য অনুমোদিত';
+      $this->data['meta_title'] = 'শিশু অনুমোদিত';
       $this->data['subview'] = 'member/approve';
       $this->load->view('backend/_layout_main', $this->data);
    }
 
 
+   public function verified_approve($id, $dcID){
+      $this->data['info'] = $this->Member_model->get_info_all($id, $dcID);
+      // $dcID = $this->data['info']->day_cares_id;
+      $groupID = $this->data['info']->child_admit_interest;
+      $this->data['seat_limit'] = $this->Member_model->get_seat_limit($groupID);
+      $this->data['seat_count'] = $this->Member_model->get_seat_count($dcID, $groupID);
 
+      // echo"<pre>";print_r($this->data);exit('id');
+
+      $this->form_validation->set_rules('is_verified', 'verify status', 'required|trim');
+
+      // Validate and insert data
+      if ($this->form_validation->run() == true){
+
+         $form_data['status'] = $this->input->post('is_verified');
+
+         if($this->Member_model->edit_otherdb('members', $id, 'id', $form_data)){
+            if($this->input->post('is_verified')){
+               $row = $this->Common_model->get_row('users', $this->data['info']->parents_id);
+               // echo"<pre>";print_r($row); exit('alisddd');
+               // Send Message
+               $mobile = '+88'.$row->phone;
+               $message = 'প্রিয় '.$row->first_name.' আপনার তালিকা ভুক্তির আবেদন সফলভাবে অনুমোদিত হয়েছে। যত তাড়াতাড়ি সম্ভব আপনার প্যানেল থেকে ভর্তির ফর্ম জমা দিন. ধন্যবাদ!';
+               $this->send_sms($mobile, $message);
+            }
+            $this->session->set_flashdata('success', 'Approve member status change successfully.');
+            redirect('index.php/adminpanel/member/verified_request/4');
+         }
+      }
+
+      // $this->data['meta_title'] = 'Member Approve';
+      $this->data['meta_title'] = 'শিশু চুড়ান্ত অনুমোদিত ফর্ম';
+      $this->data['subview'] = 'member/final_approve';
+      $this->load->view('backend/_layout_main', $this->data);
+
+   }
+
+
+
+   public function dc_verified_applicant_info($database_other, $id){
+      // Database Load
+      $this->Dashboard_model->loadCustomerDatabase($database_other);
+      // $results = $this->Member_model->get_data_all(0);
+      $info = $this->Dashboard_model->get_info_all($id);
+      // $this->data['info'] = $this->Member_model->get_info_all($id);
+
+
+      return $info;
+   } 
+
+
+
+   public function details_all($id, $dcID){
+      $this->data['info'] = $this->Member_model->get_info_all($id, $dcID);
+      // echo"<pre>";print_r($this->data['info']->is_paid);exit('ali');
+      // $this->data['meta_title'] = 'Member Details';
+      $this->data['meta_title'] = 'শিশু বিস্তারিত';
+      $this->data['subview'] = 'member/details';
+      $this->load->view('backend/_layout_main', $this->data);
+   }
+
+   
    public function details($id){
       $this->data['info'] = $this->Member_model->get_info($id);
       // echo"<pre>";print_r($this->data['info']->is_paid);exit('ali');
       // $this->data['meta_title'] = 'Member Details';
-      $this->data['meta_title'] = 'সদস্য বিস্তারিত';
+      $this->data['meta_title'] = 'শিশু বিস্তারিত';
       $this->data['subview'] = 'member/details';
       $this->load->view('backend/_layout_main', $this->data);
    }

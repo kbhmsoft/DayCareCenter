@@ -175,7 +175,7 @@
                               <td><?=@$this->Site_model->get_daycare_name($row->day_cares_id)?></td>
                               <td><?=@$row->child_name?></td>
                               <td> 
-                                    <?php if($row->status==1&&$row->is_applied==0){ ?>
+                                    <?php if($row->status==4&&$row->is_applied==0){ ?>
                                        <!-- <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button> -->
                                        <a href="<?=base_url('index.php/new-application/'.$row->day_cares_id.'/'.$row->id)?>" class="btn btn-success btn-xs">ভর্তির আবেদন করুন</a>
                                        <?php /*
@@ -308,7 +308,7 @@
          .step.finish {
            background-color: #04AA6D;
          }
-         </style>
+      </style>
 
       
 

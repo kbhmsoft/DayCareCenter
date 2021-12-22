@@ -161,7 +161,19 @@
                <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care');?>"><i class="fa fa-th"></i> <span>দিবা যত্ন কেন্দ্র</span></a></li>
 
                <!-- <li class="<?=backend_activate_menu_class('day_care_others');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care_others');?>"><i class="fa fa-th"></i> <span>অন্যান্য দিবা যত্ন কেন্দ্র</span></a></li> -->
-
+                <li class="treeview <?=backend_activate_menu_class('member');?>">
+                  <a href="javascript:void();">
+                     <i class="fa fa-users"></i> <span>শিশু</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
+                  </a>
+                  <ul class="treeview-menu">
+                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/3');?>"><i class="fa fa-circle-o"></i>ভর্তি যোগ্য শিশুর তালিকা</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/5');?>"><i class="fa fa-circle-o"></i>ভর্তির অযোগ্য শিশুর তালিকা</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/4');?>"><i class="fa fa-circle-o"></i>ভর্তির জন্য অপেক্ষমান শিশু</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/2');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
+                  </ul>
+               </li>
                <li class="<?=backend_activate_menu_class('doctors');?>"><a href="<?php echo base_url('index.php/adminpanel/doctors');?>"><i class="fa fa-th"></i> <span>চিকিৎসকরা</span></a></li>
 
                <li class="treeview <?=backend_activate_menu_class('manage_user');?>">

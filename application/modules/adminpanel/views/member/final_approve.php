@@ -99,42 +99,37 @@
                      <div class="col-md-5">
                         <?php 
                         $attributes = array('id' => 'jsvalidation');
-                        echo form_open('index.php/adminpanel/member/approve/'.$info->id, $attributes);
+                        echo form_open('index.php/adminpanel/member/verified_approve/'.$info->id.'/'.$info->day_cares_id, $attributes);
                         ?>
                         <fieldset>
                            <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #3c8dbc;">কেন্দ্রের সাধারণ তথ্য ও অনুমোদন</legend>
                            <div class="row row-form">
                               <div class="col-md-6">
                                  <div class="form-group">
-                                    <label>মোট আসন <span class='text-danger'>&nbsp;*</span></label>
+                                    <label>মোট আসন <span class='required'>*</span></label>
                                     <p><?=eng2bng($seat_limit);?></p>
                                  </div>  
                               </div>
 
                               <div class="col-md-6">
                                  <div class="form-group">
-                                    <label>ফাকা আসন <span class='text-danger'>&nbsp;*</span></label>
+                                    <label>ফাকা আসন <span class='required'>*</span></label>
                                     <p><?=eng2bng($seat_limit-$seat_count);?></p>
                                  </div>  
                               </div>
                               <?php /*
                               */ ?>
 
-                              <div class="col-md-5">
+                              <div class="col-md-8">
                                  <div class="form-group">
-                                    <label>যাচাইকৃত স্থিতি <span class='text-danger'>&nbsp; *</span></label> <br>
+                                    <label>যাচাইকৃত স্থিতি <span class='required'>*</span></label> <br>
                                     <?php echo form_error('is_verified');?>
-                                    <input type="radio" name="is_verified" value="1" id="selectedV" <?=set_value('is_verified')==3?'checked':'checked';?>>অনুমোদিত
-                                    <input type="radio" name="is_verified" value="0" <?=set_value('is_verified')==5?'':'';?>>অননুমোদিত
+                                    <input type="radio" name="is_verified" value="4" id="selectedV" <?=set_value('is_verified')==4?'checked':'checked';?>>অনুমোদিত
+                                    <input type="radio" name="is_verified" value="6" <?=set_value('is_verified')==6?'':'';?>>অননুমোদিত
                                  </div>  
                               </div>
-                              <div class="col-md-5">
-                                 <label>মন্তব্য</label>
-                                 <input type="text" id="comments" name="comments"><br><br>
-                              </div>
-                              
-                              <div class="col-md-7 text-center">
-                                 <?php echo form_submit('submit', 'প্রেরণ করুন', "class='btn btn-primary pull-right'"); ?>
+                              <div class="col-md-4">
+                                 <?php echo form_submit('submit', 'সংরক্ষণ করুন', "class='btn btn-primary pull-right'"); ?>
                               </div>
                            </div>
                         </fieldset>
@@ -144,14 +139,14 @@
                       <div class="col-md-5">
                          <div class="col-md-6">
                               <div class="form-group">
-                                 <label>মোট আসন <span class='text-danger'>&nbsp;*</span></label>
+                                 <label>মোট আসন <span class='required'>*</span></label>
                                  <p><?=eng2bng($seat_limit);?></p>
                               </div>  
                            </div>
 
                            <div class="col-md-6">
                               <div class="form-group">
-                                 <label>ফাকা আসন <span class='text-danger'>&nbsp;*</span></label>
+                                 <label>ফাকা আসন <span class='required'>*</span></label>
                                  <p><?=eng2bng($seat_limit-$seat_count);?></p>
                               </div>  
                            </div>

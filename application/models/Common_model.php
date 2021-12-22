@@ -24,6 +24,7 @@ class Common_model extends CI_Model {
    }
 
    public function get_row($table, $id) {
+      // print_r($table);exit;
       $this->db->select('*');
       $this->db->from($table);
       $this->db->where('id', $id);
