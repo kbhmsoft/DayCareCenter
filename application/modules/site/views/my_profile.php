@@ -123,6 +123,45 @@
                   </tbody>
                </table> 
             </div>
+
+            <div class="col-md-12">
+              <?php foreach ($day_care_list as $item) { ?>
+                  <?php if($seat_count[$item->id]){ ?>
+
+                  <table class="table table-bordered table-striped table-responsive">
+                     <h5 style="font-weight: bold;text-decoration: underline; "><?php echo $item->title; ?></h5>   
+                     <thead style="background-color: lightblue;">
+                        <tr>
+                           <th width="20">নং</th>
+                           <th>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</th>
+                           <th>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</th>
+                           <th>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</th>
+                           <th>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</th>
+                           
+                        </tr>
+                     </thead>
+                     <tbody style="background-color: #f3f0f0;">
+                        <?php 
+                        $sl=0;                     
+                        foreach ($results[$item->id] as $row) { 
+                           $sl++;
+                           ?>
+                           <tr>
+                              <td><?=$sl;?></td>
+                              <td><?php echo $row->total_sec_1;?></td>
+                              <td><?php echo $row->total_sec_2;?></td>
+                              <td><?php echo $row->total_sec_3;?></td>
+                              <td><?php echo $row->total_sec_4;?></td> 
+                              
+                              
+                               
+                           </tr>
+                           <?php } ?>
+                        </tbody>
+                     </table>
+                     <?php } ?>
+                     <?php } ?> 
+            </div>
          </div>
 
        <!-- /home -->

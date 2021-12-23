@@ -7,6 +7,16 @@ class Site_model extends MY_Model {
         parent::__construct();
     }
 
+    public function get_day_cares() {
+      $where_in = array('1','2','11');
+      $this->db->select('*');  
+      $this->db->where_in('id',$where_in);      
+      $query =  $this->db->get('day_cares');
+
+      return $query->result();
+    }
+   
+
     public function save($table, $data) {
         if ($this->customDB->insert($table, $data)) {
             return true;
@@ -72,6 +82,44 @@ class Site_model extends MY_Model {
 
         return $query;
     }
+
+    public function get_seat_count($dcID) {
+      // count query
+      $dbName = 'daycare_'.$dcID;
+      // exit($status);
+      $this->loadCustomerDatabase($dbName);
+      // count query
+      // $this->customDB->select('m.*,r.*');
+      $this->customDB->select('count(r.id) as total');
+      $this->customDB->where('m.status', '1');
+      $this->customDB->group_by('r.child_admit_interest');
+      $this->customDB->join("registrations r", "r.id = m.registrations_id", 'LEFT');
+      $this->customDB->from('members m');
+      $query = $this->customDB->get()->row()->total;
+
+      return $query;
+
+    }
+
+    public function get_child_admit_interest_by_status($status){ 
+          /*$this->customDB->select('COUNT(*) as count');
+          $this->customDB->where('member_types_id', 1);
+          $this->customDB->where('status', $status);
+          $tmp = $this->customDB->get('members')->result();
+          // echo $this->customDB->last_query(); exit;        
+          // return $tmp[0]->count;
+          return count($tmp) > 0 ? $tmp[0]->count : 0;*/
+
+          $this->customDB->select('COUNT(*) as count');
+          $this->customDB->join('members m', 'm.registrations_id = r.id', 'LEFT');
+          $this->customDB->where('m.member_types_id', 1);
+          $this->customDB->where('m.status', 1);
+          $this->customDB->where('r.child_admit_interest', $status);
+          $tmp = $this->customDB->get('registrations r')->result(); 
+          // return count($tmp) > 0 ? $tmp[0]->count : 0;
+          return $tmp[0]->count;
+    }
+     
     public function get_regular_monthly_fee($ageID) {
         // print_r($ageID);exit('age');
         $this->db->select('fee');

@@ -560,8 +560,15 @@ class Site extends Frontend_Controller {
          // $this->data['results'] = $this->Site_model->get_application_data($this->userSessID);
          $this->data['results'] = $this->Site_model->get_application($this->userSessID);
 
+         $this->data['day_care_list'] = $this->Site_model->get_day_cares();
+
+         foreach ($this->data['day_care_list'] as $item) {
+            $data_arr[$item->id] = $this->dc_child_interest($item->database_name);
+            //$gtotal['application'] = $data_arr[$item->id]['total_application'];
+         }
+         $this->data['seat_count'] = $data_arr;
          // echo '<pre>';
-         // print_r($this->data['results']); exit;
+         // print_r($this->data['seat_count']); exit;
 
          // Update Basic Info
          if($this->input->post('hide_update_info') == '11111'){
@@ -767,6 +774,31 @@ class Site extends Frontend_Controller {
          // $this->data['subview'] = 'childenroll_form';
          $this->data['edit'] = $edit == 'edit' ? true : false;
          $this->load->view('frontend/_layout_main', $this->data);
+      }
+
+
+
+
+      public function dc_child_interest($database_other){
+         // Database Load
+         $this->Site_model->loadCustomerDatabase($database_other);
+
+         $results['total_sec_1'] = $this->Site_model->get_child_admit_interest_by_status(1);
+         $results['total_sec_2'] = $this->Site_model->get_child_admit_interest_by_status(2);
+         $results['total_sec_3'] = $this->Site_model->get_child_admit_interest_by_status(3);
+         $results['total_sec_4'] = $this->Site_model->get_child_admit_interest_by_status(4);
+
+         return $results;
+      }
+
+
+      public function dc_seat_availability($database_other){
+         // Database Load
+         // print_r($database_other);exit;
+         $this->Site_model->loadCustomerDatabase($database_other);
+         $results = $this->Site_model->get_seat_count($database_other);
+
+         return $results;
       }
 
       public function newapplication($dcID, $appID)
