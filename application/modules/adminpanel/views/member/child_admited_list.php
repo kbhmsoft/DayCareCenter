@@ -39,6 +39,7 @@
                            <th>যোগদান তারিখ</th>
                            <th>বয়সভিত্তিক গ্রুপ</th>
                            <th>আবেদন তারিখ</th>
+                           <th>পদবী</th>
                            <th width="100">অ্যাকশন</th>
                         </tr>
                      </thead>
@@ -57,6 +58,7 @@
                               </td>                
 
                               <td><?php echo date("d/m/Y", strtotime($row->created));?></td>
+                              <td><?php echo $row->child_mother_designation;?></td>
                               <td> 
                                  <div class="btn-group">
                                     <!-- <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button> -->
