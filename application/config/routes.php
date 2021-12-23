@@ -62,6 +62,7 @@ $route['contact-us'] 			= 'site/contact_us';
 $route['registration'] 			= 'site/registration';
 $route['forgotten_password'] 			= 'site/forgotten_password';
 $route['reset_password'] 			= 'site/reset_password';
+$route['set_password'] 			= 'site/set_password';
 $route['login'] 					= 'site/login';
 $route['day-care-details/(:any)'] 		= 'site/day_care_details/$1';
 $route['day-care-centers'] 		= 'site/day_care_centers'; #Day Care Centers

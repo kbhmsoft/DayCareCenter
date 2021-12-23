@@ -171,7 +171,7 @@ class Site extends Frontend_Controller {
       $this->load->view('frontend/_layout_main', $this->data);
    }
 
-   public function registration(){   
+   public function registration_old(){   
 
       //user
       $tables = $this->config->item('tables','ion_auth');
@@ -221,6 +221,84 @@ class Site extends Frontend_Controller {
          
          // redirect them back to the admin page
          redirect("index.php/my-profile");
+      }
+
+      // Load View
+      $this->data['meta_title'] = 'রেজিস্ট্রেশন';                
+      $this->data['subview'] = 'registration';
+      $this->load->view('frontend/_layout_main', $this->data);
+   }
+
+
+   public function registration(){   
+
+      //user
+      $tables = $this->config->item('tables','ion_auth');
+      $identity_column = $this->config->item('identity','ion_auth');
+      $this->data['identity_column'] = $identity_column;
+
+      // validate form input field
+      if($identity_column!=='email') {
+         $this->form_validation->set_rules('identity','username','required|is_unique['.$tables['users'].'.'.$identity_column.']|callback_username_valid');
+         $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'valid_email');
+      } else {
+         $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email|is_unique[' . $tables['users'] . '.email]');
+      }
+
+      $this->form_validation->set_rules('first_name', 'first name (Bangla)', 'required|trim');
+      $this->form_validation->set_rules('last_name', 'last name (Bangla)', 'required|trim');
+      
+      $this->form_validation->set_rules(
+        'mobile_no', 'mobile number', 'required|trim|is_unique[users.phone]',
+        array(
+                'required'      => 'আপনাকে অবশ্যই মোবাইল নম্বর দিতে হবে',
+                'is_unique'     => 'এই মোবাইল নং টি ইতি মধ্যে ব্যবহার করা হয়েছে'
+        )
+      );
+
+      //Validate and input data
+      if ($this->form_validation->run() == true) {
+         $email    = strtolower($this->input->post('email'));
+         $identity = ($identity_column==='email') ? $email : $this->input->post('identity');
+         $password = '87654321';
+         $otp_code = rand(1111,9999);
+
+         // Array data
+         $additional_data = array(
+           'first_name'    => $this->input->post('first_name'),
+           'last_name'     => $this->input->post('last_name'),                
+           'phone'         => $this->input->post('mobile_no'),                
+           'email'         => $this->input->post('identity'),
+           'gender'        => $this->input->post('gender'),              
+            'otp'          => $otp_code
+           );
+
+
+
+         // echo "<pre>";
+         // print_r($additional_data);
+         // exit();
+
+         //$user_group = array('3'); // parents 
+         $id = $this->ion_auth->register($identity, $password, $email, $additional_data);
+
+         //generate session
+         $newdata = array(
+           'id'  => $id,
+           'otp' => $otp_code
+         );
+
+         $this->session->set_userdata('new_data',$newdata);
+
+
+         // Send Message
+         $name = $this->input->post('first_name').' '.$this->input->post('last_name');
+         $mobile = '+88'.$this->input->post('mobile_no');
+         $message = 'প্রিয় '. $name .', শিশু দিবাযত্ন কেন্দ্রে আপনাকে স্বাগতম। আপনার ওটিপি হল - '. $otp_code .' , এই ওটিপি ব্যবহার করে  আপনার পাসওয়ার্ড সেট করুন।';
+         $this->send_sms($mobile, $message);
+         
+         // redirect them back to the admin page
+         redirect('index.php/set_password');
       }
 
       // Load View
@@ -282,6 +360,49 @@ class Site extends Frontend_Controller {
          
    }
 
+   public function set_password(){      
+
+      $this->form_validation->set_rules('otp', 'otp', 'required|trim');
+      $this->form_validation->set_rules('password', $this->lang->line('reset_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[confirm_password]');
+      $this->form_validation->set_rules('confirm_password', $this->lang->line('reset_password_validation_new_password_confirm_label'), 'required');
+
+
+      // Validate and input data
+      if ($this->form_validation->run() == true) {
+         // Cross match OTP
+         $newData = $this->session->all_userdata();
+         // print_r($newData); exit('dfd');
+         
+         if($this->Common_model->exists('users', 'otp', $newData['new_data']['otp'])){
+            // finally change the password
+            $user =$this->Site_model->get_info($newData['new_data']['id']);
+            $identity = $user->username; //$user->{$this->config->item('identity', 'ion_auth')};
+
+            // print_r($identity);exit('identity');
+            $change = $this->ion_auth->reset_password($identity, $this->input->post('password'));
+            if ($change){
+               // if the password was successfully changed
+               $this->session->set_flashdata('message', $this->ion_auth->messages());
+               redirect("index.php/login");
+            } else {
+               $this->session->set_flashdata('message', $this->ion_auth->errors());
+               redirect('index.php/site/set_password'.$code);
+            }
+         }
+         
+      }
+      
+      //Validate and input data
+      
+      
+
+      // Load View
+      $this->data['meta_title'] = ' পাসওয়ার্ড পুনরুদ্ধার';                
+      $this->data['subview'] = 'set_password';
+      $this->load->view('frontend/_layout_main', $this->data);
+         
+   }
+
    public function reset_password(){      
 
       $this->form_validation->set_rules('otp', 'otp', 'required|trim');
@@ -293,7 +414,7 @@ class Site extends Frontend_Controller {
       if ($this->form_validation->run() == true) {
          // Cross match OTP
          $newData = $this->session->all_userdata();
-         // print_r($newData['new_data']['otp']); //exit('dfd');
+         // print_r($newData['new_data']['otp']); exit('dfd');
          
          if($this->Common_model->exists('users', 'otp', $newData['new_data']['otp'])){
             // finally change the password
@@ -426,7 +547,7 @@ class Site extends Frontend_Controller {
 
       public function my_profile( $edit = 'no'){   
          if (!$this->ion_auth->logged_in()):
-            redirect('login');
+            redirect('index.php/login');
          endif;
 
          // User Info
@@ -651,7 +772,7 @@ class Site extends Frontend_Controller {
       public function newapplication($dcID, $appID)
       {
 
-         if (!$this->ion_auth->logged_in()){redirect('login');}
+         if (!$this->ion_auth->logged_in()){redirect('index.php/login');}
 
          // Student info
          $this->data['student_info'] = $this->Site_model->get_student_details($dcID, $appID);
@@ -761,7 +882,7 @@ class Site extends Frontend_Controller {
 
       public function subsidary_application($dcID, $appID)
       {
-         if (!$this->ion_auth->logged_in()){redirect('login');}
+         if (!$this->ion_auth->logged_in()){redirect('index.php/login');}
          
          // Student info
          $this->data['student_info'] = $this->Site_model->get_student_details($dcID, $appID);
@@ -850,7 +971,7 @@ class Site extends Frontend_Controller {
       public function payment($dcID, $appID)
       {
          // print_r($id);
-         if (!$this->ion_auth->logged_in()){redirect('login');}
+         if (!$this->ion_auth->logged_in()){redirect('index.php/login');}
 
          $this->data['student_info'] = $this->Site_model->get_student_details($dcID, $appID);
          // echo "<pre>";print_r($this->data['student_info']);exit('student_info');

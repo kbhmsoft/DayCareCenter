@@ -46,12 +46,12 @@
                   </div>
 
                   <div class="row form-row">
-                     <div class="col-md-6">
+                     <!-- <div class="col-md-6">
                         <div class="form-group">
                            <label>পাসওয়ার্ড <span class="required">*</span></label>
                            <input type="password" name="password" value="" class="form-control">
                         </div>
-                     </div>
+                     </div> -->
                      <div class="col-md-6">
                         <div class="form-group">
                            <label>লিঙ্গ</label><br>
