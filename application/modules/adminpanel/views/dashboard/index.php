@@ -63,6 +63,51 @@
 
       
       <div class="col-lg-3 col-xs-6">
+         <div class="small-box bg-red">
+            <div class="inner">
+               <h3><?=eng2bng($result_gTotal_sec_1)?></h3>
+               <p>প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-users"></i> </div>
+            <a href="<?php //echo base_url('index.php/adminpanel/staff/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div> 
+
+      <div class="col-lg-3 col-xs-6">      
+         <div class="small-box bg-yellow">
+            <div class="inner">
+               <h3><?=eng2bng($result_gTotal_sec_2)?></h3>
+               <p>প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <a href="<?php //echo base_url('index.php/adminpanel/member')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div>  
+
+      
+      <div class="col-lg-3 col-xs-6">
+         <div class="small-box bg-aqua">
+            <div class="inner">
+               <h3><?=eng2bng($result_gTotal_sec_3)?></h3>
+               <p>প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-users"></i> </div>
+            <a href="<?php //echo base_url('index.php/adminpanel/staff/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div> 
+
+      <div class="col-lg-3 col-xs-6">      
+         <div class="small-box bg-blue">
+            <div class="inner">
+               <h3><?=eng2bng($result_gTotal_sec_4)?></h3>
+               <p>প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <a href="<?php //echo base_url('index.php/adminpanel/member')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div> 
+
+      <div class="col-lg-3 col-xs-6">
          <div class="small-box bg-yellow">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_staff)?></h3>
@@ -104,11 +149,11 @@
                            <td class="sub-mark">:</td>
                            <td><?=eng2bng($result_dc[1]['total_application'])?></td>
                         </tr>        
-                        <tr>
+                        <!-- <tr>
                            <td>সর্বশেষ অগ্রিম বিল</td>
                            <td class="sub-mark">:</td>
                            <td><?=eng2bng($result_dc[1]['total_advance_bill'])?></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                            <td>সর্বমোট স্টাফ</td>
                            <td class="sub-mark">:</td>
@@ -147,11 +192,11 @@
                            <td class="sub-mark">:</td>
                            <td><?=eng2bng($result_dc[2]['total_application'])?></td>
                         </tr>        
-                        <tr>
+                        <!-- <tr>
                            <td>সর্বশেষ অগ্রিম বিল</td>
                            <td class="sub-mark">:</td>
                            <td><?=eng2bng($result_dc[2]['total_advance_bill'])?></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                            <td>সর্বমোট স্টাফ</td>
                            <td class="sub-mark">:</td>
@@ -191,11 +236,11 @@
                            <td class="sub-mark">:</td>
                            <td><?=eng2bng($result_dc[11]['total_application'])?></td>
                         </tr>        
-                        <tr>
+                        <!-- <tr>
                            <td>সর্বশেষ অগ্রিম বিল</td>
                            <td class="sub-mark">:</td>
                            <td><?=eng2bng($result_dc[11]['total_advance_bill'])?></td>
-                        </tr>
+                        </tr> -->
                         <tr>
                            <td>সর্বমোট স্টাফ</td>
                            <td class="sub-mark">:</td>
@@ -952,8 +997,8 @@
             <div class="triangle-up"></div>
          </div>
       </div>
-*/
-?>
+      */
+   ?>
 
 
 
@@ -972,58 +1017,59 @@
 
 
 
-<?php /* 
-   <div class="row">
-      
-      <div class="col-lg-6 col-xs-6">
-         <div class="small-box bg-aqua">
-            <div class="inner">
-               <h3>123<?php //$total_member ?></h3>
-               <p>Total Application</p>
+   <?php /* 
+      <div class="row">
+         
+         <div class="col-lg-6 col-xs-6">
+            <div class="small-box bg-aqua">
+               <div class="inner">
+                  <h3>123<?php //$total_member ?></h3>
+                  <p>Total Application</p>
+               </div>
+               <div class="icon"> <i class="ion ion-bag"></i> </div>
+               <a href="<?php //base_url('adminpanel/member')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon"> <i class="ion ion-bag"></i> </div>
-            <a href="<?php //base_url('adminpanel/member')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
-         </div>
-      </div> <!-- ./col -->
+         </div> <!-- ./col -->
 
-      <div class="col-lg-6 col-xs-6">      
-         <div class="small-box bg-green">
-            <div class="inner">
-               <h3>123<?php //$total_product ?></h3>
-               <p>Total Child</p>
+         <div class="col-lg-6 col-xs-6">      
+            <div class="small-box bg-green">
+               <div class="inner">
+                  <h3>123<?php //$total_product ?></h3>
+                  <p>Total Child</p>
+               </div>
+               <div class="icon"> <i class="ion ion-stats-bars"></i> </div>
+               <a href="<?php //base_url('adminpanel/product/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon"> <i class="ion ion-stats-bars"></i> </div>
-            <a href="<?php //base_url('adminpanel/product/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
-         </div>
-      </div> 
+         </div> 
 
-      
-      <div class="col-lg-3 col-xs-6">
-         <div class="small-box bg-yellow">
-            <div class="inner">
-               <h3><?php //$total_document ?></h3>
-               <p>Total Document</p>
+         
+         <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-yellow">
+               <div class="inner">
+                  <h3><?php //$total_document ?></h3>
+                  <p>Total Document</p>
+               </div>
+               <div class="icon"> <i class="ion ion-person-add"></i> </div>
+               <a href="<?php //base_url('admin/document/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon"> <i class="ion ion-person-add"></i> </div>
-            <a href="<?php //base_url('admin/document/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
          </div>
-      </div>
 
-      <div class="col-lg-3 col-xs-6">
-         <div class="small-box bg-red">
-            <div class="inner">
-               <h3><?php // $total_testimonial ?></h3>
-               <p>Total Testimonial</p>
+         <div class="col-lg-3 col-xs-6">
+            <div class="small-box bg-red">
+               <div class="inner">
+                  <h3><?php // $total_testimonial ?></h3>
+                  <p>Total Testimonial</p>
+               </div>
+               <div class="icon"> <i class="ion ion-pie-graph"></i> </div>
+               <a href="<?php //base_url('admin/testimonial/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon"> <i class="ion ion-pie-graph"></i> </div>
-            <a href="<?php //base_url('admin/testimonial/all')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
-         </div>
-      </div> <!-- ./col -->
-      
-   </div> <!-- ./row --> */ ?>
+         </div> <!-- ./col -->
+         
+      </div> <!-- ./row --> */
+   ?>
 
    <?php /*
-   <div class="row">
+      <div class="row">
       
       <?php foreach ($day_care_list as $row) {  ?>
       <div class="col-md-4">
@@ -1082,7 +1128,8 @@
          </div> <!-- /.widget-user -->
       </div> <!-- /.col -->
       
-   </div>*/ ?>
+      </div>*/
+    ?>
 </div>
 
 </section>

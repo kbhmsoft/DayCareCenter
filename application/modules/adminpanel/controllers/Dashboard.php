@@ -29,6 +29,10 @@ class Dashboard extends Backend_Controller {
          $gtotal['female'] = 0;
          $gtotal['staff'] = 0;
          $gtotal['attendance'] = 0;
+         $gtotal['sec_1'] = 0;
+         $gtotal['sec_2'] = 0;
+         $gtotal['sec_3'] = 0;
+         $gtotal['sec_4'] = 0;
 
          foreach ($this->data['day_care_list'] as $item) {
             $data_arr[$item->id] = $this->dc_statistics($item->database_name);
@@ -40,6 +44,14 @@ class Dashboard extends Backend_Controller {
             $gtotal['attendance'] += $data_arr[$item->id]['total_attendance_today'];
          }
 
+         foreach ($this->data['day_care_list'] as $item) {
+            $data_arra[$item->id] = $this->dc_child_interest($item->database_name);
+            $gtotal['sec_1'] += $data_arra[$item->id]['total_sec_1'];
+            $gtotal['sec_2'] += $data_arra[$item->id]['total_sec_2'];
+            $gtotal['sec_3'] += $data_arra[$item->id]['total_sec_3'];
+            $gtotal['sec_4'] += $data_arra[$item->id]['total_sec_4'];
+          }  
+
          $this->data['result_dc'] = $data_arr;
          $this->data['result_gTotal_application'] = $gtotal['application'];
          $this->data['result_gTotal_child'] = $gtotal['child'];
@@ -47,10 +59,14 @@ class Dashboard extends Backend_Controller {
          $this->data['result_gTotal_child_female'] = $gtotal['female'];
          $this->data['result_gTotal_staff'] = $gtotal['staff'];
          $this->data['result_gTotal_attendance'] = $gtotal['attendance'];
+         $this->data['result_gTotal_sec_1'] = $gtotal['sec_1'];
+         $this->data['result_gTotal_sec_2'] = $gtotal['sec_2'];
+         $this->data['result_gTotal_sec_3'] = $gtotal['sec_3'];
+         $this->data['result_gTotal_sec_4'] = $gtotal['sec_4'];
 
 
          // echo '<pre>';
-         // print_r($this->data['result_gTotal_staff']); exit; 
+         // print_r($this->data); exit; 
 
          // echo $this->data['result_dc'][1]['total_attendance'];
          //exit;
