@@ -561,4 +561,47 @@ class Member extends Backend_Controller {
       redirect('index.php/adminpanel/member');
    }
 
+
+   public function get_male_female_by_type($gender){ 
+      if ($gender == 1) {
+         $gender = "Male";
+      } else {
+         $gender = "Female";
+      }
+
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+
+      foreach ($this->data['day_care_list'] as $item) {
+         $data_arr[$item->id] = $this->get_db_verified_applicant($item->database_name, $gender);
+      }
+
+      $this->data['results'] = $data_arr; 
+
+      if ($gender == "Male") {
+
+         $this->data['subview'] = 'member/male_list';
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র ছেলে শিশুদের তালিকা';
+
+      }elseif ($gender == "Female"){
+
+         $this->data['subview'] = 'member/female_list';
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র মেয়ে শিশুদের তালিকা';
+
+      }
+      // echo "<pre>"; print_r($this->data); exit;    
+
+      $this->load->view('backend/_layout_main', $this->data);
+   }  
+
+   public function get_db_verified_applicant($database_other, $gender){
+      // Database Load
+      // echo $database_other; exit;
+      $this->Dashboard_model->loadCustomerDatabase($database_other);
+      // $results = $this->Member_model->get_data_all(0);
+      $results = $this->Dashboard_model->get_male_female_child_gender($gender);
+
+      return $results;
+   } 
+
+
 }
