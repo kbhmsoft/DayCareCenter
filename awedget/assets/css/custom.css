@@ -1,11 +1,22 @@
-@font-face {
+/*@font-face {
  font-family: 'BenSenHandwriting';
  src: url('../fonts/BenSenHandwriting.ttf') format('truetype');
  font-weight: normal;
  font-style: normal;
+}*/
+
+@font-face {
+ font-family: 'Nikosh';
+ src: url('../fonts/Nikosh.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
 }
-
-
+body, html {
+   font-family: 'Nikosh', Poppins, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Nikosh', sans-serif;
+}
 .register-page {
   /*background: #d2d6de;*/
   margin-top: 40px;
@@ -240,7 +251,7 @@
     background-color: #bcbcbc;
     color: #ffffff;
     position: relative;
-    font-family: 'Kalpurush', Arial, sans-serif;
+    font-family: 'Nikosh', Arial, sans-serif;
  }
  .tiles.overflow-hidden {
     overflow: hidden;
@@ -261,7 +272,7 @@
  .tiles .tiles-title {
   font-size: 20px;
   /*font-family: 'Open Sans';*/
-  font-family: 'Kalpurush', Arial, sans-serif;
+  font-family: 'Nikosh', Arial, sans-serif;
   text-align: center;
 }
 .tiles .tiles-body {
@@ -407,7 +418,7 @@
  font-size: 20px;
  display: block;
  /*font-family: 'Arial';*/
- font-family: 'Kalpurush', Arial, sans-serif;
+ font-family: 'Nikosh', Arial, sans-serif;
  font-weight: 600;
  margin: 4px 0px;
 }
@@ -594,4 +605,43 @@
 }
 .tiles-overlay.blue {
  background-color: rgba(0, 144, 217, 0.8);
+}
+
+
+.skin-blue .wrapper, .skin-blue .main-sidebar, .skin-blue .left-side {
+    /*color: #0e0e0e;*/
+    background-color: #FFFFFF;
+ }
+
+.skin-blue .treeview-menu>li>a {
+    color: #000; 
+}
+
+.skin-blue .sidebar a {
+    color: #000; 
+    font-size: 20px;
+}
+
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
+    color: #000;
+    background: #FFFFFF;
+    border-left-color: #3c8dbc;
+}
+
+.skin-blue .sidebar-menu>li>.treeview-menu {
+    margin: 0 1px;
+    background: #b8dae7;
+}
+
+.main-header .logo .logo-lg {
+    
+   font-family: 'Nikosh';
+
+}
+
+.widget-user .widget-user-username {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: 300;
+    text-shadow: 0 1px 1px rgb(0 0 0 / 20%);
 }

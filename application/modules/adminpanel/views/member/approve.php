@@ -1,13 +1,13 @@
 <style type="text/css">
    .tg  {border-collapse:collapse;border-spacing:0; width: 100%}
-   .tg td{font-family:Arial, sans-serif;font-size:14px;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-   .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+   .tg td{font-family:Arial, sans-serif;font-size:14px;padding:5px 5px;border-style:ridge;border-width:1px;overflow:hidden;word-break:normal;border-color:gray;}
+   .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:5px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:gray;}
    .tg .tg-x5m0{background-color:#c0c0c0;text-align:right;vertical-align:top;font-weight: bold;}
    .tg .tg-kftd{background-color:#efefef;text-align:left;vertical-align:top; }
-   .tg .tg-9czc{background-color:#c0c0c0;text-align:right;vertical-align:middle; width: 163px!important; font-weight: bold;}
+   .tg .tg-9czc{background-color:#edf7ff;text-align:right;vertical-align:middle; width: 163px!important; font-weight: bold;}
    .tg .tg-0lax{text-align:left;vertical-align:top;width: 200px;}
    .tg .tg-0pky{background-color:#efefef;text-align:left;vertical-align:top;}
-   .tg .tg-9czc{background-color:#c0c0c0;text-align:right;vertical-align:middle; width: 120px; font-weight: bold;}
+   .tg .tg-9czc{background-color:#edf7ff;text-align:right;vertical-align:middle; width: 120px; font-weight: bold;}
 </style>
 
 <section class="content-header">
@@ -39,33 +39,33 @@
                <?php endif; ?>
 
                <div class="row">
-                  <div class="col-md-7">
+                  <div class="col-md-12">
                      <fieldset>
-                        <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #3c8dbc;">সদস্যের সাধারণ তথ্য</legend>
-                        <table class="table">
+                        <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #e7f4ff;">সদস্যের সাধারণ তথ্য</legend>
+                        <table class="table table-bordered table-striped table-responsive" >
                           
                            <tr>
-                              <td class="tg-9czc">শিশুর নাম</td>
-                              <td class="tg-0pky"><?=$info->child_name?></td>
-                              <td class="tg-9czc">বয়সভিত্তিক গ্রুপ</td>
-                              <td class="tg-0pky"><?=$info->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($info->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($info->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($info->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?></td>
+                              <td style="font-weight: bold;">শিশুর নাম</td>
+                              <td><?=$info->child_name?></td>
+                              <td style="font-weight: bold;">বয়সভিত্তিক গ্রুপ</td>
+                              <td><?=$info->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($info->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($info->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($info->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?></td>
                            </tr>
                            <tr>
                               
-                              <td class="tg-9czc">মায়ের নাম</td>
-                              <td class="tg-0pky"><?=$info->child_mother_name?></td>
-                              <td class="tg-9czc">মায়ের পদবী</td>
-                              <td class="tg-0pky"><?=$info->child_mother_designation?></td>
+                              <td style="font-weight: bold;">মায়ের নাম</td>
+                              <td><?=$info->child_mother_name?></td>
+                              <td style="font-weight: bold;">মায়ের পদবী</td>
+                              <td><?=$info->child_mother_designation?></td>
                            </tr>
                            <tr>
-                              <td class="tg-9czc">মায়ের প্রতিষ্ঠানের নাম: </td>
-                              <td class="tg-0pky"><?=$info->child_mother_working_institute?></td>
-                              <td class="tg-9czc">প্রতিষ্ঠানের ঠিকানা</td>
-                              <td class="tg-0pky"><?=$info->child_mother_working_place?></td>
+                              <td style="font-weight: bold;">মায়ের প্রতিষ্ঠানের নাম: </td>
+                              <td><?=$info->child_mother_working_institute?></td>
+                              <td style="font-weight: bold;">প্রতিষ্ঠানের ঠিকানা</td>
+                              <td><?=$info->child_mother_working_place?></td>
                            </tr>
                            <tr>
-                              <td class="tg-9czc">মায়ের প্রতিষ্ঠানের ধরণ: </td>
-                              <td class="tg-0pky">
+                              <td style="font-weight: bold;">মায়ের প্রতিষ্ঠানের ধরণ: </td>
+                              <td>
                                  <?=
                                  $info->child_mother_working_institute_type == '1' ? 
                                  'সরকারি': ($info->child_mother_working_institute_type == '2' ? 
@@ -76,64 +76,68 @@
                                   ?>
                                      
                                   </td>
-                              <td class="tg-9czc">মায়ের পেশার ধরণ:</td>
-                              <td class="tg-0pky"><?=eng2bng($info->child_mother_work_type == '1' ? 'পূর্ণ কর্মঘন্টার কর্মজীবী' : 'খন্ডকালীন কর্মজীবী')?></td>
+                              <td style="font-weight: bold;">মায়ের পেশার ধরণ:</td>
+                              <td><?=eng2bng($info->child_mother_work_type == '1' ? 'পূর্ণ কর্মঘন্টার কর্মজীবী' : 'খন্ডকালীন কর্মজীবী')?></td>
                            </tr>
                            <tr>
-                              <td class="tg-9czc">মাসিক সেবামূল্য</td>
-                              <td class="tg-0pky"><?=eng2bng($info->monthly_fee)?>/- টাকা</td>
-                              <td class="tg-9czc">মায়ের জাতীয় পরিচয়পত্রের নম্বর: </td>
-                              <td class="tg-0pky"><?=eng2bng($info->child_mother_national_no)?></td>
+                              <td style="font-weight: bold;">মাসিক সেবামূল্য</td>
+                              <td><?=eng2bng($info->monthly_fee)?>/- টাকা</td>
+                              <td style="font-weight: bold;">মায়ের জাতীয় পরিচয়পত্রের নম্বর: </td>
+                              <td><?=eng2bng($info->child_mother_national_no)?></td>
                            </tr>
                            <!-- <tr>
-                              <td class="tg-9czc">ওজন</td>
-                              <td class="tg-0pky"><?=$info->child_weight?></td>
-                              <td class="tg-9czc">উচ্চতা</td>
-                              <td class="tg-0pky"><?=$info->child_height?></td>
+                              <td>ওজন</td>
+                              <td><?=$info->child_weight?></td>
+                              <td>উচ্চতা</td>
+                              <td><?=$info->child_height?></td>
                               
                            </tr> -->
                         </table>
                      </fieldset>
                   </div>
                   <?php if ($seat_count<=$seat_limit) { ?>
-                     <div class="col-md-5">
+                     <div class="col-md-12">
                         <?php 
                         $attributes = array('id' => 'jsvalidation');
                         echo form_open('index.php/adminpanel/member/approve/'.$info->id, $attributes);
                         ?>
                         <fieldset>
-                           <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #3c8dbc;">কেন্দ্রের সাধারণ তথ্য ও অনুমোদন</legend>
+                           <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #e7f4ff;">কেন্দ্রের সাধারণ তথ্য ও অনুমোদন</legend>
                            <div class="row row-form">
                               <div class="col-md-6">
-                                 <div class="form-group">
-                                    <label>মোট আসন <span class='text-danger'>&nbsp;*</span></label>
-                                    <p><?=eng2bng($seat_limit);?></p>
-                                 </div>  
-                              </div>
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                       <label>মোট আসন </label>
+                                       <p><?=eng2bng($seat_limit);?></p>
+                                    </div>  
+                                 </div>
 
-                              <div class="col-md-6">
-                                 <div class="form-group">
-                                    <label>ফাকা আসন <span class='text-danger'>&nbsp;*</span></label>
-                                    <p><?=eng2bng($seat_limit-$seat_count);?></p>
-                                 </div>  
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                       <label>ফাকা আসন </label>
+                                       <p><?=eng2bng($seat_limit-$seat_count);?></p>
+                                    </div>  
+                                 </div>
                               </div>
                               <?php /*
                               */ ?>
 
-                              <div class="col-md-5">
-                                 <div class="form-group">
-                                    <label>যাচাইকৃত স্থিতি <span class='text-danger'>&nbsp; *</span></label> <br>
-                                    <?php echo form_error('is_verified');?>
-                                    <input type="radio" name="is_verified" value="3" id="selectedV" <?=set_value('is_verified')==3?'checked':'checked';?>>অনুমোদিত
-                                    <input type="radio" name="is_verified" value="5" <?=set_value('is_verified')==5?'':'';?>>অননুমোদিত
-                                 </div>  
-                              </div>
-                              <div class="col-md-5">
-                                 <label>মন্তব্য</label>
-                                 <input type="text" id="comments" name="comments"><br><br>
+                              <div class="col-md-6">
+                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                       <label>যাচাইকৃত স্থিতি <span class='text-danger'>&nbsp; *</span></label> <br>
+                                       <?php echo form_error('is_verified');?>
+                                       <input type="radio" name="is_verified" value="3" id="selectedV" <?=set_value('is_verified')==3?'checked':'checked';?>>&nbsp; গ্রহণযোগ্য <br>
+                                       <input type="radio" name="is_verified" value="5" <?=set_value('is_verified')==5?'':'';?>>&nbsp; গ্রহণযোগ্য নয়
+                                    </div>  
+                                 </div>
+                                 <div class="col-md-6">
+                                    <label>মন্তব্য</label><br>
+                                    <textarea id="comments" name="comments" rows="3"></textarea> <br>
+                                 </div>
                               </div>
                               
-                              <div class="col-md-7 text-center">
+                              <div class="col-md-6 text-center">
                                  <?php echo form_submit('submit', 'প্রেরণ করুন', "class='btn btn-primary pull-right'"); ?>
                               </div>
                            </div>

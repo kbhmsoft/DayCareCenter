@@ -36,12 +36,12 @@
                            <th width="20">নং</th>
                            <th>শিশুর নাম</th>
                            <th>জন্ম তারিখ</th>
+                           <th>কবে থেকে প্রয়োজন</th>
                            <th>বয়সভিত্তিক গ্রুপ</th>
                            <th>মায়ের নাম</th>
                            <th>মায়ের প্রতিষ্ঠানের নাম</th>
                            <th>পদবী</th>
-                          <!--  <th>কর্মস্থান</th>
-                           <th>বেতন</th> -->
+                          
                            <th>ডে কেয়ার অ্যাডমিনের মন্তব্য</th>
                            <th width="100">পদক্ষেপ</th>
                         </tr>
@@ -55,7 +55,8 @@
                            <tr>
                               <td><?=$sl;?></td>
                               <td><?php echo $row->child_name;?></td>
-                              <td><?php echo $row->child_dob;?></td>
+                              <td><?php echo eng2bng($row->child_dob);?></td>
+                              <td><?php echo eng2bng($row->child_doj);?></td>
                               <td><?=$row->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($row->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($row->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($row->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?>
                               </td>                
                               <td><?php echo $row->child_mother_name;?></td>
@@ -75,6 +76,7 @@
                                     <ul class="dropdown-menu" role="menu">
                                        <li>
                                           <a href="<?= base_url('adminpanel/member/verified_approve/'.$row->id.'/'.$row->day_cares_id)?>">অনুমোদন</a></li>
+                                       <li><a href="<?=base_url('index.php/adminpanel/member/details_all/'.$row->id.'/'.$row->day_cares_id)?>">বিস্তারিত</a></li>
                                        <!-- <li><a href="<?=base_url('adminpanel/member/delete/'.$row->id)?>" onclick="return confirm('Are you sure you want to delete this Member?');">Delete</a></li> -->
                                     </ul>
                                  </div>
