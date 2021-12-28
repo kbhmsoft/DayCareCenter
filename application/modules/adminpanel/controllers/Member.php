@@ -83,7 +83,7 @@ class Member extends Backend_Controller {
 
       }elseif ($status == 1){
 
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশু শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_running_list';
 
       }elseif ($status == 4){
@@ -102,7 +102,7 @@ class Member extends Backend_Controller {
       $results = $this->Dashboard_model->get_all_member($status);
 
       return $results;
-   } 
+   }    
 
    public function completed(){      
       $this->data['results'] = $this->Member_model->get_data(2); 
@@ -646,5 +646,32 @@ class Member extends Backend_Controller {
       return $results;
    } 
 
+
+   public function verified_request_search($status = null){ 
+
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+
+      foreach ($this->data['day_care_list'] as $item) {
+         $data_arr[$item->id] = $this->dc_verified_applicant_search($item->database_name);
+      }
+      // echo "<pre>"; print_r($data_arr); exit;
+
+      $this->data['results'] = $data_arr;     
+      // echo "<pre>"; print_r($this->data['results']); exit;
+
+      //Load page
+      $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশুদের তালিকা';
+      $this->data['subview'] = 'member/final_running_list_search';
+      $this->load->view('backend/_layout_main', $this->data);
+   }     
+
+   public function dc_verified_applicant_search($database_other){
+      // Database Load
+      $this->Dashboard_model->loadCustomerDatabase($database_other);
+      // $results = $this->Member_model->get_data_all(0);
+      $results = $this->Dashboard_model->applicant_member_search();
+
+      return $results;
+   } 
 
 }

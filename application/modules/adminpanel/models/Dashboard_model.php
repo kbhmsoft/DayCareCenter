@@ -202,4 +202,28 @@ class Dashboard_model extends MY_Model {
 
    } 
 
+
+   public function applicant_member_search() {
+      
+      $this->customDB->select('m.id, m.day_cares_id, m.monthly_fee, m.payment_status, m.pament_received, m.status,m.registrations_id, m.child_name, m.child_dob, m.gender, m.child_age, m.child_weight, m.is_paid, m.child_height, m.birth_mark, m.birth_certificate_no, m.describe_food, m.describe_health_problem, m.payment_slip, r.child_mother_name, r.child_mother_national_no, r.child_father_name, r.child_mother_work_type, r.child_father_national_no, r.child_parents_name, r.child_parents_ph_no, r.child_parents_national_no, r.child_mother_designation, r.child_mother_working_place,  r.child_mother_working_institute_type, r.child_mother_ph_no, r.child_mother_total_salary, r.child_mother_basic_salary, r.child_mother_pay_scale, r.child_mother_job_duration, r.child_doj, r.child_admit_interest, r.child_mother_working_institute, r.child_parents_present_address, r.child_mother_permanent_address, r.child_mother_parmanent_ph_no,  r.child_admit_interest, r.child_number');
+
+      $this->customDB->from('members m');
+      $this->customDB->join('registrations r', 'r.id = m.registrations_id', 'LEFT');
+      $this->customDB->where('m.member_types_id', 1);
+      $this->customDB->where('m.status', 1);
+      if ($this->input->get('year_group')) {
+         $this->customDB->where('r.child_admit_interest',$this->input->get('year_group'));
+      }
+      if ($this->input->get('date_joining')) {
+         $this->customDB->where('r.child_doj',$this->input->get('date_joining'));
+      }
+      if ($this->input->get('date_dirth')) {
+         $this->customDB->where('m.child_dob',$this->input->get('date_dirth'));
+      }
+      $query = $this->customDB->get()->result();
+
+      return $query;
+   }
+
+
 }

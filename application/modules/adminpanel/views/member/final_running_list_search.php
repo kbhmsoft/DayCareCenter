@@ -14,7 +14,7 @@
             <div class="box-header with-border">
                <!-- <h3 class="box-title"><?=$meta_title; ?></h3> -->
                <!-- <a href="<?=base_url('index.php/adminpanel/member/add')?>" class="btn btn-info btn-xs pull-right"> Add Member</a>           -->
-            </div> 
+            </div>  
             <div style="float: right; margin-right: 10px">
                <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/1');?>" method="GET"> 
                      <div class="input-group">
@@ -35,10 +35,14 @@
                          <button class="btn btn-primary" type="submit">
                            <span class="glyphicon glyphicon-search"></span>
                          </button>
+                         <a href="">clear</a>
+                       </div>
+                       <div class="input-group-btn">
+                         <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>">clear</a>
                        </div>
                      </div>
                </form>
-            </div>       
+            </div>      
 
             <div class="box-body">
                <!-- <div id="infoMessage"><?php //echo $message;?></div>             -->
@@ -53,14 +57,13 @@
                <?php foreach ($day_care_list as $item) { ?>
                   <?php if($results[$item->id]){ ?>
 
-                  <table class="table table-bordered table-striped table-responsive">
+                  <table class="table table-bordered table-striped table-responsive" id="example2">
                      <h5 style="font-weight: bold;text-decoration: underline; "><?php echo $item->title; ?></h5>   
                      <thead style="background-color: lightblue;">
                         <tr>
                            <th width="20">নং</th>
                            <th>শিশুর নাম</th>
                            <th>জন্ম তারিখ</th>
-                           <th>যোগদানের তারিখ</th>
                            <th>বয়সভিত্তিক গ্রুপ</th>
                            <th>মায়ের নাম</th>
                            <th>মায়ের প্রতিষ্ঠানের নাম</th>
@@ -81,7 +84,6 @@
                               <td><?=$sl;?></td>
                               <td><?php echo $row->child_name;?></td>
                               <td><?php echo $row->child_dob;?></td>
-                              <td><?php echo $row->child_doj;?></td>
                               <td><?=$row->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($row->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($row->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($row->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?>
                               </td>                
                               <td><?php echo $row->child_mother_name;?></td>
