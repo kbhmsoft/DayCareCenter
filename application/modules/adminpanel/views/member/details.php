@@ -156,6 +156,25 @@
                 </table>
                
               </fieldset>
+              <fieldset>
+                <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend> 
+                <table class="tg" style="text-align: left;">
+                  <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">সদস্যের মাসিক সেবামূল্য</caption>
+                  <tr>
+                    <th class="tg-9czc" >আবেদনকারীর ছবি</th>
+                    <th class="tg-9czc" >অভিভাবকের জাতীয় পরিচয়পত্রের কপি </th>
+                    <th class="tg-9czc" >শিশুর জন্মসনদের কপি </th>
+                    <th class="tg-9czc" >প্রত্যয়নপত্র </th>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <td><button class="btn-success">Show</button></td>
+                    <td><button class="btn-success">Show</button></td>
+                    <td><button class="btn-success">Show</button></td>
+                    <td><button class="btn-success">Show</button></td>
+                  </tr>
+                </table>
+               
+              </fieldset>
           </div>
 
         <div class="col-md-6">

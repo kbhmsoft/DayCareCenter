@@ -612,14 +612,26 @@ class Site extends Frontend_Controller {
             // $this->form_validation->set_rules('child_name', 'Child name', 'required|trim');
 
             // If file selected
-            // if(@$_FILES['userfile']['size'] > 0){
-            //    $this->form_validation->set_rules('userfile', '', 'callback_file_check');
-            // }
+            if(@$_FILES['userfile']['size'] > 0){
+               $this->form_validation->set_rules('userfile', '', 'callback_file_check');
+            }
 
             // If Immunization selected
-            // if(@$_FILES['userfile1']['size'] > 0){
-            //    $this->form_validation->set_rules('userfile1', '', 'callback_file_check');
-            // }
+            if(@$_FILES['userfile1']['size'] > 0){
+               $this->form_validation->set_rules('userfile1', '', 'callback_file_check');
+            }
+            
+
+            // If Immunization selected
+            if(@$_FILES['userfile2']['size'] > 0){
+               $this->form_validation->set_rules('userfile2', '', 'callback_file_check');
+            }
+            
+
+            // If Immunization selected
+            if(@$_FILES['userfile3']['size'] > 0){
+               $this->form_validation->set_rules('userfile3', '', 'callback_file_check');
+            }
             
 
             //Validate and input data
@@ -638,6 +650,149 @@ class Site extends Frontend_Controller {
                   'created'      => date('Y-m-d H:i:s'),        
                   );
                $registrations_data = array_merge($registrations_data, $registrations_data_);
+
+                // Image Upload
+               if($_FILES['userfile']['size'] > 0){
+                  $new_file_name = time().'-'.$_FILES["userfile"]['name'];
+                  $config['allowed_types']= 'jpg|png|jpeg';
+                  $config['upload_path']  = $this->img_path;
+                  $config['file_name']    = $new_file_name;
+                  $config['max_size']     = 600;
+
+                  $this->load->library('upload', $config);
+                  //upload file to directory
+                  if($this->upload->do_upload()){
+                     $uploadData = $this->upload->data();
+                     $config = array(
+                        'source_image' => $uploadData['full_path'],
+                        'new_image' => $this->img_path,
+                        'maintain_ratio' => TRUE,
+                        'width' => 300,
+                        'height' => 300
+                        );
+                     $this->load->library('image_lib',$config);
+                     $this->image_lib->initialize($config);
+                     $this->image_lib->resize();
+
+                     $uploadedFile = $uploadData['file_name'];
+                     // print_r($uploadedFile);
+                  }else{
+                     $this->data['message'] = $this->upload->display_errors();
+                  }
+               }
+
+
+               // Immunization Image Upload
+               if($_FILES['userfile1']['size'] > 0){
+                  $new_file_name = time().'-'.$_FILES["userfile1"]['name'];
+                  $config['allowed_types']= 'jpg|png|jpeg';
+                  $config['upload_path']  = $this->img_path;
+                  $config['file_name']    = $new_file_name;
+                  $config['max_size']     = 600;
+
+                  $this->load->library('upload', $config);
+                  //upload file to directory
+                  if($this->upload->do_upload('userfile1')){
+                     $uploadData = $this->upload->data();
+                     $config = array(
+                        'source_image' => $uploadData['full_path'],
+                        'new_image' => $this->img_path,
+                        'maintain_ratio' => TRUE,
+                        'width' => 300,
+                        'height' => 300
+                        );
+                     $this->load->library('image_lib',$config);
+                     $this->image_lib->initialize($config);
+                     $this->image_lib->resize();
+
+                     $uploadedFile = $uploadData['file_name'];
+                     // print_r($uploadedFile);
+                  }else{
+                     $this->data['message'] = $this->upload->display_errors();
+                  }
+               }
+
+
+
+               // Immunization Image Upload
+               if($_FILES['userfile2']['size'] > 0){
+                  $new_file_name = time().'-'.$_FILES["userfile2"]['name'];
+                  $config['allowed_types']= 'jpg|png|jpeg';
+                  $config['upload_path']  = $this->img_path;
+                  $config['file_name']    = $new_file_name;
+                  $config['max_size']     = 600;
+
+                  $this->load->library('upload', $config);
+                  //upload file to directory
+                  if($this->upload->do_upload('userfile2')){
+                     $uploadData = $this->upload->data();
+                     $config = array(
+                        'source_image' => $uploadData['full_path'],
+                        'new_image' => $this->img_path,
+                        'maintain_ratio' => TRUE,
+                        'width' => 300,
+                        'height' => 300
+                        );
+                     $this->load->library('image_lib',$config);
+                     $this->image_lib->initialize($config);
+                     $this->image_lib->resize();
+
+                     $uploadedFile = $uploadData['file_name'];
+                     // print_r($uploadedFile);
+                  }else{
+                     $this->data['message'] = $this->upload->display_errors();
+                  }
+               }
+
+
+
+               // Immunization Image Upload
+               if($_FILES['userfile3']['size'] > 0){
+                  $new_file_name = time().'-'.$_FILES["userfile3"]['name'];
+                  $config['allowed_types']= 'jpg|png|jpeg';
+                  $config['upload_path']  = $this->img_path;
+                  $config['file_name']    = $new_file_name;
+                  $config['max_size']     = 600;
+
+                  $this->load->library('upload', $config);
+                  //upload file to directory
+                  if($this->upload->do_upload('userfile3')){
+                     $uploadData = $this->upload->data();
+                     $config = array(
+                        'source_image' => $uploadData['full_path'],
+                        'new_image' => $this->img_path,
+                        'maintain_ratio' => TRUE,
+                        'width' => 300,
+                        'height' => 300
+                        );
+                     $this->load->library('image_lib',$config);
+                     $this->image_lib->initialize($config);
+                     $this->image_lib->resize();
+
+                     $uploadedFile = $uploadData['file_name'];
+                     // print_r($uploadedFile);
+                  }else{
+                     $this->data['message'] = $this->upload->display_errors();
+                  }
+               }
+
+
+               if($_FILES['userfile']['size'] > 0){
+                  $registrations_data['parents_image'] = $uploadedFile;
+               }
+
+               if($_FILES['userfile1']['size'] > 0){
+                  $registrations_data['guardian_image'] = $uploadedFile;
+               }
+
+               if($_FILES['userfile2']['size'] > 0){
+                  $registrations_data['birth_certificate'] = $uploadedFile;
+               }
+
+               if($_FILES['userfile3']['size'] > 0){
+                  $registrations_data['father_mother_job_certificate'] = $uploadedFile;
+               }
+
                /*echo "<pre>";
                print_r($registrations_data);
                echo "</pre>";*/
@@ -656,76 +811,7 @@ class Site extends Frontend_Controller {
                   );
                $members_data = array_merge($members_data, $members_data_);
 
-               // Image Upload
-               // if($_FILES['userfile']['size'] > 0){
-               //    $new_file_name = time().'-'.$_FILES["userfile"]['name'];
-               //    $config['allowed_types']= 'jpg|png|jpeg';
-               //    $config['upload_path']  = $this->img_path;
-               //    $config['file_name']    = $new_file_name;
-               //    $config['max_size']     = 600;
-
-               //    $this->load->library('upload', $config);
-               //    //upload file to directory
-               //    if($this->upload->do_upload()){
-               //       $uploadData = $this->upload->data();
-               //       $config = array(
-               //          'source_image' => $uploadData['full_path'],
-               //          'new_image' => $this->img_path,
-               //          'maintain_ratio' => TRUE,
-               //          'width' => 300,
-               //          'height' => 300
-               //          );
-               //       $this->load->library('image_lib',$config);
-               //       $this->image_lib->initialize($config);
-               //       $this->image_lib->resize();
-
-               //       $uploadedFile = $uploadData['file_name'];
-               //       // print_r($uploadedFile);
-               //    }else{
-               //       $this->data['message'] = $this->upload->display_errors();
-               //    }
-               // }
-
-
-               // Immunization Image Upload
-               // if($_FILES['userfile1']['size'] > 0){
-               //    $new_file_name = time().'-'.$_FILES["userfile"]['name'];
-               //    $config['allowed_types']= 'jpg|png|jpeg';
-               //    $config['upload_path']  = $this->img_path;
-               //    $config['file_name']    = $new_file_name;
-               //    $config['max_size']     = 600;
-
-               //    $this->load->library('upload', $config);
-               //    //upload file to directory
-               //    if($this->upload->do_upload('userfile1')){
-               //       $uploadData = $this->upload->data();
-               //       $config = array(
-               //          'source_image' => $uploadData['full_path'],
-               //          'new_image' => $this->img_path,
-               //          'maintain_ratio' => TRUE,
-               //          'width' => 300,
-               //          'height' => 300
-               //          );
-               //       $this->load->library('image_lib',$config);
-               //       $this->image_lib->initialize($config);
-               //       $this->image_lib->resize();
-
-               //       $uploadedFile = $uploadData['file_name'];
-               //       // print_r($uploadedFile);
-               //    }else{
-               //       $this->data['message'] = $this->upload->display_errors();
-               //    }
-               // }
-
-
-               // if($_FILES['userfile']['size'] > 0){
-               //    $members_data['image_file'] = $uploadedFile;
-               // }
-
-               // if($_FILES['userfile1']['size'] > 0){
-               //    $members_data['immunization_file'] = $uploadedFile;
-               // }
-
+              
                /*echo "<pre>";
                print_r($members_data);
                echo "</pre>";

@@ -32,9 +32,6 @@
                      <tr>
                         <th width="20">নং</th>
                         <th>শিশুর নাম</th>
-                        <!-- <th>বয়স</th>
-                        <th>ওজন</th>
-                        <th>উচ্চতা</th> -->
                         <th>মা</th>
                         <th>পদবী</th>
                         <th>কর্মস্থান</th>
@@ -51,17 +48,14 @@
                         <tr>
                            <td><?=$sl;?></td>
                            <td><?=$row->child_name;?></td>
-                           <!-- <td><?=$row->child_age;?></td>
-                           <td><?=$row->child_weight;?></td>                 
-                           <td><?=$row->child_height;?></td>  -->
                            <td><?=$row->child_mother_name;?></td>
                            <td><?=$row->child_mother_designation;?></td>
-                           <td><?=$row->child_mother_working_place;?></td>
+                           <td><?=$row->child_mother_working_institute;?></td>
                            <td><?=eng2bng($row->monthly_fee);?></td>
                            <td> 
                               <div class="btn-group">
-                                 <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button>
-                                 <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                 
+                                 <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">অ্যাকশন &nbsp;
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                  </button>
@@ -70,10 +64,7 @@
                                     <li><a href="<?=base_url('index.php/adminpanel/member/payment_complete/'.$row->id)?>">পেমেন্ট</a></li>
                                      <li><a href="<?=base_url('index.php/adminpanel/member/details/'.$row->id)?>">বিস্তারিত</a></li>
                                     
-                                    <!-- <?=base_url('index.php/adminpanel/member/details/'.$row->id)?>
-                                    <li><a href="<?=base_url('index.php/adminpanel/member/details_pdf/'.$row->id)?>" target="_blank">PDF Generate</a></li>
-                                    <li><a href="<?=base_url('index.php/adminpanel/member/edit/'.$row->id)?>">Edit</a></li>
-                                    <li><a href="<?=base_url('index.php/adminpanel/member/delete/'.$row->id)?>" onclick="return confirm('Are you sure you want to delete this Member?');">Delete</a></li> -->
+                                   
                                  </ul>
                               </div>
                            </td>

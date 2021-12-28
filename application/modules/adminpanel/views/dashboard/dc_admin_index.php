@@ -73,8 +73,56 @@
          </div>
       </div>
 
+
+      
+      <div class="col-lg-3 col-xs-6">
+         <div class="small-box bg-red">
+            <div class="inner">
+               <h3><?=eng2bng($dc_child_interest['total_sec_1'])?></h3>
+               <p>প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-users"></i> </div>
+            <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/1')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div> 
+
       <div class="col-lg-3 col-xs-6">      
-         <div class="small-box bg-green">
+         <div class="small-box bg-yellow">
+            <div class="inner">
+               <h3><?=eng2bng($dc_child_interest['total_sec_2'])?></h3>
+               <p>প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/2')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div>  
+
+      
+      <div class="col-lg-3 col-xs-6">
+         <div class="small-box bg-aqua">
+            <div class="inner">
+               <h3><?=eng2bng($dc_child_interest['total_sec_3'])?></h3>
+               <p>প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-users"></i> </div>
+            <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/3')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div> 
+
+      <div class="col-lg-3 col-xs-6">      
+         <div class="small-box bg-blue">
+            <div class="inner">
+               <h3><?=eng2bng($dc_child_interest['total_sec_4'])?></h3>
+               <p>প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)</p>
+            </div>
+            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/4')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
+         </div>
+      </div>
+      
+
+      <div class="col-lg-3 col-xs-6">      
+         <div class="small-box bg-yellow">
             <div class="inner">
                <h3><?=eng2bng($dc_statistics['total_child_male'])?></h3>
                <p>মোট ছেলে শিশু</p>
@@ -93,7 +141,7 @@
             <div class="icon"> <i class="fa fa-child"></i> </div>
             <!-- <a href="<?php echo base_url('index.php/adminpanel/member')?>" class="small-box-footer">আরও তথ্য <i class="fa fa-arrow-circle-right"></i></a> -->
          </div>
-      </div> 
+      </div>  
        <!-- ./col -->
       
    </div> <!-- ./row -->

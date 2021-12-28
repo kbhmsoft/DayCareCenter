@@ -57,14 +57,14 @@
                            <td><?=eng2bng($row->monthly_fee);?></td>
                            <td> 
                               <div class="btn-group">
-                                <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button>
-                                <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <!-- <button type="button" class="btn btn-success btn-xs"></button> -->
+                                <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">অ্যাকশন &nbsp;
                                  <span class="caret"></span>
                                  <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <ul class="dropdown-menu" role="menu">
-                                 <li><a href="<?=base_url('index.php/adminpanel/member/approve/'.$row->id)?>">
-অনুমোদন করুন</a></li>
+                                 <li><a href="<?=base_url('index.php/adminpanel/member/approve/'.$row->id)?>">অনুমোদন করুন</a></li>
+                                 <li><a href="<?=base_url('index.php/adminpanel/member/details/'.$row->id)?>">বিস্তারিত</a></li>
                                  <!-- <li><a href="<?=base_url('index.php/adminpanel/member/delete/'.$row->id)?>" onclick="return confirm('Are you sure you want to delete this Member?');">Delete</a></li> -->
                               </ul>
                            </div>

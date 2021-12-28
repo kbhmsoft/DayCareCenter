@@ -53,6 +53,7 @@ class Dashboard extends Backend_Controller {
           }  
 
          $this->data['result_dc'] = $data_arr;
+         // echo "<pre>";print_r($this->data['result_dc']);exit;
          $this->data['result_gTotal_application'] = $gtotal['application'];
          $this->data['result_gTotal_child'] = $gtotal['child'];
          $this->data['result_gTotal_child_male'] = $gtotal['male'];
@@ -83,12 +84,13 @@ class Dashboard extends Backend_Controller {
          $this->data['day_care_info'] = $this->Common_model->get_row('day_cares', $userDetails->day_care_id);
 
          $this->data['dc_statistics'] = $this->dc_statistics($this->data['day_care_info']->database_name);
+         $this->data['dc_child_interest'] = $this->dc_child_interest($this->data['day_care_info']->database_name);
          
          // $this->data['child_admit_statistics'] = $this->getdata($this->data['day_care_info']->database_name);
 
 
 
-         // print_r($this->data['dc_statistics']); exit;         
+         // print_r($this->data['dc_child_interest']); exit;         
          
          // Load View
          $this->data['meta_title'] = 'ড্যাশবোর্ড';
@@ -203,8 +205,7 @@ class Dashboard extends Backend_Controller {
 
    public function dc_child_interest($database_other){
       // Database Load
-      $this->Dashboard_model->loadCustomerDatabase($database_other);
-
+      $dbName=$this->Dashboard_model->loadCustomerDatabase($database_other);
       $results['total_sec_1'] = $this->Dashboard_model->get_child_admit_interest_by_status(1);
       $results['total_sec_2'] = $this->Dashboard_model->get_child_admit_interest_by_status(2);
       $results['total_sec_3'] = $this->Dashboard_model->get_child_admit_interest_by_status(3);

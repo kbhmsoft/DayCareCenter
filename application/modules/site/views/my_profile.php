@@ -125,42 +125,102 @@
             </div>
 
             <div class="col-md-12">
-              <?php foreach ($day_care_list as $item) { ?>
-                  <?php if($seat_count[$item->id]){ ?>
-
                   <table class="table table-bordered table-striped table-responsive">
-                     <h5 style="font-weight: bold;text-decoration: underline; "><?php echo $item->title; ?></h5>   
-                     <thead style="background-color: lightblue;">
-                        <tr>
-                           <th width="20">নং</th>
-                           <th>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</th>
-                           <th>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</th>
-                           <th>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</th>
-                           <th>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</th>
-                           
-                        </tr>
-                     </thead>
+                     <h5 style="font-weight: bold;text-decoration: underline; "> ধানমন্ডি শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     
                      <tbody style="background-color: #f3f0f0;">
                         <?php 
                         $sl=0;                     
-                        foreach ($results[$item->id] as $row) { 
-                           $sl++;
+                        // foreach ($seat_count as $row) { 
+                           
                            ?>
                            <tr>
-                              <td><?=$sl;?></td>
-                              <td><?php echo $row->total_sec_1;?></td>
-                              <td><?php echo $row->total_sec_2;?></td>
-                              <td><?php echo $row->total_sec_3;?></td>
-                              <td><?php echo $row->total_sec_4;?></td> 
-                              
-                              
-                               
+                              <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
+                              <th style="background-color: lightblue;">আসন বাকি</th>
                            </tr>
-                           <?php } ?>
-                        </tbody>
-                     </table>
-                     <?php } ?>
-                     <?php } ?> 
+                           <tr>
+                              <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
+                              <td><?php echo 6-$seat_count[1]['total_sec_1'];?></td>
+                           </tr>
+                           <tr>   
+                              <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
+                              <td><?php echo 12-$seat_count[1]['total_sec_2'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
+                              <td><?php echo 18-$seat_count[1]['total_sec_3'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
+                              <td><?php echo 24-$seat_count[1]['total_sec_4'];?></td> 
+                           </tr>
+                          
+                     </tbody>
+                  </table>
+                  <table class="table table-bordered table-striped table-responsive">
+                     <h5 style="font-weight: bold;text-decoration: underline; "> ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     
+                     <tbody style="background-color: #f3f0f0;">
+                        <?php 
+                        $sl=0;                     
+                        // foreach ($seat_count as $row) { 
+                           
+                           ?>
+                           <tr>
+                              <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
+                              <th style="background-color: lightblue;">আসন বাকি</th>
+                           </tr>
+                           <tr>
+                              <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
+                              <td><?php echo 6-$seat_count[2]['total_sec_1'];?></td>
+                           </tr>
+                           <tr>   
+                              <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
+                              <td><?php echo 12-$seat_count[2]['total_sec_2'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
+                              <td><?php echo 18-$seat_count[2]['total_sec_3'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
+                              <td><?php echo 24-$seat_count[2]['total_sec_4'];?></td> 
+                           </tr>
+                          
+                     </tbody>
+                  </table>
+                  <table class="table table-bordered table-striped table-responsive">
+                     <h5 style="font-weight: bold;text-decoration: underline; "> গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     
+                     <tbody style="background-color: #f3f0f0;">
+                        <?php 
+                        $sl=0;                     
+                        // foreach ($seat_count as $row) { 
+                           
+                           ?>
+                           <tr>
+                              <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
+                              <th style="background-color: lightblue;">আসন বাকি</th>
+                           </tr>
+                           <tr>
+                              <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
+                              <td><?php echo 6-$seat_count[11]['total_sec_1'];?></td>
+                           </tr>
+                           <tr>   
+                              <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
+                              <td><?php echo 12-$seat_count[11]['total_sec_2'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
+                              <td><?php echo 18-$seat_count[11]['total_sec_3'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
+                              <td><?php echo 24-$seat_count[11]['total_sec_4'];?></td> 
+                           </tr>
+                          
+                     </tbody>
+                  </table>
             </div>
          </div>
 
@@ -350,18 +410,16 @@
       </style>
 
             <div id="menu2" class="tab-pane fade">
-
-               
-               
                <form  id="regForm" action="<?=base_url('index.php/my-profile/')?>" method="post" enctype="multipart/form-data" id="jsvalidation" style="font-family: 'arial'">
 
                   <div><?php //echo validation_errors(); ?></div>
                   <div class="col-md-12" style="background: #fff;padding-top:30px;">
                      
                         <!-- <h2 align="center">শিশু তালিকা ভুক্তির আবেদন</h2> -->
-                  <!-- <h1>তালিকা ভুক্তির আবেদন ফর্ম:</h1> -->
-                 <!-- One "tab" for each step in the form: -->
+                     <!-- <h1>তালিকা ভুক্তির আবেদন ফর্ম:</h1> -->
+                     <!-- One "tab" for each step in the form: -->
                     <div class="tab">
+                        <h3 style="text-align: center;">পার্ট ১</h3>
                         <fieldset class="scheduler-border">
                            <legend class="scheduler-border"> সাধারণ তথ্য</legend>
                            <div class="row form-row">             
@@ -516,6 +574,7 @@
                         </fieldset>
                     </div>
                     <div class="tab">
+                        <h3 style="text-align: center;">পার্ট ২</h3>
                         <fieldset class="scheduler-border">
                            <legend class="scheduler-border">মাতা-পিতার পেশা সংক্রান্ত তথ্য (অবশ্যই পূরণীয়)</legend>
                               <h5>৬. মাতার তথ্য</h5>
@@ -647,6 +706,7 @@
                         </fieldset>
                     </div>
                     <div class="tab">
+                        <h3 style="text-align: center;">পার্ট ৩</h3>
                         <fieldset class="scheduler-border">
                            <legend class="scheduler-border">শিশু তালিকাভুক্তির তথ্য</legend>
                              <div class="row form-row">
@@ -690,6 +750,7 @@
                         </fieldset>
                     </div>
                     <div class="tab">
+                        <h3 style="text-align: center;">পার্ট ৪</h3>
                         <fieldset class="scheduler-border">
                            <legend class="scheduler-border">শিশুর তথ্য</legend>
                            <h5>১১. শিশু -০১</h5>
@@ -740,15 +801,20 @@
                         </fieldset>
                     </div>
                     <div class="tab">
+                        <h3 style="text-align: center;">পার্ট ৫</h3>
                         <fieldset class="scheduler-border">
                            <legend class="scheduler-border">প্রয়োজনীয় সংযুক্তিসমূহ</legend>
                               <div class="row form-row">
                                  <div class="col-md-12">
                                     <div class="form-group">
-                                       <input type="checkbox" name="registrations[attachment_4]" value="1">  আবেদনকারীর (মাতা-পিতা বা বিকল্প অভিভাবকের) পাসপোর্ট সাইজের ছবি ২ (দুই) কপি.<br>
-                                       <input type="checkbox" name="registrations[attachment_5]" value="1">  মাতা-পিতা ও বিকল্প অভিভাবকের জাতীয় পরিচয়পত্রের কপি.<br>
-                                       <input type="checkbox" name="registrations[attachment_6]" value="1">   শিশুর জন্মসনদের কপি.<br>
-                                       <input type="checkbox" name="registrations[attachment_7]" value="1">   মাতা ও পিতার চাকুরী নিয়ন্ত্রণকারী কর্তৃপক্ষ কর্তৃক প্রত্যয়নপত্র.<br>
+                                       <input type="checkbox" name="registrations[attachment_4]" value="1">  আবেদনকারীর (মাতা-পিতা বা বিকল্প অভিভাবকের) পাসপোর্ট সাইজের ছবি.<div><?php echo form_error('userfile'); ?></div>
+                                          <input type="file" name="userfile" ><br>
+                                       <input type="checkbox" name="registrations[attachment_5]" value="1">  মাতা-পিতা ও বিকল্প অভিভাবকের জাতীয় পরিচয়পত্রের কপি.<div><?php echo form_error('userfile1'); ?></div>
+                                          <input type="file" name="userfile1" ><br>
+                                       <input type="checkbox" name="registrations[attachment_6]" value="1">   শিশুর জন্মসনদের কপি.<div><?php echo form_error('userfile2'); ?></div>
+                                          <input type="file" name="userfile2" ><br>
+                                       <input type="checkbox" name="registrations[attachment_7]" value="1">   মাতা ও পিতার চাকুরী নিয়ন্ত্রণকারী কর্তৃপক্ষ কর্তৃক প্রত্যয়নপত্র.<div><?php echo form_error('userfile3'); ?></div>
+                                          <input type="file" name="userfile3" ><br>
                                      </div>
                                  </div>
                               </div>
@@ -781,6 +847,7 @@
                          <span class="step"></span>
                          <span class="step"></span>
                     </div>
+                  </div>
                </form>
 
             </div> <!-- /part2 -->            
@@ -788,10 +855,10 @@
 
 
 
-
+         <?php /* 
             <div id="menu3" class="tab-pane fade">
 
-            <form action="<?=base_url('index.php/my-profile/')?>" method="post" enctype="multipart/form-data" id="jsvalidation" style="font-family: 'arial'">
+               <form action="<?=base_url('index.php/my-profile/')?>" method="post" enctype="multipart/form-data" id="jsvalidation" style="font-family: 'arial'">
 
                   <div><?php //echo validation_errors(); ?></div>
                   <div class="col-md-12" style="background: #fff;padding-top:30px;">
@@ -981,6 +1048,7 @@
                </form>
 
             </div>
+          */?>   
          </div> <!-- /menu2 -->
 
 
