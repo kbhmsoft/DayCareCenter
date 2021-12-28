@@ -36,7 +36,7 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member List';
-      $this->data['meta_title'] = 'শিশু তালিকা';
+      $this->data['meta_title'] = 'বর্তমানে সেবা গ্রহণকারী শিশুর তালিকা';
       $this->data['subview'] = 'member/index';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -47,7 +47,7 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member Request/Application';
-      $this->data['meta_title'] = 'আবেদন কৃত শিশুর তালিকা';
+      $this->data['meta_title'] = 'শিশু অপেক্ষমাণ তালিকা';
       $this->data['subview'] = 'member/request';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -110,7 +110,7 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member Completed';
-      $this->data['meta_title'] = 'আর্কাইভ';
+      $this->data['meta_title'] = 'পূর্ববর্তী সেবা গ্রহণকারী শিশুর তালিকা';
       $this->data['subview'] = 'member/completed';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -398,9 +398,7 @@ class Member extends Backend_Controller {
             redirect('index.php/adminpanel/member/request');
          }
       }
-
-      // $this->data['meta_title'] = 'Member Approve';
-      $this->data['meta_title'] = 'শিশু অনুমোদিত';
+      $this->data['meta_title'] = 'শিশু অনুমোদন ফরম';
       $this->data['subview'] = 'member/approve';
       $this->load->view('backend/_layout_main', $this->data);
    }

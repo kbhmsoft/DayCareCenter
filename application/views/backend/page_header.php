@@ -81,7 +81,7 @@
                   <li class="dropdown user user-menu">
                      <a href="javascript:void();" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?=base_url('awedget/assets/img/no-avatar.jpeg');?>" class="user-image" alt="User Image">
-                        <span class="hidden-xs"><?=ucwords($this->session->userdata('first_name').' '.$this->session->userdata('last_name'));?></span>
+                        <span class="hidden-xs"><?=$this->session->userdata('first_name').' '.$this->session->userdata('last_name');?></span>
                      </a>
                      <ul class="dropdown-menu">
                         <li class="user-header">
@@ -118,9 +118,9 @@
                      <i class="fa fa-users"></i> <span>শিশু</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
                   <ul class="treeview-menu">
-                     <li><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>শিশুর তালিকা</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
                      <li><a href="<?=base_url('index.php/adminpanel/member/request');?>"><i class="fa fa-circle-o"></i>শিশু অপেক্ষমাণ তালিকা</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/completed');?>"><i class="fa fa-circle-o"></i>শিশু সমাপ্ত তালিকা</a></li>
+                     <li><a href="<?=base_url('index.php/adminpanel/member/completed');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
                      <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
                   </ul>
                </li>
@@ -174,7 +174,7 @@
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li> -->
                   </ul>
                </li>
-               <li class="<?=backend_activate_menu_class('doctors');?>"><a href="<?php echo base_url('index.php/adminpanel/doctors');?>"><i class="fa fa-th"></i> <span>চিকিৎসকরা</span></a></li>
+               <li class="<?=backend_activate_menu_class('doctors');?>"><a href="<?php echo base_url('index.php/adminpanel/doctors');?>"><i class="fa fa-th"></i> <span> ডাক্তারের তালিকা </span></a></li>
 
                <li class="treeview <?=backend_activate_menu_class('manage_user');?>">
                   <a href="javascript:void();">
@@ -191,6 +191,7 @@
             </ul>
          </section>
       </aside>
+
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">

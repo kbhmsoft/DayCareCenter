@@ -10,7 +10,7 @@
    </ol>
 </section>
 
-<!-- Main content -->-
+<!-- Main content -->
 <section class="content">
 
    <div class="row">

@@ -42,30 +42,30 @@
                   <div class="col-md-7">
                      <fieldset>
                         <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #3c8dbc;">সদস্যের সাধারণ তথ্য</legend>
-                        <table class="table">
+                        <table class="table table-bordered table-striped table-responsive" >
                           
                            <tr>
-                              <td class="tg-9czc">শিশুর নাম</td>
-                              <td class="tg-0pky"><?=$info->child_name?></td>
-                              <td class="tg-9czc">বয়সভিত্তিক গ্রুপ</td>
-                              <td class="tg-0pky"><?=$info->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($info->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($info->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($info->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?></td>
+                              <td style="font-weight: bold;">শিশুর নাম</td>
+                              <td><?=$info->child_name?></td>
+                              <td style="font-weight: bold;">বয়সভিত্তিক গ্রুপ</td>
+                              <td><?=$info->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($info->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($info->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($info->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?></td>
                            </tr>
                            <tr>
                               
-                              <td class="tg-9czc">মায়ের নাম</td>
-                              <td class="tg-0pky"><?=$info->child_mother_name?></td>
-                              <td class="tg-9czc">মায়ের পদবী</td>
-                              <td class="tg-0pky"><?=$info->child_mother_designation?></td>
+                              <td style="font-weight: bold;">মায়ের নাম</td>
+                              <td><?=$info->child_mother_name?></td>
+                              <td style="font-weight: bold;">মায়ের পদবী</td>
+                              <td><?=$info->child_mother_designation?></td>
                            </tr>
                            <tr>
-                              <td class="tg-9czc">মায়ের প্রতিষ্ঠানের নাম: </td>
-                              <td class="tg-0pky"><?=$info->child_mother_working_institute?></td>
-                              <td class="tg-9czc">প্রতিষ্ঠানের ঠিকানা</td>
-                              <td class="tg-0pky"><?=$info->child_mother_working_place?></td>
+                              <td style="font-weight: bold;">মায়ের প্রতিষ্ঠানের নাম: </td>
+                              <td><?=$info->child_mother_working_institute?></td>
+                              <td style="font-weight: bold;">প্রতিষ্ঠানের ঠিকানা</td>
+                              <td><?=$info->child_mother_working_place?></td>
                            </tr>
                            <tr>
-                              <td class="tg-9czc">মায়ের প্রতিষ্ঠানের ধরণ: </td>
-                              <td class="tg-0pky">
+                              <td style="font-weight: bold;">মায়ের প্রতিষ্ঠানের ধরণ: </td>
+                              <td>
                                  <?=
                                  $info->child_mother_working_institute_type == '1' ? 
                                  'সরকারি': ($info->child_mother_working_institute_type == '2' ? 
@@ -76,20 +76,20 @@
                                   ?>
                                      
                                   </td>
-                              <td class="tg-9czc">মায়ের পেশার ধরণ:</td>
-                              <td class="tg-0pky"><?=eng2bng($info->child_mother_work_type == '1' ? 'পূর্ণ কর্মঘন্টার কর্মজীবী' : 'খন্ডকালীন কর্মজীবী')?></td>
+                              <td style="font-weight: bold;">মায়ের পেশার ধরণ:</td>
+                              <td><?=eng2bng($info->child_mother_work_type == '1' ? 'পূর্ণ কর্মঘন্টার কর্মজীবী' : 'খন্ডকালীন কর্মজীবী')?></td>
                            </tr>
                            <tr>
-                              <td class="tg-9czc">মাসিক সেবামূল্য</td>
-                              <td class="tg-0pky"><?=eng2bng($info->monthly_fee)?>/- টাকা</td>
-                              <td class="tg-9czc">মায়ের জাতীয় পরিচয়পত্রের নম্বর: </td>
-                              <td class="tg-0pky"><?=eng2bng($info->child_mother_national_no)?></td>
+                              <td style="font-weight: bold;">মাসিক সেবামূল্য</td>
+                              <td><?=eng2bng($info->monthly_fee)?>/- টাকা</td>
+                              <td style="font-weight: bold;">মায়ের জাতীয় পরিচয়পত্রের নম্বর: </td>
+                              <td><?=eng2bng($info->child_mother_national_no)?></td>
                            </tr>
                            <!-- <tr>
-                              <td class="tg-9czc">ওজন</td>
-                              <td class="tg-0pky"><?=$info->child_weight?></td>
-                              <td class="tg-9czc">উচ্চতা</td>
-                              <td class="tg-0pky"><?=$info->child_height?></td>
+                              <td style="font-weight: bold;">ওজন</td>
+                              <td><?=$info->child_weight?></td>
+                              <td style="font-weight: bold;">উচ্চতা</td>
+                              <td><?=$info->child_height?></td>
                               
                            </tr> -->
                         </table>
