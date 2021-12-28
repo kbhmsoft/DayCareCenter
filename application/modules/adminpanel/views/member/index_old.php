@@ -34,7 +34,7 @@
                   <th>ব্যাচ</th>
                   <th>পদবী</th>
                   <th width="80">সদস্য ফি</th>
-                  <th width="60">অ্যাকশন</th>
+                  <th width="60">পদক্ষেপ</th>
                 </tr>
               </thead>
               <tbody>
@@ -63,7 +63,7 @@
                 <td><?=$row->pay_member_fee;?></td>                                 
                 <td> 
                   <div class="btn-group">
-                      <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button>
+                      <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button>
                       <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                         <span class="caret"></span>
                         <span class="sr-only">Toggle Dropdown</span>

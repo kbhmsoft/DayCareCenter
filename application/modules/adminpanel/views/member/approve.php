@@ -124,8 +124,8 @@
                                  <div class="form-group">
                                     <label>যাচাইকৃত স্থিতি <span class='text-danger'>&nbsp; *</span></label> <br>
                                     <?php echo form_error('is_verified');?>
-                                    <input type="radio" name="is_verified" value="1" id="selectedV" <?=set_value('is_verified')==3?'checked':'checked';?>>অনুমোদিত
-                                    <input type="radio" name="is_verified" value="0" <?=set_value('is_verified')==5?'':'';?>>অননুমোদিত
+                                    <input type="radio" name="is_verified" value="3" id="selectedV" <?=set_value('is_verified')==3?'checked':'checked';?>>অনুমোদিত
+                                    <input type="radio" name="is_verified" value="5" <?=set_value('is_verified')==5?'':'';?>>অননুমোদিত
                                  </div>  
                               </div>
                               <div class="col-md-5">

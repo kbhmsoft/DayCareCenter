@@ -156,25 +156,6 @@
                 </table>
                
               </fieldset>
-              <fieldset>
-                <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend> 
-                <table class="tg" style="text-align: left;">
-                  <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">সদস্যের মাসিক সেবামূল্য</caption>
-                  <tr>
-                    <th class="tg-9czc" >আবেদনকারীর ছবি</th>
-                    <th class="tg-9czc" >অভিভাবকের জাতীয় পরিচয়পত্রের কপি </th>
-                    <th class="tg-9czc" >শিশুর জন্মসনদের কপি </th>
-                    <th class="tg-9czc" >প্রত্যয়নপত্র </th>
-                  </tr>
-                  <tr style="text-align: center;">
-                    <td><button class="btn-success">Show</button></td>
-                    <td><button class="btn-success">Show</button></td>
-                    <td><button class="btn-success">Show</button></td>
-                    <td><button class="btn-success">Show</button></td>
-                  </tr>
-                </table>
-               
-              </fieldset>
           </div>
 
         <div class="col-md-6">
@@ -297,9 +278,30 @@
                   </tr>
                 </table>
               </fieldset>   -->
-          </fieldset>  
+          </fieldset>
+
+              
         </div>
       </div>
+        <fieldset>
+                <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend> 
+                <table class="tg" style="text-align: left;">
+                  <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">সংযুক্তি সমূহ</caption>
+                  <tr>
+                    <th class="tg-9czc" >আবেদনকারীর ছবি</th>
+                    <th class="tg-9czc" >অভিভাবকের জাতীয় পরিচয়পত্রের কপি </th>
+                    <th class="tg-9czc" >শিশুর জন্মসনদের কপি </th>
+                    <th class="tg-9czc" >প্রত্যয়নপত্র </th>
+                  </tr>
+                  <tr style="text-align: center;">
+                    <td><button class="btn-success" data-toggle="modal" data-target="#images">Show</button></td>
+                    <td><button class="btn-success" data-toggle="modal" data-target="#guardian">Show</button></td>
+                    <td><button class="btn-success" data-toggle="modal" data-target="#birthCertificate">Show</button></td>
+                    <td><button class="btn-success" data-toggle="modal" data-target="#jobCertificate">Show</button></td>
+                  </tr>
+                </table>
+               
+              </fieldset>  
 
           </div>
           <!-- /.box-body -->
@@ -310,5 +312,86 @@
   </div>
   <!-- /.row -->
 
+
 </section>
+
+                          <!-- modal starts -->
+              <div class="modal fade" id="images" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">আবেদনকারীর ছবি</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->parents_image ?>"
+                        width="200" height="250" ><br>
+                        
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->parents_image ?>" download="<?=$info->parents_image ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="modal fade" id="guardian" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">অভিভাবকের জাতীয় পরিচয়পত্রের কপি</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->guardian_image ?>"
+                        width="400" height="200" ><br>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->guardian_image ?>" download="<?=$info->guardian_image ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="birthCertificate" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">শিশুর জন্মসনদের কপি</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->birth_certificate ?>"
+                        width="300" height="300" ><br>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->birth_certificate ?>" download="<?=$info->birth_certificate ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="jobCertificate" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">মাতা ও পিতার চাকুরী নিয়ন্ত্রণকারী কর্তৃপক্ষ কর্তৃক প্রত্যয়নপত্র</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>"
+                        width="300" height="300" ><br>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>" download="<?=$info->father_mother_job_certificate ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                          <!-- modal ends -->
 <!-- /.content -->

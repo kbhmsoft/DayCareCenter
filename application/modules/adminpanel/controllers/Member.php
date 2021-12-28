@@ -394,8 +394,8 @@ class Member extends Backend_Controller {
                $message = 'Your application approve successfully. Please contact us as soon as possible. Thank You!';
                $this->send_sms($mobile, $message);
             }*/
-            $this->session->set_flashdata('success', 'Approve member status change successfully.');
-            redirect('index.php/adminpanel/member');
+            $this->session->set_flashdata('success', 'সুপার এডমিনের নিকট চুড়ান্ত অনুমোদনের জন্য প্রেরণ করা হয়েছে..');
+            redirect('index.php/adminpanel/member/request');
          }
       }
 

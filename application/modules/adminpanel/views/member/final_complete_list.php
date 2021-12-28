@@ -42,7 +42,7 @@
                            <th>পদবী</th>
                            <th>কর্মস্থান</th>
                            <th>বেতন</th>
-                           <th width="100">অ্যাকশন</th>
+                           <th width="100">পদক্ষেপ</th>
                         </tr>
                      </thead>
                      <tbody>
@@ -65,9 +65,9 @@
                               
                               <td> 
                                  <div class="btn-group">
-                                    <!-- <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button> -->
+                                    <!-- <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button> -->
                                     <button type="button" class="btn btn-success btn-xs dropdown-toggle w-100" data-toggle="dropdown" aria-expanded="true">
-                                       অ্যাকশন &nbsp;<span class="caret"></span>
+                                       পদক্ষেপ &nbsp;<span class="caret"></span>
                                        <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">

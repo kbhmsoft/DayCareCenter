@@ -705,7 +705,7 @@ class Site extends Frontend_Controller {
                      $this->image_lib->initialize($config);
                      $this->image_lib->resize();
 
-                     $uploadedFile = $uploadData['file_name'];
+                     $uploadedFile1 = $uploadData['file_name'];
                      // print_r($uploadedFile);
                   }else{
                      $this->data['message'] = $this->upload->display_errors();
@@ -737,7 +737,7 @@ class Site extends Frontend_Controller {
                      $this->image_lib->initialize($config);
                      $this->image_lib->resize();
 
-                     $uploadedFile = $uploadData['file_name'];
+                     $uploadedFile2 = $uploadData['file_name'];
                      // print_r($uploadedFile);
                   }else{
                      $this->data['message'] = $this->upload->display_errors();
@@ -769,7 +769,7 @@ class Site extends Frontend_Controller {
                      $this->image_lib->initialize($config);
                      $this->image_lib->resize();
 
-                     $uploadedFile = $uploadData['file_name'];
+                     $uploadedFile3 = $uploadData['file_name'];
                      // print_r($uploadedFile);
                   }else{
                      $this->data['message'] = $this->upload->display_errors();
@@ -782,15 +782,15 @@ class Site extends Frontend_Controller {
                }
 
                if($_FILES['userfile1']['size'] > 0){
-                  $registrations_data['guardian_image'] = $uploadedFile;
+                  $registrations_data['guardian_image'] = $uploadedFile1;
                }
 
                if($_FILES['userfile2']['size'] > 0){
-                  $registrations_data['birth_certificate'] = $uploadedFile;
+                  $registrations_data['birth_certificate'] = $uploadedFile2;
                }
 
                if($_FILES['userfile3']['size'] > 0){
-                  $registrations_data['father_mother_job_certificate'] = $uploadedFile;
+                  $registrations_data['father_mother_job_certificate'] = $uploadedFile3;
                }
 
                /*echo "<pre>";
