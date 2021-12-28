@@ -34,7 +34,7 @@
                         <th>ই-মেইল আইডি</th>
                         <th>পারিবারিক বাৎসরিক আয়</th>
                         <th>মাতার মাসিক আয়ের পরিমাণ</th>
-                        <th width="110">অ্যাকশন</th>
+                        <th width="110">পদক্ষেপ</th>
                         
                      </tr>
                   </thead>
@@ -55,7 +55,7 @@
                            <td><?=$row->morther_monthly_income == 1 ? '০ - ৭,৯৯৯ টাকা':($row->morther_monthly_income == 2 ? '৮,০০০ - ১৯,৯৯৯ টাকা':($row->morther_monthly_income == 3 ? '২০,০০০ - ৩৪,৯৯৯ টাকা':($row->morther_monthly_income == 4 ? '৩৫,০০০ - ৪৯,৯৯৯ টাকা':($row->morther_monthly_income == 5 ? '৫০,০০০ অথবা ততোধিক':'')))) ;?></td>
                            <td>
                               <div class="btn-group">
-                                 <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button>
+                                 <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button>
                                  <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
