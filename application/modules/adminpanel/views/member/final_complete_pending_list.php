@@ -7,11 +7,12 @@
 </section>
 
 <section class="content">
+
    <div class="row">
       <div class="col-md-12">
          <div class="box box-primary">
             <div style="float: right; margin: 10px 10px 10px 0px;">
-               <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/1');?>" method="GET"> 
+               <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/4');?>" method="GET"> 
                   <div class="input-group">
                      <select name="year_group" class="form-control">
                        <option value="">সিলেক্ট বয়সভিত্তিক গ্রুপ</option>
@@ -32,12 +33,11 @@
                       </button>
                     </div>
                     <div class="input-group-btn">
-                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>">clear</a>
+                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/member/verified_request/4');?>">clear</a>
                     </div>
                   </div>
                </form>
-            </div>
-      
+            </div>       
 
             <div class="box-body">
                <!-- <div id="infoMessage"><?php //echo $message;?></div>             -->
@@ -53,7 +53,7 @@
                   <?php if($results[$item->id]){ ?>
 
                   <table class="table table-bordered table-striped table-responsive">
-                     <h5 style="font-weight: bold;text-decoration: underline; "><?php echo $item->title; ?></h5>   
+                     <h5 style="font-weight: bold;text-decoration: underline;"><?php echo $item->title; ?></h5>   
                      <thead style="background-color: lightblue;">
                         <tr>
                            <th width="20">নং</th>
@@ -66,7 +66,6 @@
                            <th>পদবী</th>
                            <th>কর্মস্থান</th>
                            <th>বেতন</th>
-                           <th>পেমেন্ট</th>
                            <th width="100">পদক্ষেপ</th>
                         </tr>
                      </thead>
@@ -88,8 +87,8 @@
                               <td><?php echo $row->child_mother_designation;?></td>
                               <td><?php echo $row->child_mother_working_place;?></td>
                               <td><?php echo $row->monthly_fee;?></td>
-                              <td><?php echo $row->is_paid==1 ?'ইতোমধ্যে পরিশোধিত' :'পরিশোধ করেনি';?></td>
-                                                          <td> 
+                              
+                              <td> 
                                  <div class="btn-group">
                                     <!-- <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button> -->
                                     <button type="button" class="btn btn-success btn-xs dropdown-toggle w-100" data-toggle="dropdown" aria-expanded="true">
@@ -97,13 +96,13 @@
                                        <span class="sr-only">Toggle Dropdown</span>
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
-                                       <li>
-                                          <a href="<?=base_url('adminpanel/member/details_all/'.$row->id.'/'.$row->day_cares_id)?>" >বিস্তারিত</a>
-                                       </li>
+                                       <!-- <li>
+                                          <a href="<?= base_url('adminpanel/member/verified_approve/'.$row->id.'/'.$row->day_cares_id)?>">অনুমোদন</a></li> -->
+                                       <li><a href="<?=base_url('adminpanel/member/details_all/'.$row->id.'/'.$row->day_cares_id)?>" >বিস্তারিত</a></li>
                                     </ul>
                                  </div>
                               </td>
-                              
+                               
                                
                            </tr>
                            <?php } ?>

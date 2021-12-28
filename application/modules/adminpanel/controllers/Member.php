@@ -74,7 +74,7 @@ class Member extends Backend_Controller {
       }elseif ($status == 5){
 
          $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র অ্যাডমিন দ্বারা প্রত্যাখ্যাত শিশুদের তালিকা';
-         $this->data['subview'] = 'member/verified_application_list';
+         $this->data['subview'] = 'member/reject_application_list';
 
       }elseif ($status == 2){
 
@@ -89,7 +89,7 @@ class Member extends Backend_Controller {
       }elseif ($status == 4){
 
          $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
-         $this->data['subview'] = 'member/final_complete_list';
+         $this->data['subview'] = 'member/final_complete_pending_list';
 
       }
       $this->load->view('backend/_layout_main', $this->data);
@@ -647,29 +647,44 @@ class Member extends Backend_Controller {
    } 
 
 
-   public function verified_request_search($status = null){ 
-
+   public function verified_request_search($status){ 
       $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
 
       foreach ($this->data['day_care_list'] as $item) {
-         $data_arr[$item->id] = $this->dc_verified_applicant_search($item->database_name);
+         $data_arr[$item->id] = $this->dc_verified_applicant_search($item->database_name, $status);
       }
+      $this->data['results'] = $data_arr;     
       // echo "<pre>"; print_r($data_arr); exit;
 
-      $this->data['results'] = $data_arr;     
-      // echo "<pre>"; print_r($this->data['results']); exit;
-
       //Load page
-      $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশুদের তালিকা';
-      $this->data['subview'] = 'member/final_running_list_search';
+      if ($status == 1) {
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_running_list';
+      } elseif ($status == 2){
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র ছেড়ে যাওয়া শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_complete_list';
+
+      } elseif ($status == 3) {
+         $this->data['meta_title'] = 'ভর্তির জন্য উপযুক্ত আবেদন কৃত শিশুর তালিকা';
+         $this->data['subview'] = 'member/verified_application_list';
+
+      } elseif ($status == 4){
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_complete_pending_list';
+
+      } elseif ($status == 5){
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র অ্যাডমিন দ্বারা প্রত্যাখ্যাত শিশুদের তালিকা';
+         $this->data['subview'] = 'member/reject_application_list';
+      }
+
       $this->load->view('backend/_layout_main', $this->data);
    }     
 
-   public function dc_verified_applicant_search($database_other){
+   public function dc_verified_applicant_search($database_other, $status){
       // Database Load
       $this->Dashboard_model->loadCustomerDatabase($database_other);
       // $results = $this->Member_model->get_data_all(0);
-      $results = $this->Dashboard_model->applicant_member_search();
+      $results = $this->Dashboard_model->applicant_member_search($status);
 
       return $results;
    } 

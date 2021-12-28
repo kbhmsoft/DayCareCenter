@@ -11,10 +11,33 @@
    <div class="row">
       <div class="col-md-12">
          <div class="box box-primary">
-            <div class="box-header with-border">
-               <!-- <h3 class="box-title"><?=$meta_title; ?></h3> -->
-               <!-- <a href="<?=base_url('index.php/adminpanel/member/add')?>" class="btn btn-info btn-xs pull-right"> Add Member</a>           -->
-            </div>        
+            <div style="float: right; margin: 10px 10px 10px 0px;">
+               <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/3');?>" method="GET"> 
+                  <div class="input-group">
+                     <select name="year_group" class="form-control">
+                       <option value="">সিলেক্ট বয়সভিত্তিক গ্রুপ</option>
+                       <option value="1">প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)</option>
+                       <option value="2">প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)</option>
+                       <option value="3">প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)</option>
+                       <option value="4">প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)</option>
+                     </select>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" name="date_dirth" class="form-control" id="datepickers" autocomplete="off" placeholder="জন্ম তারিখ"/>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" name="date_joining" class="form-control" id="datepicker" autocomplete="off" placeholder="যোগদানের তারিখ" />
+                    <div class="input-group-btn">
+                      <button class="btn btn-primary" type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                      </button>
+                    </div>
+                    <div class="input-group-btn">
+                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/member/verified_request/3');?>">clear</a>
+                    </div>
+                  </div>
+               </form>
+            </div> 
 
             <div class="box-body">
                <!-- <div id="infoMessage"><?php //echo $message;?></div>             -->
@@ -36,6 +59,7 @@
                            <th width="20">নং</th>
                            <th>শিশুর নাম</th>
                            <th>জন্ম তারিখ</th>
+                           <th>যোগদানের তারিখ</th>
                            <th>বয়সভিত্তিক গ্রুপ</th>
                            <th>মায়ের নাম</th>
                            <th>মায়ের প্রতিষ্ঠানের নাম</th>
@@ -56,6 +80,7 @@
                               <td><?=$sl;?></td>
                               <td><?php echo $row->child_name;?></td>
                               <td><?php echo $row->child_dob;?></td>
+                              <td><?php echo $row->child_doj;?></td>
                               <td><?=$row->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($row->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($row->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($row->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?>
                               </td>                
                               <td><?php echo $row->child_mother_name;?></td>
@@ -99,3 +124,8 @@
 
       </section>
       <!-- /.content -->
+  <script type="text/javascript">
+    function myFunction() {
+      document.getElementById("date_dirth").placeholder = "Type name here..";
+    }
+  </script>

@@ -171,7 +171,7 @@
                      <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/4');?>"><i class="fa fa-circle-o"></i>ভর্তির জন্য অপেক্ষমান শিশু</a></li>
                      <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
                      <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/2');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
+                     <!-- <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li> -->
                   </ul>
                </li>
                <li class="<?=backend_activate_menu_class('doctors');?>"><a href="<?php echo base_url('index.php/adminpanel/doctors');?>"><i class="fa fa-th"></i> <span>চিকিৎসকরা</span></a></li>

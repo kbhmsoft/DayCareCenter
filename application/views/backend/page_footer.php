@@ -156,6 +156,12 @@
 </script>
 <?php } ?>
 
+<script src="<?=base_url();?>awedget/assets/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- bootstrap datepicker -->
+<script src="<?=base_url();?>awedget/assets/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- bootstrap time picker -->
+<script src="<?=base_url();?>awedget/assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+
 <script type="text/javascript">
    function printDiv(divName) {
       var printContents = document.getElementById(divName).innerHTML;
@@ -165,6 +171,17 @@
       window.print();
       document.body.innerHTML = originalContents;
    }
+
+   //Date picker
+      $('#datepicker').datepicker({
+         format: 'dd-mm-yyyy',
+         autoclose: true
+      }); 
+
+      $('#datepickers').datepicker({
+         format: 'dd-mm-yyyy',
+         autoclose: true
+      });
 </script>
 
 </body>
