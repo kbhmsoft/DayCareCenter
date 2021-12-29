@@ -661,7 +661,7 @@ class Site extends Frontend_Controller {
 
                   $this->load->library('upload', $config);
                   //upload file to directory
-                  if($this->upload->do_upload()){
+                  if($this->upload->do_upload('userfile')){
                      $uploadData = $this->upload->data();
                      $config = array(
                         'source_image' => $uploadData['full_path'],
@@ -947,7 +947,7 @@ class Site extends Frontend_Controller {
 
                $this->load->library('upload', $config);
                //upload file to directory
-               if($this->upload->do_upload()){
+               if($this->upload->do_upload('userfile')){
                   $uploadData = $this->upload->data();
                   $config = array(
                      'source_image' => $uploadData['full_path'],
@@ -976,7 +976,7 @@ class Site extends Frontend_Controller {
 
                $this->load->library('upload', $config);
                //upload file to directory
-               if($this->upload->do_upload()){
+               if($this->upload->do_upload('userfile1')){
                   $uploadData = $this->upload->data();
                   $config = array(
                      'source_image' => $uploadData['full_path'],
@@ -989,7 +989,7 @@ class Site extends Frontend_Controller {
                   $this->image_lib->initialize($config);
                   $this->image_lib->resize();
 
-                  $uploadedFile = $uploadData['file_name'];
+                  $uploadedFile1 = $uploadData['file_name'];
                   // print_r($uploadedFile);
                }else{
                   $this->data['message'] = $this->upload->display_errors();
@@ -1005,7 +1005,7 @@ class Site extends Frontend_Controller {
 
                $this->load->library('upload', $config);
                //upload file to directory
-               if($this->upload->do_upload()){
+               if($this->upload->do_upload('userfile2')){
                   $uploadData = $this->upload->data();
                   $config = array(
                      'source_image' => $uploadData['full_path'],
@@ -1018,7 +1018,7 @@ class Site extends Frontend_Controller {
                   $this->image_lib->initialize($config);
                   $this->image_lib->resize();
 
-                  $uploadedFile = $uploadData['file_name'];
+                  $uploadedFile2 = $uploadData['file_name'];
                   // print_r($uploadedFile);
                }else{
                   $this->data['message'] = $this->upload->display_errors();
@@ -1030,11 +1030,11 @@ class Site extends Frontend_Controller {
                }
 
             if($_FILES['userfile1']['size'] > 0){
-                  $members_data['child_image'] = $uploadedFile;
+                  $members_data['child_image'] = $uploadedFile1;
                }
 
             if($_FILES['userfile2']['size'] > 0){
-                  $members_data['child_vaccine_card'] = $uploadedFile;
+                  $members_data['child_vaccine_card'] = $uploadedFile2;
                }
 
             

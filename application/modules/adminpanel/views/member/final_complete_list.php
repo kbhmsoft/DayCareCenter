@@ -11,7 +11,7 @@
    <div class="row">
       <div class="col-md-12">
          <div class="box box-primary">
-            <div style="float: right; margin: 10px 10px 10px 0px;">
+            <div style="float: center; margin: 10px 10px 10px 150px;">
                <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/2');?>" method="GET"> 
                   <div class="input-group">
                      <select name="year_group" class="form-control">

@@ -564,7 +564,7 @@
                                  
                                  <div class="col-md-6">
                                     <div class="form-group">
-                                       <label>ফোন (বাসা)</label>
+                                       <label>মোবাইল নাম্বার</label>
                                        <input type="text" name="registrations[child_parents_ph_no]" value="<?=set_value('child_parents_ph_no')?>" class="form-control" placeholder="">
                                     </div>
                                  </div>

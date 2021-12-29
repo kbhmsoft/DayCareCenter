@@ -16,7 +16,7 @@
       <div class="col-md-12">
          <div class="box box-widget widget-user">
             <!-- Add the bg color to the header using any of the bg-* classes -->
-            <div class="widget-user-header bg-aqua-active">
+            <div class="widget-user-header bg-teal">
                <h3 class="widget-user-username"><?=$day_care_info->title?></h3>
                <h5 class="widget-user-desc"><?=$day_care_info->area?></h5>
             </div>

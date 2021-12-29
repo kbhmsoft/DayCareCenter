@@ -53,7 +53,7 @@
                            <td><?=$row->child_height;?></td> 
                            <td><?=$row->child_mother_name;?></td>
                            <td><?=$row->child_mother_designation;?></td>
-                           <td><?=$row->child_mother_working_place;?></td>
+                           <td><?=$row->child_mother_working_institute;?></td>
                            <td><?=$row->child_mother_total_salary;?></td>
                            <td> 
                               <div class="btn-group">

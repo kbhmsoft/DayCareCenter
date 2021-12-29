@@ -12,8 +12,8 @@
       <div class="col-md-12">
          <div class="box box-primary">
             <div class="box-header with-border">
-               <h3 class="box-title">Details News</h3>
-               <a href="<?=base_url('index.php/adminpanel/day_care/edit/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Edit Information</a>          
+               <h3 class="box-title">বিস্তারিত </h3>
+               <a href="<?=base_url('index.php/adminpanel/day_care/edit/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> তথ্য সম্পাদনা করুন</a>          
             </div>        
             <div class="box-body">
                <div id="infoMessage"><?php //echo $message;?></div>
@@ -28,30 +28,30 @@
                <div class="row">
                   <div class="col-md-7">
                      <dl class="dl-horizontal">
-                        <dt>Day Care Name</dt>
+                        <dt> নাম</dt>
                         <dd><?=$info->title?></dd>
-                        <dt>Day Care Area</dt>
+                        <dt>এলাকা</dt>
                         <dd><?=$info->area?></dd>  
-                        <dt>Day Care Description</dt>
+                        <dt>বর্ণনা</dt>
                         <dd><?=$info->description?></dd>
                      </dl>                 
                   </div>
 
                   <div class="col-md-5">
                      <dl class="dl-horizontal">
-                        <dt>Officer Name</dt>
+                        <dt>অফিসারের নাম</dt>
                         <dd><?=$info->officer_name?></dd>
-                        <dt>Address</dt>
+                        <dt>ঠিকানা</dt>
                         <dd><?=$info->address?></dd>
-                        <dt>Mobile No</dt>
+                        <dt>মোবাইল নাম্বার</dt>
                         <dd><?=$info->mobile_no?></dd>
-                        <dt>Phone Number</dt>
+                        <dt>ফোন নম্বর</dt>
                         <dd><?=$info->phone?></dd>
-                        <dt>Email</dt>
+                        <dt>ইমেইল</dt>
                         <dd><?=$info->email?></dd>
-                        <dt>Latitude</dt>
+                        <dt>অক্ষাংশ</dt>
                         <dd><?=$info->latitude?></dd>        
-                        <dt>Longitude</dt>
+                        <dt>দ্রাঘিমাংশ</dt>
                         <dd><?=$info->longitude?></dd>          
                      </dl>
 

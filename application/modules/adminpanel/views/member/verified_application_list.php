@@ -11,7 +11,7 @@
    <div class="row">
       <div class="col-md-12">
          <div class="box box-primary">
-            <div style="float: right; margin: 10px 10px 10px 0px;">
+            <div style="float: center; margin: 10px 10px 10px 150px;">
                <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/3');?>" method="GET"> 
                   <div class="input-group">
                      <select name="year_group" class="form-control">
@@ -59,7 +59,6 @@
                            <th width="20">নং</th>
                            <th>শিশুর নাম</th>
                            <th>জন্ম তারিখ</th>
-                           <!-- <th>যোগদানের তারিখ</th> -->
                            <th>কবে থেকে প্রয়োজন</th>
                            <th>বয়সভিত্তিক গ্রুপ</th>
                            <th>মায়ের নাম</th>
@@ -79,8 +78,6 @@
                            <tr>
                               <td><?=$sl;?></td>
                               <td><?php echo $row->child_name;?></td>
-                              <!-- <td><?php echo $row->child_dob;?></td>
-                              <td><?php echo $row->child_doj;?></td> -->
                               <td><?php echo eng2bng($row->child_dob);?></td>
                               <td><?php echo eng2bng($row->child_doj);?></td>
                               <td><?=$row->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($row->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($row->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($row->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?>
@@ -88,8 +85,6 @@
                               <td><?php echo $row->child_mother_name;?></td>
                               <td><?php echo $row->child_mother_working_institute;?></td> 
                               <td><?php echo $row->child_mother_designation;?></td>
-                              <!-- <td><?php echo $row->child_mother_working_place;?></td>
-                              <td><?php echo $row->monthly_fee;?></td> -->
                               <td><?php echo $row->comments ? $row->comments :'কোন মন্তব্য নেই';?></td>
                               
                               <td> 

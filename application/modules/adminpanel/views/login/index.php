@@ -25,14 +25,15 @@
   <![endif]-->
 </head>
 
-<body class="hold-transition register-page" style="background-image: url(<?=base_url()?>fwedget/images/bg_pattern.jpg);">
+<!-- <body class="hold-transition register-page" style="background-image: url(<?=base_url()?>fwedget/images/bg_pattern.jpg);"> -->
+<!-- <body class="hold-transition register-page" style="background-color: white;"> -->
 <div class="login-box">
   <div class="" style="border-radius: 100px;padding: 50px;">
-  <div class="login-logo" style="font-size: 16px; font-weight: bold;font-family: BenSenHandwriting;">
+  <!-- <div class="login-logo" style="font-size: 16px; font-weight: bold;font-family: BenSenHandwriting;">
     <p style="font-size: 20px;">২০টি শিশু দিবাযত্ন কেন্দ্র</p>
     <br>
     ডে-কেয়ার লগইন প্যানেল
-  </div>
+  </div> -->
   <!-- /.login-logo -->
     <div id="infoMessage"><?php echo $message;?></div>
 
@@ -86,5 +87,5 @@
     });
   });
 </script>
-</body>
+<!-- </body> -->
 </html>

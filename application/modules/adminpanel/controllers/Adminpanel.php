@@ -119,7 +119,9 @@ class Adminpanel extends Backend_Controller {
 				);
 			
 			$this->data['meta_title'] = 'Login';
-			$this->load->view('login/index', $this->data);
+			$this->data['subview'] = 'login/index';
+         	$this->load->view('backend_login/_layout_main', $this->data);
+			// $this->load->view('login/index', $this->data);
 		}
 	}
 

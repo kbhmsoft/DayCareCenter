@@ -134,7 +134,7 @@
                      <i class="fa fa-users"></i> <span>শিশু</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
                   <ul class="treeview-menu">
-                     <li class="<?=backend_activate_menu_method('member');?>"><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
+                     <li class="<?=backend_activate_menu_method('index');?>"><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
                      <li class="<?=backend_activate_menu_method('request');?>"><a href="<?=base_url('index.php/adminpanel/member/request');?>"><i class="fa fa-circle-o"></i>শিশু অপেক্ষমাণ তালিকা</a></li>
                      <li class="<?=backend_activate_menu_method('completed');?>"><a href="<?=base_url('index.php/adminpanel/member/completed');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
                      <li class="<?=backend_activate_menu_method('subsidies');?>"><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
@@ -160,7 +160,7 @@
                      <li class="<?=$active1?>"><a href="<?=base_url('index.php/adminpanel/attendance/today/2');?>"><i class="fa fa-circle-o"></i> আজকের উপস্থিতি (স্টাফ)</a></li>
                      <li class="<?=$active?>"><a href="<?=base_url('index.php/adminpanel/attendance/today/1');?>"><i class="fa fa-circle-o"></i> আজকের উপস্থিতি (শিশু)</a></li>
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/attendance/all');?>"><i class="fa fa-circle-o"></i> All Attendance</a></li> -->
-                     <li><a href="<?=base_url('index.php/adminpanel/attendance/report');?>"><i class="fa fa-circle-o"></i> উপস্থিতি রিপোর্ট</a></li>
+                     <li class="<?=backend_activate_menu_method('report');?>"><a href="<?=base_url('index.php/adminpanel/attendance/report');?>"><i class="fa fa-circle-o"></i> উপস্থিতি রিপোর্ট</a></li>
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/attendance/today');?>"><i class="fa fa-circle-o"></i> Today Attendance</a></li> -->
                   </ul>
                </li>

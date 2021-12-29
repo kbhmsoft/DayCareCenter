@@ -16,9 +16,9 @@
    <div class="row">
       
       <div class="col-lg-3 col-xs-6">
-         <div class="small-box bg-aqua">
+         <div class="small-box bg-teal">
             <div class="inner">
-               <h3><?=$result_gTotal_application?></h3>
+               <h3><?=eng2bng($result_gTotal_application)?></h3>
                <p>মোট আবেদন</p>
             </div>
             <div class="icon"> <i class="fa fa-list"></i> </div>
@@ -97,7 +97,7 @@
       </div> 
 
       <div class="col-lg-3 col-xs-6">      
-         <div class="small-box bg-blue">
+         <div class="small-box bg-fuchsia">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_sec_4)?></h3>
                <p>প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)</p>
@@ -108,7 +108,7 @@
       </div> 
 
       <div class="col-lg-3 col-xs-6">
-         <div class="small-box bg-yellow">
+         <div class="small-box bg-orange">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_staff)?></h3>
                <p>মোট কর্মী</p>
