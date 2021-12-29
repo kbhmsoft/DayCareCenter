@@ -27,11 +27,9 @@
                <table id="example1" class="table table-bordered table-striped table-responsive">
                   <thead>
                      <tr>
-                        <th width="20">SL</th>
+                        <th width="20">নং</th>
                         <th>শিশুর নাম</th>
-                        <!-- <th>বয়স</th>
-                        <th>ওজন</th>
-                        <th>উচ্চতা</th> -->
+                        <th>কবে থেকে প্রয়োজন</th>
                         <th>মাতার নাম</th>
                         <th>পদবী</th>
                         <th>কর্মস্থান</th>
@@ -48,9 +46,7 @@
                         <tr>
                            <td><?=$sl;?></td>
                            <td><?=$row->child_name;?></td>
-                           <!-- <td><?=$row->child_age;?></td>
-                           <td><?=$row->child_weight;?></td>                 
-                           <td><?=$row->child_height;?></td> --> 
+                           <td><?=$row->child_doj;?></td> 
                            <td><?=$row->child_mother_name;?></td>
                            <td><?=$row->child_mother_designation;?></td>
                            <td><?=$row->child_mother_working_place;?></td>

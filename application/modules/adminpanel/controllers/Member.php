@@ -170,7 +170,8 @@ class Member extends Backend_Controller {
       // print_r($this->data['results']); exit;
       $this->data['info'] = $this->Member_model->get_info($id);
 
-      $form_data = array('status' => 2);
+      $form_data['status'] =  2;
+      $form_data['completion_date'] =  date('Y-m-d');
 
       if($this->Member_model->edit_otherdb('members', $id, 'id', $form_data)){
          // Get user

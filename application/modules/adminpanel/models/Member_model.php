@@ -9,7 +9,7 @@ class Member_model extends MY_Model {
 
    public function get_data($status) {
       // count query
-      $this->customDB->select('m.id, m.monthly_fee, m.child_name, m.child_age, m.child_weight, m.child_height, r.child_mother_name, r.child_mother_designation, r.child_mother_working_place, r.child_mother_ph_no, r.child_mother_working_institute, r.child_mother_total_salary');
+      $this->customDB->select('m.id, m.monthly_fee, m.child_name, m.child_age, m.completion_date, m.child_weight, m.child_height, r.child_mother_name, r.child_mother_designation, r.child_doj, r.child_mother_working_place, r.child_mother_ph_no, r.child_mother_working_institute, r.child_mother_total_salary');
       $this->customDB->from('members m');
       $this->customDB->join('registrations r', 'r.id = m.registrations_id', 'LEFT');
       $this->customDB->where('m.member_types_id', 1);
@@ -22,7 +22,7 @@ class Member_model extends MY_Model {
 
    public function get_data_all($status) {
       // count query
-      $this->customDB->select('m.id, m.monthly_fee, m.child_name, m.child_age, m.child_weight, m.child_height, r.child_mother_name, r.child_mother_designation, r.child_mother_working_place, r.child_mother_ph_no, r.child_mother_total_salary');
+      $this->customDB->select('m.id, m.monthly_fee, m.child_name, m.child_age, m.completion_date, m.child_weight, m.child_height, r.child_mother_name, r.child_doj, r.child_mother_designation, r.child_mother_working_place, r.child_mother_ph_no, r.child_mother_total_salary');
       $this->customDB->from('members m');
       $this->customDB->join('registrations r', 'r.id = m.registrations_id', 'LEFT');
       $this->customDB->where('m.member_types_id', 1);
