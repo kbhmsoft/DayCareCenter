@@ -294,6 +294,10 @@
                                  */ ?>
                                 <?php }elseif ($row->status==0) {?>
                                  <p align="center" style="font-size: 12px;color: blue ">আবেদনটি অপেক্ষমান রয়েছে</p>
+                                <?php }elseif ($row->status==3) {?>
+                                 <p align="center" style="font-size: 12px;color: midnightblue; ">আবেদনটি চুড়ান্ত অনুমোদনের জন্য অপেক্ষমান রয়েছে</p>
+                                <?php }elseif ($row->status==5) {?>
+                                 <p align="center" style="font-size: 12px;color: red;font-weight: bold; ">আবেদনটি বাতিল করা হয়েছে</p>
                                 <?php }elseif ($row->is_applied==1 && $row->subsidies==0 && $row->is_paid==0) {?>
                                  <a href="<?=base_url('index.php/subsidary-application/'.$row->day_cares_id.'/'.$row->id)?>" class="btn btn-success btn-xs">ভর্তুকির আবেদন করুন  </a><p style="text-align:center;">অথবা</p>
                                  <a href="<?=base_url('index.php/payment/'.$row->day_cares_id.'/'.$row->id)?>" class="btn btn-success btn-xs">পেমেন্ট সম্পূর্ণ করুন </a>
@@ -306,7 +310,7 @@
                                 <?php }elseif ($row->is_applied==1) {?>
                                  <p align="center" style="font-size: 12px;color: green ">ইতিমধ্যে ভর্তি সম্পূর্ণ হয়েছে</p>
                                 <?php }else {?>
-                                 <p align="center" style="font-size: 12px;color: red ">পরিসমাপ্তি</p>
+                                 <p align="center" style="font-size: 12px;color: darkgray ">পরিসমাপ্তি</p>
                                 <?php }?>
                               </td>
                            </tr>

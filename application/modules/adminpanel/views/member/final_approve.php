@@ -39,9 +39,9 @@
                <?php endif; ?>
 
                <div class="row">
-                  <div class="col-md-7">
+                  <div class="col-md-12">
                      <fieldset>
-                        <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #3c8dbc;">সদস্যের সাধারণ তথ্য</legend>
+                        <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #e7f4ff;">সদস্যের সাধারণ তথ্য</legend>
                         <table class="table table-bordered table-striped table-responsive" >
                           
                            <tr>
@@ -96,39 +96,40 @@
                      </fieldset>
                   </div>
                   <?php if ($seat_count<=$seat_limit) { ?>
-                     <div class="col-md-5">
+                     <div class="col-md-12">
                         <?php 
                         $attributes = array('id' => 'jsvalidation');
                         echo form_open('index.php/adminpanel/member/verified_approve/'.$info->id.'/'.$info->day_cares_id, $attributes);
                         ?>
                         <fieldset>
-                           <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #3c8dbc;">কেন্দ্রের সাধারণ তথ্য ও অনুমোদন</legend>
+                           <legend style="color: #0d0d0d;font-weight: 700; padding: 5px; background-color: #e7f4ff;">কেন্দ্রের সাধারণ তথ্য ও অনুমোদন</legend>
                            <div class="row row-form">
                               <div class="col-md-6">
-                                 <div class="form-group">
-                                    <label>মোট আসন <span class='required'>*</span></label>
-                                    <p><?=eng2bng($seat_limit);?></p>
-                                 </div>  
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                       <label>মোট আসন <span class='required'>*</span></label>
+                                       <p><?=eng2bng($seat_limit);?></p>
+                                    </div>  
+                                 </div>
+
+                                 <div class="col-md-3">
+                                    <div class="form-group">
+                                       <label>ফাকা আসন <span class='required'>*</span></label>
+                                       <p><?=eng2bng($seat_limit-$seat_count);?></p>
+                                    </div>  
+                                 </div>
                               </div>
+                              
 
                               <div class="col-md-6">
-                                 <div class="form-group">
-                                    <label>ফাকা আসন <span class='required'>*</span></label>
-                                    <p><?=eng2bng($seat_limit-$seat_count);?></p>
-                                 </div>  
-                              </div>
-                              <?php /*
-                              */ ?>
-
-                              <div class="col-md-8">
                                  <div class="form-group">
                                     <label>যাচাইকৃত স্থিতি <span class='required'>*</span></label> <br>
                                     <?php echo form_error('is_verified');?>
-                                    <input type="radio" name="is_verified" value="4" id="selectedV" <?=set_value('is_verified')==4?'checked':'checked';?>>অনুমোদিত
-                                    <input type="radio" name="is_verified" value="6" <?=set_value('is_verified')==6?'':'';?>>অননুমোদিত
+                                    <input type="radio" name="is_verified" value="4" id="selectedV" <?=set_value('is_verified')==4?'checked':'checked';?>>&nbsp; অনুমোদন করুন &nbsp; &nbsp; 
+                                    <input type="radio" name="is_verified" value="6" <?=set_value('is_verified')==6?'':'';?>>&nbsp; বাতিল করুন
                                  </div>  
                               </div>
-                              <div class="col-md-4">
+                              <div class="col-md-6 text-center">
                                  <?php echo form_submit('submit', 'সংরক্ষণ করুন', "class='btn btn-primary pull-right'"); ?>
                               </div>
                            </div>

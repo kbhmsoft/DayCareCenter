@@ -52,7 +52,9 @@
                            <td><?=$row->child_mother_ph_no;?></td>
                            <td><?=$row->child_mother_email;?></td>                 
                            <td><?=$row->family_total_monthly_income;?></td>
-                           <td><?=$row->morther_monthly_income == 1 ? '০ - ৭,৯৯৯ টাকা':($row->morther_monthly_income == 2 ? '৮,০০০ - ১৯,৯৯৯ টাকা':($row->morther_monthly_income == 3 ? '২০,০০০ - ৩৪,৯৯৯ টাকা':($row->morther_monthly_income == 4 ? '৩৫,০০০ - ৪৯,৯৯৯ টাকা':($row->morther_monthly_income == 5 ? '৫০,০০০ অথবা ততোধিক':'')))) ;?></td>
+                           <td><?=$row->morther_monthly_income == 1 ? '০ - ৭,৯৯৯ টাকা':($row->morther_monthly_income == 2 ? '৮,০০০ - ১৯,৯৯৯ টাকা':($row->morther_monthly_income == 3 ? '২০,০০০ - ৩৪,৯৯৯ টাকা':($row->morther_monthly_income == 4 ? '৩৫,০০০ - ৪৯,৯৯৯ টাকা':($row->morther_monthly_income == 5 ? '৫০,০০০ অথবা ততোধিক':'')))) ;?>
+                           </td>
+                          
                            <td>
                               <div class="btn-group">
                                  <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button>
@@ -63,7 +65,7 @@
                                  <ul class="dropdown-menu" role="menu">
                                     <?php if($row->subsidies_approved == 0){ ?><li>
                                     <a href="<?=base_url('index.php/adminpanel/member/subsidies_approve/'.$row->member_id)?>">আবেদন মঞ্জুর করুন</a>
-                                    </li><?php } ?>
+                                    </li><?php }else{ ?><li> <p style="color:green">আবেদন মঞ্জুর হয়েছে</p></li><?php }?>
                                      <li><a href="<?=base_url('index.php/adminpanel/member/details/'.$row->member_id)?>">বিস্তারিত</a></li>
                                     
                                     

@@ -30,7 +30,7 @@
                         <input type='file' required name='logfile'/>
                      </div>
                      <div class="col-md-3">
-                        <input type='submit' name='upload' value='Upload'/>
+                        <input type='submit' name='upload' value='আপলোড'/>
                      </div>
                   </div>
                <?php echo form_close();?>

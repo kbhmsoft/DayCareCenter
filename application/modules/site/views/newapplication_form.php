@@ -672,16 +672,13 @@
                         </p>
                         <h4>(<i class="fa fa-check" aria-hidden="true"></i> চিহ্ন দিন)</h4>
 
-                              <br><input type="checkbox" name="">  পিতা-মাতা বা অভিভাবকের ২ (দুই) কপি পাসপোর্ট সাইজের ছবি;
-                              <br><input type="checkbox" name="">  শিশুর ২ (দুই) কপি পাসপোর্ট সাইজের ও ২ (দুই) কপি স্ট্যাম্প সাইজের ছবি;
-                              <br><input type="checkbox" name="">  শিশুর ২ (দুই) কপি টিকা কার্ড;
-                              <br><input type="checkbox" name="">  এককালীন অফেরতযোগ্য ভর্তি ফি;
-                              <br><input type="checkbox" name="">  ২ (দুই) মাসের মাসিক সেবামূল্য ( এক মাসের অগ্রীম জামানত+চলতি মাস);
-                              <br><input type="checkbox" name="">  শিশু অসুস্থতা নীতি সংক্রান্ত অঙ্গীকারনামা;
-                              <br><input type="checkbox" name="">  শিশুকে জরুরি চিকিৎসা সেবা প্রদানের সম্মতিপত্র; 
-                              <br><input type="checkbox" name="">  শিশুর কার্যাবলি, বিশেষ অনুষ্ঠানের ছবি ও তথ্যচিত্র ব্যবহারের অনুমতিপত্র;
-                              <br><input type="checkbox" name="">  শিশুর একজোড়া ইউনিফর্ম ( শিশু দিবাযত্ন কেন্দ্রের জন্য নির্ধারিত ইউনিফর্ম);
-                              <br><input type="checkbox" name="">  শিশুর পরিচয়পত্র সরবরাহের জন্য এককালীন ২৫০/- (কার্ড হোল্ডার ,ঝুলানোর ফিতা, প্রিন্টিং ও লেমিনেটিং খরচ বাবদ)।
+                              
+                              <br><input type="checkbox" name="">  শিশুর পাসপোর্ট সাইজের ও ২ (দুই) কপি স্ট্যাম্প সাইজের ছবি;
+                              <div><?php echo form_error('userfile1'); ?></div>
+                              <input type="file" name="userfile1" required>
+                              <br><input type="checkbox" name="">  শিশুর টিকা কার্ড;
+                              <div><?php echo form_error('userfile2'); ?></div>
+                              <input type="file" name="userfile2" required>
 
 
                               <br><br><br>

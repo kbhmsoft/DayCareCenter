@@ -57,13 +57,13 @@
                            <td><?=$row->child_mother_total_salary;?></td>
                            <td> 
                               <div class="btn-group">
-                                 <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button>
-                                 <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                 <a href="<?=base_url('index.php/adminpanel/member/details/'.$row->id)?>"><button type="button" class="btn btn-success btn-xs">বিস্তারিত</button></a>
+                                 <!-- <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <span class="caret"></span>
                                     <span class="sr-only">Toggle Dropdown</span>
                                  </button>
                                  <ul class="dropdown-menu" role="menu">
-                                    <li><a href="<?=base_url('index.php/adminpanel/member/details/'.$row->id)?>">Details</a></li>
+                                    <li><a href="<?=base_url('index.php/adminpanel/member/details/'.$row->id)?>">বিস্তারিত</a></li> -->
                                     <!-- 
                                     <li><a href="<?=base_url('index.php/adminpanel/member/details_pdf/'.$row->id)?>" target="_blank">PDF Generate</a></li>
                                     <li><a href="<?=base_url('index.php/adminpanel/member/edit/'.$row->id)?>">Edit</a></li>

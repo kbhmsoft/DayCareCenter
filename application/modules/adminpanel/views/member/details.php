@@ -292,12 +292,23 @@
                     <th class="tg-9czc" >অভিভাবকের জাতীয় পরিচয়পত্রের কপি </th>
                     <th class="tg-9czc" >শিশুর জন্মসনদের কপি </th>
                     <th class="tg-9czc" >প্রত্যয়নপত্র </th>
+                    <?php if($info->parents_sign) {?>
+                    <th class="tg-9czc" >প্রত্যয়নপত্র </th>
+                    <th class="tg-9czc" >প্রত্যয়নপত্র </th>
+                    <th class="tg-9czc" >প্রত্যয়নপত্র </th>
+                    <?php }?>
                   </tr>
                   <tr style="text-align: center;">
                     <td><button class="btn-success" data-toggle="modal" data-target="#images">Show</button></td>
                     <td><button class="btn-success" data-toggle="modal" data-target="#guardian">Show</button></td>
                     <td><button class="btn-success" data-toggle="modal" data-target="#birthCertificate">Show</button></td>
                     <td><button class="btn-success" data-toggle="modal" data-target="#jobCertificate">Show</button></td>
+                    <?php if($info->parents_sign) {?>
+                      <td><button class="btn-success" data-toggle="modal" data-target="#parentSign">Show</button></td>
+                      <td><button class="btn-success" data-toggle="modal" data-target="#childImage">Show</button></td>
+                      <td><button class="btn-success" data-toggle="modal" data-target="#vaccineCard">Show</button></td>
+                    <?php }?>
+
                   </tr>
                 </table>
                
@@ -375,6 +386,63 @@
                 </div>
               </div>
               <div class="modal fade" id="jobCertificate" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">মাতা ও পিতার চাকুরী নিয়ন্ত্রণকারী কর্তৃপক্ষ কর্তৃক প্রত্যয়নপত্র</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>"
+                        width="300" height="300" ><br>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>" download="<?=$info->father_mother_job_certificate ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="parentSign" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">মাতা ও পিতার চাকুরী নিয়ন্ত্রণকারী কর্তৃপক্ষ কর্তৃক প্রত্যয়নপত্র</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>"
+                        width="300" height="300" ><br>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>" download="<?=$info->father_mother_job_certificate ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="childImage" role="dialog">
+                  <div class="modal-dialog modal-mm">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">মাতা ও পিতার চাকুরী নিয়ন্ত্রণকারী কর্তৃপক্ষ কর্তৃক প্রত্যয়নপত্র</h4>
+                      </div>
+                      <div class="modal-body" style="text-align: center;">
+                        <img src="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>"
+                        width="300" height="300" ><br>
+                      </div>
+                      <div class="modal-footer">
+                        <a class="btn btn-info text-left" href="<?=base_url().'assets/images/member_img/'.$info->father_mother_job_certificate ?>" download="<?=$info->father_mother_job_certificate ?>" style= "text-align: left;">Download</a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="vaccineCard" role="dialog">
                   <div class="modal-dialog modal-mm">
                     <div class="modal-content">
                       <div class="modal-header">

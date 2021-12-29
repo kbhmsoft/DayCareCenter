@@ -11,7 +11,7 @@
 </style>
 
 <section class="content-header">
-   <h1> <?=$meta_title; ?> </h1>
+   <h1 style="font-weight:bolder;"> <?=$meta_title; ?> </h1>
    <ol class="breadcrumb">
       <li><a href="<?=base_url('admin/dashboard');?>"><i class="fa fa-dashboard"></i> ড্যাশবোর্ড</a></li>
       <li class="active"><?=$meta_title; ?></li>

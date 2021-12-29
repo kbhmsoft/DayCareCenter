@@ -17,7 +17,7 @@
                <a href="javascript:void();" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;" onclick="printDiv('printableArea')"> প্রিন্ট </a> 
                <?php } ?>
 
-               <a href="<?=base_url('index.php/adminpanel/attendance/add')?>" class="btn btn-info btn-xs pull-right"> Add Attendance</a>    
+               <a href="<?=base_url('index.php/adminpanel/attendance/add')?>" class="btn btn-info btn-xs pull-right"><i class="fa fa-plus" aria-hidden="true"></i> যোগ করুন</a>    
                      
             </div>        
 
@@ -68,7 +68,7 @@
                   </div>
                   <div class="col-md-1 pull-left">
                         <br>
-                        <?php echo form_submit('submit', 'Search', "class='btn btn-primary pull-right'"); ?>
+                        <?php echo form_submit('submit', 'অনুসন্ধান', "class='btn btn-primary pull-right'"); ?>
                    </div>
                </div>
                <?php echo form_close();?>
