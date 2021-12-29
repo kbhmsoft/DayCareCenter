@@ -53,6 +53,22 @@
 <body class="hold-transition skin-blue sidebar-mini">
    <div class="wrapper">
 
+         <?php 
+            $active=$active1=$active2=$active3=$active4='';
+            // echo $this->uri->segment(4);
+            if($this->uri->segment(4) == 1){
+               $active = 'active';
+            }elseif($this->uri->segment(4) == 2){
+               $active1 = 'active';
+            }elseif($this->uri->segment(4) == 3){
+               $active2 = 'active';
+            }elseif($this->uri->segment(4) == 4){
+               $active3 = 'active';
+            }elseif($this->uri->segment(4) == 5){
+               $active4 = 'active';
+            }
+         ?>
+
       <header class="main-header">
          <a href="<?=base_url('index.php/adminpanel/dashboard');?>" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -118,10 +134,10 @@
                      <i class="fa fa-users"></i> <span>শিশু</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
                   <ul class="treeview-menu">
-                     <li><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/request');?>"><i class="fa fa-circle-o"></i>শিশু অপেক্ষমাণ তালিকা</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/completed');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
+                     <li class="<?=backend_activate_menu_method('member');?>"><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
+                     <li class="<?=backend_activate_menu_method('request');?>"><a href="<?=base_url('index.php/adminpanel/member/request');?>"><i class="fa fa-circle-o"></i>শিশু অপেক্ষমাণ তালিকা</a></li>
+                     <li class="<?=backend_activate_menu_method('completed');?>"><a href="<?=base_url('index.php/adminpanel/member/completed');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
+                     <li class="<?=backend_activate_menu_method('subsidies');?>"><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
                   </ul>
                </li>
 
@@ -130,8 +146,8 @@
                      <i class="fa fa-users"></i> <span>বাজেট</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
                   <ul class="treeview-menu">              
-                     <li><a href="<?=base_url('index.php/adminpanel/budget/monthly_demand');?>"><i class="fa fa-circle-o"></i> মাসিক চাহিদা</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/budget/advance_bill');?>"><i class="fa fa-circle-o"></i> অগ্রিম বিল</a></li>
+                     <li class="<?=backend_activate_menu_method('monthly_demand');?>"><a href="<?=base_url('index.php/adminpanel/budget/monthly_demand');?>"><i class="fa fa-circle-o"></i> মাসিক চাহিদা</a></li>
+                     <li class="<?=backend_activate_menu_method('advance_bill');?>"><a href="<?=base_url('index.php/adminpanel/budget/advance_bill');?>"><i class="fa fa-circle-o"></i> অগ্রিম বিল</a></li>
                   </ul>
                </li>               
                
@@ -140,9 +156,9 @@
                      <i class="fa fa-users"></i> <span>উপস্থিতি</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
                   <ul class="treeview-menu">      
-                     <li><a href="<?=base_url('index.php/adminpanel/attendance/logfileupload');?>"><i class="fa fa-circle-o"></i> ফাইল আপলোড</a></li>        
-                     <li><a href="<?=base_url('index.php/adminpanel/attendance/today/2');?>"><i class="fa fa-circle-o"></i> আজকের উপস্থিতি (স্টাফ)</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/attendance/today/1');?>"><i class="fa fa-circle-o"></i> আজকের উপস্থিতি (শিশু)</a></li>
+                     <li class="<?=backend_activate_menu_method('logfileupload');?>"><a href="<?=base_url('index.php/adminpanel/attendance/logfileupload');?>"><i class="fa fa-circle-o"></i> ফাইল আপলোড</a></li>        
+                     <li class="<?=$active1?>"><a href="<?=base_url('index.php/adminpanel/attendance/today/2');?>"><i class="fa fa-circle-o"></i> আজকের উপস্থিতি (স্টাফ)</a></li>
+                     <li class="<?=$active?>"><a href="<?=base_url('index.php/adminpanel/attendance/today/1');?>"><i class="fa fa-circle-o"></i> আজকের উপস্থিতি (শিশু)</a></li>
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/attendance/all');?>"><i class="fa fa-circle-o"></i> All Attendance</a></li> -->
                      <li><a href="<?=base_url('index.php/adminpanel/attendance/report');?>"><i class="fa fa-circle-o"></i> উপস্থিতি রিপোর্ট</a></li>
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/attendance/today');?>"><i class="fa fa-circle-o"></i> Today Attendance</a></li> -->
@@ -165,12 +181,13 @@
                   <a href="javascript:void();">
                      <i class="fa fa-users"></i> <span>শিশু</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
+
                   <ul class="treeview-menu">
-                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/3');?>"><i class="fa fa-circle-o"></i>ভর্তি যোগ্য শিশুর তালিকা</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/5');?>"><i class="fa fa-circle-o"></i>ভর্তির অযোগ্য শিশুর তালিকা</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/4');?>"><i class="fa fa-circle-o"></i>ভর্তির জন্য অপেক্ষমান শিশু</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
-                     <li><a href="<?=base_url('index.php/adminpanel/member/verified_request/2');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
+                     <li class="<?=$active2?>"><a href="<?=base_url('index.php/adminpanel/member/verified_request/3');?>"><i class="fa fa-circle-o"></i>ভর্তি যোগ্য শিশুর তালিকা</a></li>
+                     <li class="<?=$active4?>"><a href="<?=base_url('index.php/adminpanel/member/verified_request/5');?>"><i class="fa fa-circle-o"></i>ভর্তির অযোগ্য শিশুর তালিকা</a></li>
+                     <li class="<?=$active3?>"><a href="<?=base_url('index.php/adminpanel/member/verified_request/4');?>"><i class="fa fa-circle-o"></i>ভর্তির জন্য অপেক্ষমান শিশু</a></li>
+                     <li class="<?=$active?>"><a href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
+                     <li class="<?=$active1?>"><a href="<?=base_url('index.php/adminpanel/member/verified_request/2');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li> -->
                   </ul>
                </li>
@@ -181,7 +198,7 @@
                      <i class="fa fa-users"></i> <span>ম্যানেজ ইউজার</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
                   </a>
                   <ul class="treeview-menu">
-                     <li><a href="<?=base_url('index.php/adminpanel/manage_user/all');?>"><i class="fa fa-circle-o"></i> ব্যবহারকারীর তালিকা</a></li>
+                     <li class="<?=backend_activate_menu_method('all');?>"><a href="<?=base_url('index.php/adminpanel/manage_user/all');?>"><i class="fa fa-circle-o"></i> ব্যবহারকারীর তালিকা</a></li>
                      <!-- <li><a href="<?=base_url('adminpanel/manage_user/add');?>"><i class="fa fa-circle-o"></i> Add User</a></li> -->
                   </ul>
                </li>               

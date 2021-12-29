@@ -156,7 +156,6 @@
 </script>
 <?php } ?>
 
-<script src="<?=base_url();?>awedget/assets/plugins/daterangepicker/daterangepicker.js"></script>
 <!-- bootstrap datepicker -->
 <script src="<?=base_url();?>awedget/assets/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- bootstrap time picker -->
@@ -183,6 +182,30 @@
          autoclose: true
       });
 </script>
+
+<script>
+
+ $(document).ready(function() {
+
+    /*$(".sidebar-menu ul > li").click(function(e) {
+        $(this).siblings('li.active').removeClass("active");
+        $(this).find('li.open').removeClass("open");
+        $(this).addClass("active");
+     });*/
+
+    // $(".sidebar-menu ul li").click(function(e) {
+    //     $(this).find('li.mactive').removeClass("mactive");
+    //     $(this).addClass("mactive");
+    //  });
+
+    // $('.anchor_cls').on('click', function(){
+    //   $('.sidebar-menu ul > li').siblings('ul li').find("a.mactive").removeClass("mactive");
+    //   $(this).parent().siblings().find('.mactive').removeClass('mactive');
+    //   $(this).addClass('mactive');
+    // });
+ });
+
+ </script>
 
 </body>
 </html>
