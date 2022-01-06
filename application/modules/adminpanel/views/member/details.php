@@ -19,7 +19,16 @@
           <a href="<?=base_url('index.php/adminpanel/member/complete_status/'.$info->id)?>" target="_blank" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;" onclick="return confirm('Are you sure?')">সেবা সম্পন্ন</a>
         <?php } ?>
           <a href="javascript:void();" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;" onclick="printDiv('printableArea')"> প্রিন্ট </a>
-         <!--  <a href="<?=base_url('index.php/adminpanel/member/details_pdf/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> PDF </a> -->
+          <?php if($this->ion_auth->in_group(array('dc_admin'))){ ?>
+            
+              <a href="<?=base_url('index.php/adminpanel/member/details_pdf/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> PDF </a>
+            
+          <?php }?>  
+          <?php if($this->ion_auth->in_group(array('admin'))){ ?>
+            
+              <a href="<?=base_url('index.php/adminpanel/member/details_pdf_all/'.$info->id.'/'.$info->day_cares_id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> PDF </a>
+            
+          <?php }?>  
           <!-- <a href="<?=base_url('index.php/adminpanel/member/edit/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Edit </a>           -->
         </div>        
           <div class="box-body">
@@ -193,131 +202,129 @@
                     </fieldset>
                 </div>
 
-              <div class="col-md-6">
-                <fieldset>
-                    <legend style="color: #ffffff;font-weight: 700; background-color: #3c8dbc;padding: 5px;">নিবন্ধন তথ্য</legend>
+                <div class="col-md-6">
                   <fieldset>
-                    <table class="tg" style="text-align: left;">
-                      <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">মায়ের সাধারণ তথ্য</caption>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">মায়ের নাম:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_name?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_national_no?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">পদবী:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_designation?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">কর্মস্থান:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_working_place?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_ph_no?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">মোট বেতন:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_total_salary?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">বেসিক বেতন:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_basic_salary?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">বেতন কাঠামো:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_pay_scale?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">কর্মঘণ্টা:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_job_duration?></td>
-                      <!-- </tr>
-                      <tr> -->
-                      <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>
-                      <td class="tg-0pky" colspan="2"><?=$info->child_mother_permanent_address?></td>
-                      </tr>
-                      
-                    </table>
-                  </fieldset>
-                  <fieldset>
-                    <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend>
-                    <table class="tg" style="text-align: left;">
-                      <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">পিতার সাধারণ তথ্য</caption>
-
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">পিতার নাম:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_name?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_national_no?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">মোট বেতন:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_total_salary?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">বেসিক বেতন:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_basic_salary?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">বেতন কাঠামো:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_pay_scale?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_permanent_address?></td>
-                      </tr>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_father_ph_no?></td>
-                      </tr>
-                    </table>
-                  </fieldset>
-                  <fieldset>
-                    <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend>
-                    <table class="tg" style="text-align: left;">
-                      <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">অভিভাবকের সাধারণ তথ্য</caption>
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">অভিভাবকের নাম:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_parents_name?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_parents_ph_no?></td>
-                      </tr>
-
-                      <tr>
-                        <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_parents_national_no?></td>
-                      <!-- </tr>
-                      <tr> -->
-                        <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>
-                        <td class="tg-0pky" colspan="2"><?=$info->child_parents_present_address?></td>
-                      </tr>
-                    </table>
-                  </fieldset>
-                    <!-- <fieldset>
-                      <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;">ভর্তি বিষয়ক তথ্য</legend>
+                      <legend style="color: #ffffff;font-weight: 700; background-color: #3c8dbc;padding: 5px;">নিবন্ধন তথ্য</legend>
+                    <fieldset>
                       <table class="tg" style="text-align: left;">
+                        <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">মায়ের সাধারণ তথ্য</caption>
                         <tr>
-                          <td class="tg-9czc">Child Admit Interest:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_admit_interest?></td>
+                          <td class="tg-9czc" style="font-weight: bolder;">মায়ের নাম:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_name?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_national_no?></td>
                         </tr>
                         <tr>
-                          <td class="tg-9czc">Child Number:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_number?></td>
+                          <td class="tg-9czc" style="font-weight: bolder;">পদবী:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_designation?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">কর্মস্থান:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_working_place?></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_ph_no?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">মোট বেতন:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_total_salary?></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">বেসিক বেতন:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_basic_salary?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">বেতন কাঠামো:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_pay_scale?></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">কর্মঘণ্টা:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_job_duration?></td>
+                        <!-- </tr>
+                        <tr> -->
+                        <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>
+                        <td class="tg-0pky" colspan="2"><?=$info->child_mother_permanent_address?></td>
+                        </tr>
+                        
+                      </table>
+                    </fieldset>
+                    <fieldset>
+                      <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend>
+                      <table class="tg" style="text-align: left;">
+                        <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">পিতার সাধারণ তথ্য</caption>
+
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">পিতার নাম:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_name?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_national_no?></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">মোট বেতন:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_total_salary?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">বেসিক বেতন:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_basic_salary?></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">বেতন কাঠামো:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_pay_scale?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_permanent_address?></td>
+                        </tr>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_father_ph_no?></td>
                         </tr>
                       </table>
-                    </fieldset>   -->
-                </fieldset>
+                    </fieldset>
+                    <fieldset>
+                      <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend>
+                      <table class="tg" style="text-align: left;">
+                        <caption style="color: #10192d;font-weight: 700; background-color: #ffffff;padding: 5px;">অভিভাবকের সাধারণ তথ্য</caption>
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">অভিভাবকের নাম:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_parents_name?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_parents_ph_no?></td>
+                        </tr>
 
-                    
+                        <tr>
+                          <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_parents_national_no?></td>
+                        <!-- </tr>
+                        <tr> -->
+                          <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>
+                          <td class="tg-0pky" colspan="2"><?=$info->child_parents_present_address?></td>
+                        </tr>
+                      </table>
+                    </fieldset>
+                      <!-- <fieldset>
+                        <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;">ভর্তি বিষয়ক তথ্য</legend>
+                        <table class="tg" style="text-align: left;">
+                          <tr>
+                            <td class="tg-9czc">Child Admit Interest:</td>
+                            <td class="tg-0pky" colspan="2"><?=$info->child_admit_interest?></td>
+                          </tr>
+                          <tr>
+                            <td class="tg-9czc">Child Number:</td>
+                            <td class="tg-0pky" colspan="2"><?=$info->child_number?></td>
+                          </tr>
+                        </table>
+                      </fieldset>   -->
+                  </fieldset>
+                </div>
               </div>
-            </div>
             <?php if($info->parents_image) {?>
               <fieldset>
                       <legend style="color: #0d0d0d;font-weight: 700; padding: 5px;"></legend> 

@@ -91,16 +91,9 @@
                               
                               <td> 
                                  <div class="btn-group">
-                                    <!-- <button type="button" class="btn btn-success btn-xs">পদক্ষেপ</button> -->
-                                    <button type="button" class="btn btn-success btn-xs dropdown-toggle w-100" data-toggle="dropdown" aria-expanded="true">
-                                       পদক্ষেপ &nbsp;<span class="caret"></span>
-                                       <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                       <!-- <li>
-                                          <a href="<?= base_url('adminpanel/member/verified_approve/'.$row->id.'/'.$row->day_cares_id)?>">অনুমোদন</a></li> -->
-                                       <li><a href="<?=base_url('adminpanel/member/details_all/'.$row->id.'/'.$row->day_cares_id)?>" >বিস্তারিত</a></li>
-                                    </ul>
+                                    
+                                    <a href="<?=base_url('index.php/adminpanel/member/details_all/'.$row->id.'/'.$row->day_cares_id)?>"><button type="button" class="btn btn-success btn-xs">বিস্তারিত</button></a>
+                                    
                                  </div>
                               </td>
                                

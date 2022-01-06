@@ -96,7 +96,7 @@
                                     </button>
                                     <ul class="dropdown-menu" role="menu">
                                        <li>
-                                          <a href="<?= base_url('adminpanel/member/verified_approve/'.$row->id.'/'.$row->day_cares_id)?>">অনুমোদন</a></li>
+                                          <a href="<?= base_url('index.php/adminpanel/member/verified_approve/'.$row->id.'/'.$row->day_cares_id)?>">অনুমোদন</a></li>
                                        <li><a href="<?=base_url('index.php/adminpanel/member/details_all/'.$row->id.'/'.$row->day_cares_id)?>">বিস্তারিত</a></li>
                                        <!-- <li><a href="<?=base_url('adminpanel/member/delete/'.$row->id)?>" onclick="return confirm('Are you sure you want to delete this Member?');">Delete</a></li> -->
                                     </ul>

@@ -459,7 +459,7 @@ class Member extends Backend_Controller {
 
    public function details_all($id, $dcID){
       $this->data['info'] = $this->Member_model->get_info_all($id, $dcID);
-      // echo"<pre>";print_r($this->data['info']->is_paid);exit('ali');
+      // echo"<pre>";print_r($this->data['info']);exit('ali');
       // $this->data['meta_title'] = 'Member Details';
       $this->data['meta_title'] = 'শিশু বিস্তারিত';
       $this->data['subview'] = 'member/details';
@@ -477,11 +477,25 @@ class Member extends Backend_Controller {
    }
 
    public function details_pdf($id){
-      // echo phpinfo(); exit;
       $this->data['headding'] = "PDF Details";
 
       $this->data['info'] = $this->Member_model->get_info($id);        
       $html = $this->load->view('member/details_pdf', $this->data, true);   
+      $file_name = $id.".pdf";
+
+      // Generate PDF
+      $mpdf = new mPDF('', 'A4', 10, 'nikosh', 10, 10, 10, 5);
+      // $mpdf->showImageErrors = true;
+      $mpdf->WriteHtml($html);
+      $mpdf->output($file_name, 'I'); //download it for 'D'. 
+   }
+
+   public function details_pdf_all($id, $dcID){
+      // echo phpinfo(); exit;
+      $this->data['headding'] = "PDF Details";
+
+      $this->data['info'] = $this->Member_model->get_info_all($id, $dcID);        
+      $html = $this->load->view('member/details_pdf_all', $this->data, true);   
       $file_name = $id.".pdf";
 
       // Generate PDF
