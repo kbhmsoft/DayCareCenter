@@ -140,8 +140,8 @@
 
  </style> 
 <div class="row">
-	<?php $this->load->view('frontend/right_side_bar'); ?>   
-	
+  <?php $this->load->view('frontend/right_side_bar'); ?>   
+  
   <div class="col-md-9 main-content" style="padding: 15px 15px 15px 15px"> 
     <script>
       function func_details(id){
@@ -285,7 +285,7 @@
             </div>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset>
 
@@ -404,8 +404,8 @@
             </div>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -466,8 +466,8 @@
             </div>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -529,8 +529,8 @@
             </div>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -623,8 +623,8 @@
             </div>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -651,8 +651,8 @@
             <p>•  যদি কেন্দ্রে আপনার শিশু অসুস্থ হয়ে পড়ে এবং ঐ মুহূর্তে আপনাকে অবগত করা হয় তবে যত দ্রুত সম্ভব আপনার শিশুকে দিবাযত্ন কেন্দ্র থেকে নিয়ে যাওয়ার জন্য অনুরোধ করা হলো। শিশু পরিপূর্ণরুপে সুস্থ না হওয়া পর্যন্ত কেন্দ্রে শিশুকে কখনই গ্রহণ করা হবে না। </p>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -661,8 +661,8 @@
             <p>কোন দুর্ঘটনা বা অসুস্থতার কারণে উদ্ভূত জরুরি পরিস্থিতিতে শিশুকে তাৎক্ষণিক চিকিৎসা দেওয়ার প্রয়োজন হলে এবং সেই মুহূর্তে পিতামাতা বা অভিভাবকের সাথে যোগাযোগ করা সম্ভব না হলে নিম্নে উল্লিখিত শিশুকে প্রয়োজনীয় চিকিৎসা সেবা প্রদানের জন্য নিকটস্থ হাসপাতালে বা চিকিৎসা কেন্দ্রে নিয়ে যাওয়ার অনুমতি প্রদান করা হলো। স্বাস্থ্য শিক্ষিকা শিশুটির সঙ্গে চিকিৎসা কেন্দ্রে  যাবেন এবং চিকিৎসকের পরামর্শ অনুযায়ী শিশুটিকে চিকিৎসা সেবা প্রদান করবেন। আমি আরও সম্মতি প্রদান করছি যে, এ জরুরি অবস্থায় আমার শিশুর সকল চিকিৎসা সংক্রান্ত ব্যয় বহন করা আমার দায়িত্ব।</p><br>
 
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -690,8 +690,8 @@
                </tr>
             </table>
             <div class="form-group clearfix">
-              <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-              <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+              <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+              <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
             </div>
           </fieldset> 
 
@@ -745,7 +745,7 @@
             </fieldset>
 
              <div class="form-group clearfix">
-                <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+                <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
                 <input type="submit" name="submit" class="form-wizard-submit float-right" value="Submit">
              </div>
           </fieldset> 

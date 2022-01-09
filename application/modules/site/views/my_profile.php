@@ -628,7 +628,7 @@
                      </div>
 
                      <div class="form-group clearfix">
-                        <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+                        <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
                      </div>
                   </fieldset>
 
@@ -772,8 +772,8 @@
                      </div>
 
                      <div class="form-group clearfix">
-                        <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                        <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+                        <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+                        <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
                      </div>
                   </fieldset>  
                    
@@ -814,8 +814,8 @@
 
 
                      <div class="form-group clearfix">
-                        <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                        <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+                        <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+                        <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
                      </div>
                   </fieldset> 
 
@@ -849,8 +849,8 @@
                      </div> 
 
                      <div class="form-group clearfix">
-                        <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                        <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
+                        <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
+                        <a href="javascript:;" class="form-wizard-next-btn float-right">পরবর্তী</a>
                      </div>
                   </fieldset> 
 
@@ -874,7 +874,7 @@
                      <input type="hidden" name="hide_app_info" value="22222">
 
                      <div class="form-group clearfix">
-                        <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
+                        <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
                         <input type="submit" name="submit" class="form-wizard-submit float-right" value="Submit">
                      </div>
                   </fieldset> 

@@ -133,131 +133,135 @@
 
 
    <div class="row spacing-bottom 2col">
-      <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
-         <div class="tiles white added-margin new new1">
-            <div class="tiles-body">
-               <div class="tiles-title"> ধানমন্ডি শিশু দিবাযত্ন কেন্দ্র</div>
-               <div class="heading"> মোট শিশু <span class="" data-value="" data-animation-duration="500"><?=eng2bng($result_dc[1]['total_child'])?></span> </div>
+      <a href="http://cdcc.dwa.gov.bd/index.php/adminpanel/day_care/details/1">
+         <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
+            <div class="tiles white added-margin new new1">
+               <div class="tiles-body">
+                  <div class="tiles-title"> বাংলাদেশ সরকারি কর্ম কমিশন শিশু দিবাযত্ন কেন্দ্র</div>
+                  <div class="heading"> মোট শিশু <span class="" data-value="" data-animation-duration="500"><?=eng2bng($result_dc[1]['total_child'])?></span> </div>
 
-               <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>
-               <div class="description">
-                  <table class="report-table">
-                     <tbody>
-                        <tr><td colspan="2"></td></tr>
-                        <tr>
-                           <td>আবেদনের সংখ্যা</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[1]['total_application'])?></td>
-                        </tr>        
-                        <!-- <tr>
-                           <td>সর্বশেষ অগ্রিম বিল</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[1]['total_advance_bill'])?></td>
-                        </tr> -->
-                        <tr>
-                           <td>সর্বমোট স্টাফ</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[1]['total_staff'])?></td>
-                        </tr>
-                        <tr>
-                           <td>আজকের উপস্থিতি</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[1]['total_attendance_today'])?></td>
-                        </tr>                        
-                     </tbody>
-                  </table>
+                  <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>
+                  <div class="description">
+                     <table class="report-table">
+                        <tbody>
+                           <tr><td colspan="2"></td></tr>
+                           <tr>
+                              <td>আবেদনের সংখ্যা</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[1]['total_application'])?></td>
+                           </tr>        
+                           <!-- <tr>
+                              <td>সর্বশেষ অগ্রিম বিল</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[1]['total_advance_bill'])?></td>
+                           </tr> -->
+                           <tr>
+                              <td>সর্বমোট স্টাফ</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[1]['total_staff'])?></td>
+                           </tr>
+                           <tr>
+                              <td>আজকের উপস্থিতি</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[1]['total_attendance_today'])?></td>
+                           </tr>                        
+                        </tbody>
+                     </table>
+                  </div>
                </div>
+               <div class="triangle-up"></div>
             </div>
-            <div class="triangle-up"></div>
          </div>
-      </div>
+      </a>
+      <a href="http://cdcc.dwa.gov.bd/index.php/adminpanel/day_care/details/2">
+         <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
+            <div class="tiles white added-margin new new2">
+               <div class="tiles-body">
+                  <div class="tiles-title">ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র</div>
+                  <div class="heading"> মোট শিশু  <span class="" data-value="" data-animation-duration="1000"><?=eng2bng($result_dc[2]['total_child'])?></span> </div>
 
-      <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
-         <div class="tiles white added-margin new new2">
-            <div class="tiles-body">
-               <div class="tiles-title">ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র</div>
-               <div class="heading"> মোট শিশু  <span class="" data-value="" data-animation-duration="1000"><?=eng2bng($result_dc[2]['total_child'])?></span> </div>
-
-               <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>
-               <div class="description">
-                  <table class="report-table report-tabe2">
-                     <tbody>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                        </tr>
-                        <tr>
-                           <td>আবেদনের সংখ্যা</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[2]['total_application'])?></td>
-                        </tr>        
-                        <!-- <tr>
-                           <td>সর্বশেষ অগ্রিম বিল</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[2]['total_advance_bill'])?></td>
-                        </tr> -->
-                        <tr>
-                           <td>সর্বমোট স্টাফ</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[2]['total_staff'])?></td>
-                        </tr>
-                        <tr>
-                           <td>আজকের উপস্থিতি</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[2]['total_attendance_today'])?></td>
-                        </tr>
-                     </tbody>
-                  </table>
+                  <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>
+                  <div class="description">
+                     <table class="report-table report-tabe2">
+                        <tbody>
+                           <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                           </tr>
+                           <tr>
+                              <td>আবেদনের সংখ্যা</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[2]['total_application'])?></td>
+                           </tr>        
+                           <!-- <tr>
+                              <td>সর্বশেষ অগ্রিম বিল</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[2]['total_advance_bill'])?></td>
+                           </tr> -->
+                           <tr>
+                              <td>সর্বমোট স্টাফ</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[2]['total_staff'])?></td>
+                           </tr>
+                           <tr>
+                              <td>আজকের উপস্থিতি</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[2]['total_attendance_today'])?></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
                </div>
+               <div class="triangle-up"></div>
             </div>
-            <div class="triangle-up"></div>
          </div>
-         </div>
+      </a>
+      <a href="http://cdcc.dwa.gov.bd/index.php/adminpanel/day_care/details/11">
+         <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
+            <div class="tiles white added-margin new new1">
+               <div class="tiles-body">
 
-      <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
-         <div class="tiles white added-margin new new1">
-            <div class="tiles-body">
+                  <div class="tiles-title"> গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র </div>
+                  <div class="heading"> মোট শিশু  <span class="" data-value="" data-animation-duration="500"><?=eng2bng($result_dc[11]['total_child'])?></span> </div>
 
-               <div class="tiles-title"> গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র </div>
-               <div class="heading"> মোট শিশু  <span class="" data-value="" data-animation-duration="500"><?=eng2bng($result_dc[11]['total_child'])?></span> </div>
-
-               <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>
-               <div class="description">
-                  <table class="report-table">
-                     <tbody>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td></td>
-                        </tr>
-                        <tr>
-                           <td>আবেদনের সংখ্যা</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[11]['total_application'])?></td>
-                        </tr>        
-                        <!-- <tr>
-                           <td>সর্বশেষ অগ্রিম বিল</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[11]['total_advance_bill'])?></td>
-                        </tr> -->
-                        <tr>
-                           <td>সর্বমোট স্টাফ</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[11]['total_staff'])?></td>
-                        </tr>
-                        <tr>
-                           <td>আজকের উপস্থিতি</td>
-                           <td class="sub-mark">:</td>
-                           <td><?=eng2bng($result_dc[11]['total_attendance_today'])?></td>
-                        </tr>
-                     </tbody>
-                  </table>
+                  <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>
+                  <div class="description">
+                     <table class="report-table">
+                        <tbody>
+                           <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                           </tr>
+                           <tr>
+                              <td>আবেদনের সংখ্যা</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[11]['total_application'])?></td>
+                           </tr>        
+                           <!-- <tr>
+                              <td>সর্বশেষ অগ্রিম বিল</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[11]['total_advance_bill'])?></td>
+                           </tr> -->
+                           <tr>
+                              <td>সর্বমোট স্টাফ</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[11]['total_staff'])?></td>
+                           </tr>
+                           <tr>
+                              <td>আজকের উপস্থিতি</td>
+                              <td class="sub-mark">:</td>
+                              <td><?=eng2bng($result_dc[11]['total_attendance_today'])?></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
                </div>
+               <div class="triangle-up"></div>
             </div>
-            <div class="triangle-up"></div>
          </div>
-      </div>
+      </a>
    <?php /*
          <div class="col-md-4 col-sm-6 spacing-bottom">
             <div class="tiles white added-margin new new3">
