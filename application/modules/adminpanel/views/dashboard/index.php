@@ -30,7 +30,7 @@
          <div class="small-box bg-green">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_child)?></h3>
-               <p>মোট শিশু</p>
+               <p>বর্তমানে সেবা গ্রহণকারী মোট শিশু</p>
             </div>
             <div class="icon"> <i class="fa fa-child"></i> </div>
             <a href="<?=base_url('index.php/adminpanel/member/verified_request/1');?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
@@ -43,7 +43,7 @@
                <h3><?=eng2bng($result_gTotal_child_male)?></h3>
                <p>মোট ছেলে শিশু</p>
             </div>
-            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <div class="icon"> <i class="fa fa-male"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_male_female_by_type/1')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
          </div>
       </div> 
@@ -56,7 +56,7 @@
                <h3><?=eng2bng($result_gTotal_child_female)?></h3>
                <p>মোট মেয়ে শিশু</p>
             </div>
-            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <div class="icon"> <i class="fa fa-female"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_male_female_by_type/2')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
          </div>
       </div> 
@@ -66,7 +66,7 @@
          <div class="small-box bg-red">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_sec_1)?></h3>
-               <p>প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)</p>
+               <p>প্রারম্ভিক পর্যায় <br>(৬ মাস - ১২ মাস)</p>
             </div>
             <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/1')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
@@ -77,9 +77,9 @@
          <div class="small-box bg-yellow">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_sec_2)?></h3>
-               <p>প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)</p>
+               <p>প্রাক-প্রারম্ভিক পর্যায়<br> (১২ মাস - ৩০মাস)</p>
             </div>
-            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/2')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
          </div>
       </div>  
@@ -89,7 +89,7 @@
          <div class="small-box bg-aqua">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_sec_3)?></h3>
-               <p>প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)</p>
+               <p>প্রারম্ভিক পর্যায় <br>(৩০ মাস - ৪৮ মাস)</p>
             </div>
             <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/3')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
@@ -100,9 +100,9 @@
          <div class="small-box bg-fuchsia">
             <div class="inner">
                <h3><?=eng2bng($result_gTotal_sec_4)?></h3>
-               <p>প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)</p>
+               <p>প্রাক-প্রাথমিক স্কুল পর্যায় <br>(৪ বছর - ৬ বছর)</p>
             </div>
-            <div class="icon"> <i class="fa fa-child"></i> </div>
+            <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/4')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
          </div>
       </div> 

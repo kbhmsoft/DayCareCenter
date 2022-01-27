@@ -32,7 +32,7 @@ class Event extends Backend_Controller {
       // print_r($this->data['results']); exit;
       
       //Load page
-      $this->data['meta_title'] = 'All Event';
+      $this->data['meta_title'] = 'সমস্ত ইভেন্ট';
       $this->data['subview'] = 'event/all';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -40,7 +40,7 @@ class Event extends Backend_Controller {
    public function details($id){
       $this->data['info'] = $this->Event_model->get_info($id);
 
-      $this->data['meta_title'] = 'Event Details';
+      $this->data['meta_title'] = 'ইভেন্টের বিবরণ';
       $this->data['subview'] = 'event/details';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -105,7 +105,7 @@ class Event extends Backend_Controller {
       }
 
       //Load View
-      $this->data['meta_title'] = 'Edit Event';
+      $this->data['meta_title'] = 'ইভেন্ট সম্পাদনা করুন';
       $this->data['subview'] = 'event/edit';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -168,7 +168,7 @@ class Event extends Backend_Controller {
       // $this->data['category'] = $this->Common_model->get_event_category(); 
 
       // Load View
-      $this->data['meta_title'] = 'Add Event';
+      $this->data['meta_title'] = 'ইভেন্ট যোগ করুন';
       $this->data['subview'] = 'event/add';
       $this->load->view('backend/_layout_main', $this->data);
    }

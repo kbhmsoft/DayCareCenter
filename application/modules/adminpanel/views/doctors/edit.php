@@ -13,7 +13,7 @@
          <div class="box box-primary">
             <div class="box-header with-border">
                <h3 class="box-title"><?=$meta_title?></h3>
-               <a href="<?=base_url('index.php/adminpanel/doctors')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Doctor List</a>
+               <a href="<?=base_url('index.php/adminpanel/doctors')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;">ডাক্তারের তালিকা</a>
             </div>        
             <?php //echo validation_errors(); ?>
             <?php echo form_open_multipart("index.php/adminpanel/doctors/edit/$info->id");?>
@@ -30,14 +30,14 @@
                   <div class="row">
                         <div class="col-md-8"> 
                           <div class="form-group">
-                            <label>Docotr Name</label>
+                            <label>ডাক্তারের নাম</label>
                             <div><?php echo form_error('doctor_name'); ?></div>
                             <input type="text" class="form-control" name="doctor_name" value="<?=set_value('doctor_name', $info->doctor_name)?>">
                           </div>
                          </div>
                          <div class="col-md-4">  
                           <div class="form-group">
-                            <label>Phone Number</label>
+                            <label>মোবাইল নম্বর</label>
                             <div><?php echo form_error('phone'); ?></div>
                             <input type="text" name="phone" value="<?=set_value('phone', $info->phone)?>" class="form-control">
                           </div> 
@@ -45,7 +45,7 @@
                       </div>
 
                      <div class="form-group">
-                        <label>Institute Name</label>
+                        <label>প্রতিষ্ঠানের নাম</label>
                         <div><?php echo form_error('institute_name'); ?></div>
                         <input type="text" class="form-control" name="institute_name" value="<?=set_value('institute_name', $info->institute_name)?>">
                      </div>
@@ -53,7 +53,7 @@
                      <div class="row">
                         <div class="col-md-4">        
                            <div class="form-group">
-                              <label>Division</label>
+                              <label>বিভাগ</label>
                               <div><?php echo form_error('division_id'); ?></div>
                               <?php
                               $more_attr = 'class="form-control input-sm" id="division"';
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-md-4">        
                            <div class="form-group">
-                              <label>District</label>
+                              <label>জেলা</label>
                               <div><?php echo form_error('district_id'); ?></div>
                               <?php
                               $more_attr = 'class="district_val form-control input-sm" id="district"';
@@ -73,7 +73,7 @@
                         </div>
                         <div class="col-md-4">        
                            <div class="form-group">
-                              <label>Upazila</label>
+                              <label>উপজেলা</label>
                               <div><?php echo form_error('upazila_id'); ?></div>
                               <?php
                               $more_attr = 'class="upazila_val form-control input-sm"';
@@ -89,7 +89,7 @@
             <!-- /.box-body -->
 
             <div class="box-footer">    
-               <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+               <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
             </div>
             <?php echo form_close();?>
          </div>

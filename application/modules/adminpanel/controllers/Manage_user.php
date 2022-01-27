@@ -38,7 +38,7 @@ class Manage_user extends Backend_Controller {
         }
 
         //Load page
-        $this->data['meta_title'] = 'All Users';
+        $this->data['meta_title'] = 'সমস্ত ব্যবহারকারীর তালিকা';
         $this->data['subview'] = 'manage_user/all';
         $this->load->view('backend/_layout_main', $this->data);
     }
@@ -56,7 +56,7 @@ class Manage_user extends Backend_Controller {
         $tables = $this->config->item('tables','ion_auth');
         $this->data['groups']=$this->ion_auth->groups()->result_array();
         $this->data['daycare']=$this->Dashboard_model->get_three_day_cares();
-        $this->data['daycare_list']=array(''=>'---Select One---', '1'=>'ধানমন্ডি শিশু দিবাযত্ন কেন্দ্র','2'=>'ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র','11'=>'গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র');
+        $this->data['daycare_list']=array(''=>'---নির্বাচন করুন---', '1'=>'বাংলাদেশ সরকারি কর্ম কমিশন শিশু দিবাযত্ন কেন্দ্র','2'=>'ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র','11'=>'গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র');
         // echo "<pre>";
         // print_r($this->data['daycare']);exit('daycare');
         // $this->data['currentGroups'] = $this->ion_auth->get_users_groups($id)->result();
@@ -176,7 +176,7 @@ class Manage_user extends Backend_Controller {
             );
 
             // Load Page
-            $this->data['meta_title'] = $this->lang->line('create_user_heading');
+            $this->data['meta_title'] = 'নতুন ব্যবহারকারী তৈরি করুন';
             $this->data['subview'] = 'manage_user/add';
             $this->load->view('backend/_layout_main', $this->data);
         }
@@ -312,7 +312,7 @@ class Manage_user extends Backend_Controller {
 
         //Load Page
         $this->data['title'] = $this->lang->line('edit_user_heading');
-        $this->data['meta_title'] = 'Edit User';
+        $this->data['meta_title'] = 'ব্যবহারকারীর বিবরণ সম্পাদনা করুন';
         $this->data['subview'] = 'manage_user/edit_user';
         $this->load->view('backend/_layout_main', $this->data);
     }

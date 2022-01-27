@@ -90,6 +90,7 @@ $route['at-a-galance'] = 'site/at_galance';
 $route['at-pdmsg'] = 'site/at_pdmsg';
 $route['at-admsg'] = 'site/at_admsg';
 $route['at-pomsg'] = 'site/at_pomsg';
+$route['at-apmsg'] = 'site/at_apmsg';
 $route['at-acmsg'] = 'site/at_acmsg';
 $route['at-comsg'] = 'site/at_comsg';
 $route['child-law'] = 'site/child_law';

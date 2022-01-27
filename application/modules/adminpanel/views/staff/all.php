@@ -13,7 +13,7 @@
          <div class="box box-primary">
             <div class="box-header with-border">
                <h3 class="box-title"><?=$meta_title; ?></h3>
-               <a href="<?=base_url('index.php/adminpanel/staff/add')?>" class="btn btn-info btn-xs pull-right"> Add Staff</a>          
+               <a href="<?=base_url('index.php/adminpanel/staff/add')?>" class="btn btn-info btn-xs pull-right"> স্টাফ যোগ করুন</a>          
             </div>        
 
             <div class="box-body">
@@ -27,7 +27,7 @@
                <table id="example1" class="table table-bordered table-striped table-responsive">
                   <thead>
                      <tr>
-                        <th width="20">SL</th>
+                        <th width="20">ক্রোম</th>
                         <th>ছবি</th>                 
                         <th>নাম</th>
                         <th>ফোন</th>                                     

@@ -126,7 +126,7 @@
 
             <div class="col-md-12">
                <table class="table table-bordered table-striped table-responsive">
-                  <h5 style="font-weight: bold;text-decoration: underline; "> ধানমন্ডি শিশু দিবাযত্ন কেন্দ্র</h5>   
+                  <h5 style="font-weight: bold;text-decoration: underline; "> বাংলাদেশ সরকারি কর্ম কমিশন শিশু দিবাযত্ন কেন্দ্র</h5>   
                   
                   <tbody style="background-color: #f3f0f0;">
                      <?php 
@@ -791,9 +791,9 @@
                         </div>
 
                         <div class="col-md-8">
-                           <label>৯. এই শিশুর জন্য আপনার কখন শিশু দিবাযত্ন কেন্দ্র প্রোয়োজন হবে?</label>
+                           <label>৯. এই শিশুর জন্য আপনার কখন শিশু দিবাযত্ন কেন্দ্র প্রয়োজন হবে?</label>
                            <div class="form-group">
-                              <input class="wizard-required form-control" type="text" name="registrations[child_doj]" value="<?=set_value('child_doj')?>" placeholder="" autocomplete="off">
+                              <input type="date" class="wizard-required form-control" type="text" name="registrations[child_doj]" value="<?=set_value('child_doj')?>" placeholder="" autocomplete="off">
                               <div class="wizard-form-error"></div>
                            </div>
                         </div>

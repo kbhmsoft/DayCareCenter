@@ -28,57 +28,57 @@
             <div class="row">
               <div class="col-md-12">
                   <div class="form-group">
-                    <label><?php echo lang('create_user_fname_label', 'first_name');?></label>
+                    <label>নামের প্রথম অংশ</label>
                     <div><?php echo form_error('first_name'); ?></div>
                     <?php echo form_input($first_name);?>
                   </div>
 
                   <div class="form-group">
-                    <label><?php echo lang('create_user_lname_label', 'last_name');?></label>
+                    <label>নামের শেষাংশ</label>
                     <div><?php echo form_error('last_name'); ?></div>
                     <?php echo form_input($last_name);?>
                   </div>
 
                   <?php if($identity_column!=='email') { ?>
                   <div class="form-group">
-                    <label>Username</label>
+                    <label>ইউজারনেম</label>
                     <div><?php echo form_error('identity'); ?></div>
                     <?php echo form_input($identity);?>
                   </div>
                   <?php } ?>
 
                   <!-- <div class="form-group">
-                    <label><?php echo lang('create_user_company_label', 'company');?></label>
+                    <label></label>
                     <div><?php echo form_error('company'); ?></div>
                     <?php echo form_input($company);?>
                   </div> -->
 
                   <div class="form-group">
-                    <label><?php echo lang('create_user_email_label', 'email');?></label>
+                    <label>ইমেইল</label>
                     <div><?php echo form_error('email'); ?></div>
                     <?php echo form_input($email);?>
                   </div>
 
                   <div class="form-group">
-                    <label><?php echo lang('create_user_phone_label', 'phone');?></label>
+                    <label>মোবাইল নাম্বার</label>
                     <div><?php echo form_error('phone'); ?></div>
                     <?php echo form_input($phone);?>
                   </div>
 
                   <div class="form-group">
-                    <label><?php echo lang('create_user_password_label', 'password');?></label>
+                    <label>পাসওয়ার্ড</label>
                     <div><?php echo form_error('password'); ?></div>
                     <?php echo form_input($password);?>
                   </div>
 
                   <div class="form-group">
-                    <label><?php echo lang('create_user_password_confirm_label', 'password_confirm');?></label>
+                    <label>কনফার্ম পাসওয়ার্ড</label>
                     <div><?php echo form_error('password_confirm'); ?></div>
                     <?php echo form_input($password_confirm);?>
                   </div>
 
                   <div class="form-group">
-                    <label>Day Care</label>
+                    <label>দিবা যত্ন কেন্দ্র</label>
                     <?php 
                        $more_attr = 'class="form-control" required';
                        echo form_dropdown('day_care_id', $daycare_list, set_value('day_care_id'), $more_attr);
@@ -89,7 +89,7 @@
                       <div class="form-group">
                       
 
-                        <h3>User Group</h3>
+                        <h3>ইউজার গ্রুপ</h3>
                         <?php foreach ($groups as $group):?>
                             <div class="checkbox">
                               <?php
@@ -115,7 +115,7 @@
 
           <div class="box-footer">    
             <?php //echo form_input($user_id);?>        
-            <?php echo form_submit('submit', lang('create_user_submit_btn'), "class='btn btn-primary pull-right'"); ?>
+            <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
           </div>
         <?php echo form_close();?>
       </div>

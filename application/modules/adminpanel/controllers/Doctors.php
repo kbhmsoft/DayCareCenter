@@ -22,7 +22,7 @@ class Doctors extends Backend_Controller {
       // print_r($this->data['results']); exit;
 
       //Load page
-      $this->data['meta_title'] = 'All Doctor List';
+      $this->data['meta_title'] = 'সমস্ত ডাক্তারের তালিকা';
       $this->data['subview'] = 'doctors/index';
       $this->load->view('backend/_layout_main', $this->data);
       // redirect('adminpanel/news/all');
@@ -55,7 +55,7 @@ class Doctors extends Backend_Controller {
       $this->data['division'] = $this->Common_model->get_division();
 
       // Load View
-      $this->data['meta_title'] = 'Add Doctor';
+      $this->data['meta_title'] = 'নতুন ডাক্তার এন্ট্রি';
       $this->data['subview'] = 'doctors/add';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -99,7 +99,7 @@ class Doctors extends Backend_Controller {
       $this->data['upazila'] = $this->Common_model->get_upazila_thana();
 
       // Load View
-      $this->data['meta_title'] = 'Edit Doctor';
+      $this->data['meta_title'] = 'ডাক্তারের বিবরণ সম্পাদনা করুন';
       $this->data['subview'] = 'doctors/edit';
       $this->load->view('backend/_layout_main', $this->data);
    }

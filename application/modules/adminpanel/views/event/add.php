@@ -12,8 +12,8 @@
       <div class="col-md-12">
          <div class="box box-primary">
             <div class="box-header with-border">
-               <h3 class="box-title">Add Event</h3>
-               <a href="<?=base_url('index.php/adminpanel/event/all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Event</a>          
+               <h3 class="box-title"><?=$meta_title; ?></h3>
+               <a href="<?=base_url('index.php/adminpanel/event/all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> সমস্ত ইভেন্ট</a>          
             </div>        
             <?php echo form_open_multipart("index.php/adminpanel/event/add");?>
             <div class="box-body">
@@ -29,17 +29,17 @@
                <div class="row">
                   <div class="col-md-7">
                      <div class="form-group">
-                        <label>Event Title</label>
+                        <label>ইভেন্ট টাইটেল</label>
                         <div><?php echo form_error('title'); ?></div>
                         <input type="text" class="form-control" name="title" value="<?=set_value('title')?>">
                      </div>
                      <div class="form-group">
-                        <label>Event Location</label>
+                        <label>ইভেন্ট লোকেশন</label>
                         <div><?php echo form_error('location'); ?></div>
                         <input type="text" class="form-control" name="location" value="<?=set_value('location')?>">
                      </div>
                      <div class="form-group">
-                        <label>Event Details</label>
+                        <label>ইভেন্ট বিবরণ</label>
                         <div><?php echo form_error('description'); ?></div>
                         <textarea id="editor1" class="form-control" name="description" rows="5" cols="98"><?=set_value('description')?></textarea>
                      </div>
@@ -47,7 +47,7 @@
 
                   <div class="col-md-5">
                      <div class="form-group">
-                        <label>Event Datetime</label>
+                        <label>ইভেন্ট সময়তারিখ </label>
                         <div><?php echo form_error('date'); ?></div>
                         <input type="text" name="date" value="<?=set_value('date', date("Y-m-d H:i:s"))?>" class="form-control datepicker" autocomplete="off">
                      </div> 
@@ -59,10 +59,10 @@
                      </div>
 
                      <div class="form-group">
-                        <label>Image Upload</label>
+                        <label>ছবি আপলোড</label>
                         <div><?php echo form_error('userfile'); ?></div>
                         <input type="file" name="userfile">
-                        <p class="help-block">File type jpg, png, jpeg, gif and maximun file size 1 MB.</p>
+                        <p class="help-block">ফাইলের ধরন jpg, png, jpeg, gif এবং সর্বোচ্চ ফাইলের আকার ১ MB.</p>
                      </div>
 
                      <!-- <div class="form-group">

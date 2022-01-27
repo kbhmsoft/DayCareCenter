@@ -67,6 +67,7 @@ class Dashboard_model extends MY_Model {
       $this->customDB->select('COUNT(*) as count');
       $this->customDB->where('member_types_id', 1);
       $this->customDB->where('gender', $gender);
+      $this->customDB->where('status', 1);
       $tmp = $this->customDB->get('members')->result();
       // echo $this->customDB->last_query(); exit;        
       // return $tmp[0]->count;
@@ -178,7 +179,7 @@ class Dashboard_model extends MY_Model {
       $this->customDB->join('registrations r', 'r.id = m.registrations_id', 'LEFT');
 
       $this->customDB->where('m.member_types_id', 1);
-       // $this->customDB->where('m.status', $status);
+       $this->customDB->where('m.status', 1);
       $this->customDB->where('gender', $gender);
       $this->customDB->order_by('m.id', 'ASC');
       $query = $this->customDB->get()->result();

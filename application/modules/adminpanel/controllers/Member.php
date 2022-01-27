@@ -91,6 +91,11 @@ class Member extends Backend_Controller {
          $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_complete_pending_list';
 
+      }elseif ($status == 0){
+
+         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে সমস্ত আবেদন শিশুদের তালিকা';
+         $this->data['subview'] = 'member/final_complete_pending_list';
+
       }
       $this->load->view('backend/_layout_main', $this->data);
    }  

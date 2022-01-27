@@ -146,6 +146,7 @@ ul li ul li {
                                     <li><a href="<?=base_url('index.php/at-pdmsg')?>">পরিচালক</a></li>
                                     <li><a href="<?=base_url('index.php/at-admsg')?>">সহকারী পরিচালক</a></li>
                                     <li><a href="<?=base_url('index.php/at-pomsg')?>">প্রোগ্রাম অফিসার</a></li>
+                                    <li><a href="<?=base_url('index.php/at-apmsg')?>">সহকারী প্রোগ্রামার</a></li>
                                     <li><a href="<?=base_url('index.php/at-acmsg')?>">হিসাবরক্ষক</a></li>
                                     <li><a href="<?=base_url('index.php/at-comsg')?>">কম্পিউটার অপারেটর</a></li>
                                   </ul>

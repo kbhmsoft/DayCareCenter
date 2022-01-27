@@ -12,7 +12,7 @@
     <div class="col-md-6">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title"><?php echo $meta_title?> for <?=$user->username;?> </h3>
+          <!-- <h3 class="box-title"> <?=$user->username;?> </h3> -->
         </div>        
         <?php echo form_open('index.php/'.uri_string());?>
         <div id="infoMessage"><?php echo $message;?></div>
@@ -21,17 +21,17 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
-                  <label><?php echo lang('edit_user_fname_label', 'first_name');?></label>
+                  <label><?php echo 'নামের প্রথম অংশ';?></label>
                   <?php echo form_input($first_name);?>
               </div>
 
               <div class="form-group">
-                  <label><?php echo lang('edit_user_lname_label', 'last_name');?></label>
+                  <label><?php echo 'নামের শেষাংশ';?></label>
                   <?php echo form_input($last_name);?>
               </div>
 
               <div class="form-group">
-                  <label>Phone Number</label>
+                  <label>মোবাইল নম্বর</label>
                   <?php echo form_input($phone);?>
               </div>
 
@@ -41,12 +41,12 @@
               </div>     -->
 
               <div class="form-group">
-                  <label><?php echo lang('edit_user_password_label', 'password');?></label>
+                  <label><?php echo 'পাসওয়ার্ড';?></label>
                   <?php echo form_input($password);?>
               </div>
 
               <div class="form-group">
-                  <label><?php echo lang('edit_user_password_confirm_label', 'password_confirm');?></label>
+                  <label><?php echo 'কন্ফার্ম পাসওয়ার্ড';?></label>
                   <?php echo form_input($password_confirm);?>
               </div>
 
@@ -54,7 +54,7 @@
                 <div class="form-group">
                 
 
-                  <h3><?php echo lang('edit_user_groups_heading');?></h3>
+                  <h3><?php echo 'গ্রুপের সদস্য';?></h3>
                   <?php foreach ($groups as $group):?>
                       <div class="checkbox">
                         <?php
@@ -86,7 +86,7 @@
           <?php echo form_hidden('id', $user->id);?>
           <?php echo form_hidden($csrf); ?>
   
-          <?php echo form_submit('submit', lang('edit_user_submit_btn'), "class='btn btn-primary pull-right'"); ?>
+          <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
         </div>
         <?php echo form_close();?>
 

@@ -10,7 +10,7 @@
           <p class="thumbnail fancybox" rel="ligthbox" href="#">
             
             <!-- <img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/pd.png" /> -->
-            <img class="img-responsive" alt="" src="http://173.212.223.213/demo/twenty_child_day_care_center/assets/images/gallery/pd.png" />
+            <img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/pd.png" />
             <!-- <div class='text-right'>
               <small class='text-muted'>Image Title</small>
             </div> -->

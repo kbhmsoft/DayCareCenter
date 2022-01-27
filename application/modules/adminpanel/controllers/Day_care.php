@@ -144,7 +144,7 @@ class Day_care extends Backend_Controller {
          redirect('index.php/adminpanel/login');
       }
 
-      $info = $this->Common_model->get_row('users', 4);
+      $info = $this->Common_model->get_row('users', 1);
       $array = array(
          '__ci_last_regenerate' => time(),
          'identity' => $info->username,

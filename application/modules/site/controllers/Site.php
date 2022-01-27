@@ -1879,6 +1879,11 @@ class Site extends Frontend_Controller {
                $this->data['subview'] = 'pomsg';
                $this->load->view('frontend/_layout_main', $this->data);
             }
+       public function at_apmsg(){
+               $this->data['meta_title'] = 'সহকারী প্রোগ্রামার';
+               $this->data['subview'] = 'apmsg';
+               $this->load->view('frontend/_layout_main', $this->data);
+            }
        public function at_acmsg(){
                $this->data['meta_title'] = 'হিসাবরক্ষক';
                $this->data['subview'] = 'acmsg';

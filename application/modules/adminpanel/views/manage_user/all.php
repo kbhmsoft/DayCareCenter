@@ -13,7 +13,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title"><?=$meta_title; ?> </h3>
-          <a href="<?=base_url('index.php/adminpanel/manage_user/add')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Create User</a> 
+          <a href="<?=base_url('index.php/adminpanel/manage_user/add')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;">নতুন ব্যবহারকারী</a> 
           <!-- <a href="<?=base_url('admin/manage_user/create_group')?>" class="btn btn-info btn-xs pull-right"> Create Group</a>  -->
         </div>        
 
@@ -28,13 +28,13 @@
             <table id="example1" class="table table-bordered table-striped table-responsive">
               <thead>
                 <tr>
-                  <th>SL</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
-                  <th>Email Address</th>
-                  <th>Status</th>
-                  <th>Groups</th>
+                  <th>ক্রম </th>
+                  <th>নামের প্রথম অংশ</th>
+                  <th>নামের শেষাংশ</th>
+                  <th>ইউজারনেম</th>
+                  <th> ইমেইল</th>
+                  <th>স্ট্যাটাস</th>
+                  <th>গ্রুপস</th>
                   <th>অ্যাকশন</th>
                 </tr>
               </thead>
@@ -45,13 +45,13 @@
                   $sl++;
               ?>
               <tr>
-                <td><?=$sl;?></td>
+                <td>#</td>
                 <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
                 <td><?php echo htmlspecialchars($user->last_name,ENT_QUOTES,'UTF-8');?></td>
                 <td><?php echo htmlspecialchars($user->username,ENT_QUOTES,'UTF-8');?></td>
                 <td><?php echo htmlspecialchars($user->email,ENT_QUOTES,'UTF-8');?></td>
                 <td>
-                  <?php echo ($user->active) ? anchor("index.php/adminpanel/manage_user/deactivate/".$user->id, lang('index_active_link'), array('class' => 'btn btn-warning btn-flat btn-xs')) : anchor("index.php/adminpanel/manage_user/activate/". $user->id, lang('index_inactive_link'), array('class' => 'btn btn-danger btn-flat btn-xs'));?>
+                  <?php echo ($user->active) ? anchor("index.php/adminpanel/manage_user/deactivate/".$user->id, 'এক্টিভ' , array('class' => 'btn btn-warning btn-flat btn-xs')) : anchor("index.php/adminpanel/manage_user/activate/". $user->id, 'ইনএক্টিভ' , array('class' => 'btn btn-danger btn-flat btn-xs'));?>
                 </td>
                 <td>
                   <?php foreach ($user->groups as $group):?>
@@ -59,7 +59,7 @@
                     <span class="btn bg-maroon btn-flat btn-xs"><?php echo htmlspecialchars($group->description,ENT_QUOTES,'UTF-8'); ?></span>
                   <?php endforeach?>
                 </td>
-                <td><?php echo anchor("index.php/adminpanel/manage_user/edit_user/".$user->id, 'Edit User', array('class' => 'btn btn-success btn-xs')) ;?></td>                
+                <td><?php echo anchor("index.php/adminpanel/manage_user/edit_user/".$user->id, 'সম্পাদনা করুন', array('class' => 'btn btn-success btn-xs')) ;?></td>                
               </tr>
               <?php endforeach;?>
               </tbody>
