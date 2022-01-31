@@ -38,11 +38,17 @@ class Budget extends Backend_Controller {
       $this->load->view('backend/_layout_main', $this->data);
    }
 
-   public function monthly_demand_details($id){
+   public function monthly_demand_details($id, $database_name = null){
 
       // $this->Budget_model->loadCustomerDatabase($this->DBName);
-      $this->data['info'] = $this->Budget_model->get_budget($id);
-      $this->data['item_results'] = $this->Budget_model->get_budget_item($id);
+      if ($database_name != null) {
+         $this->Budget_model->loadCustomerDatabase($database_name);
+         $this->data['info'] = $this->Budget_model->get_budget($id);
+         $this->data['item_results'] = $this->Budget_model->get_budget_item($id);
+      } else {
+         $this->data['info'] = $this->Budget_model->get_budget($id);
+         $this->data['item_results'] = $this->Budget_model->get_budget_item($id);
+      }
 
       //Load View
       $this->data['meta_title'] = 'মাসিক চাহিদা বিবরন';
@@ -107,10 +113,16 @@ class Budget extends Backend_Controller {
       $this->load->view('backend/_layout_main', $this->data);
    }
 
-   public function advance_bill_details($id){
+   public function advance_bill_details($id,$database_name = null){
 
-      $this->data['info'] = $this->Budget_model->get_budget($id);
-      $this->data['item_results'] = $this->Budget_model->get_budget_item($id);
+      if ($database_name != null) {
+         $this->Budget_model->loadCustomerDatabase($database_name);
+         $this->data['info'] = $this->Budget_model->get_budget($id);
+         $this->data['item_results'] = $this->Budget_model->get_budget_item($id);
+      } else {
+         $this->data['info'] = $this->Budget_model->get_budget($id);
+         $this->data['item_results'] = $this->Budget_model->get_budget_item($id);
+      }
 
       //Load View
       $this->data['meta_title'] = 'অগ্রিম বিল বিবরন';
@@ -234,5 +246,55 @@ class Budget extends Backend_Controller {
       $this->session->set_flashdata('success', 'Information delete successfully.');
       redirect('index.php/adminpanel/event/all');
    }
+
+   public function monthly_demand_all(){   
+      $this->load->model('Dashboard_model');
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+
+      foreach ($this->data['day_care_list'] as $item) {
+         $data_arr[$item->id] = $this->monthly_demand_search($item->database_name, 1);
+      }
+      $this->data['results'] = $data_arr;  
+      // echo "<pre>"; print_r($this->data['results']); exit();  
+      
+      //Load View
+      $this->data['meta_title'] = 'মাসিক চাহিদা';
+      $this->data['subview'] = 'budget/monthly_demand_all';
+      $this->load->view('backend/_layout_main', $this->data);
+   }
+
+   public function monthly_demand_search($database_other, $type){
+      // Database Load
+      $this->Budget_model->loadCustomerDatabase($database_other);
+      // $results = $this->Member_model->get_data_all(0);
+      $results = $this->Budget_model->get_data($type);
+
+      return $results;
+   } 
+
+   public function advance_bill_all(){     
+      $this->load->model('Dashboard_model');
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+
+      foreach ($this->data['day_care_list'] as $item) {
+         $data_arr[$item->id] = $this->monthly_demand_search($item->database_name, 2);
+      }
+      $this->data['results'] = $data_arr;  
+      // echo "<pre>"; print_r($this->data['results']); exit(); 
+
+      //Load View
+      $this->data['meta_title'] = 'অগ্রিম বিল';
+      $this->data['subview'] = 'budget/advance_bill_all';
+      $this->load->view('backend/_layout_main', $this->data);
+   }
+
+   public function advance_bill_search($database_other, $type){
+      // Database Load
+      $this->Budget_model->loadCustomerDatabase($database_other);
+      // $results = $this->Member_model->get_data_all(0);
+      $results = $this->Budget_model->get_data($type);
+
+      return $results;
+   } 
 
 }

@@ -191,6 +191,17 @@
                      <!-- <li><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li> -->
                   </ul>
                </li>
+               
+               <li class="treeview <?=backend_activate_menu_class('budget');?>">
+                  <a href="javascript:void();">
+                     <i class="fa fa-users"></i> <span>বাজেট</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span>
+                  </a>
+                  <ul class="treeview-menu">              
+                     <li class="<?=backend_activate_menu_method('monthly_demand_all');?>"><a href="<?=base_url('index.php/adminpanel/budget/monthly_demand_all');?>"><i class="fa fa-circle-o"></i> মাসিক চাহিদা</a></li>
+                     <li class="<?=backend_activate_menu_method('advance_bill_all');?>"><a href="<?=base_url('index.php/adminpanel/budget/advance_bill_all');?>"><i class="fa fa-circle-o"></i> অগ্রিম বিল</a></li>
+                  </ul>
+               </li>  
+
                <li class="<?=backend_activate_menu_class('doctors');?>"><a href="<?php echo base_url('index.php/adminpanel/doctors');?>"><i class="fa fa-th"></i> <span> ডাক্তারের তালিকা </span></a></li>
 
                <li class="treeview <?=backend_activate_menu_class('manage_user');?>">

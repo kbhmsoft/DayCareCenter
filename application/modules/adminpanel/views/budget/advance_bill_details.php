@@ -14,7 +14,11 @@
             <div class="box-header with-border">
                <h3 class="box-title"><?=$meta_title; ?></h3>
                <!-- <a href="<?=base_url('index.php/adminpanel/event/edit/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Edit Event</a>           -->
-               <a href="<?=base_url('index.php/adminpanel/budget/advance_bill')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Data</a>   
+               <?php if ($this->ion_auth->in_group(array('dc_admin'))){ ?>
+                  <a href="<?=base_url('index.php/adminpanel/budget/advance_bill')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Data</a>  
+               <?php } elseif ($this->ion_auth->in_group(array('admin'))) { ?>
+                  <a href="<?=base_url('index.php/adminpanel/budget/advance_bill_all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Data</a>                   
+               <?php }?>  
                <a href="javascript:void();" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;" onclick="printDiv('printableArea')"> Print </a> 
             </div>        
             <div class="box-body">
