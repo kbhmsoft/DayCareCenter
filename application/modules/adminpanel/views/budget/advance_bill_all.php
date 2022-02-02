@@ -12,28 +12,27 @@
       <div class="col-md-12">
          <div class="box box-primary">
             <div style="float: center; margin: 10px 10px -10px 150px;">
-               <form class="form-inline" action="<?=base_url('index.php/adminpanel/member/verified_request_search/5');?>" method="GET"> 
+               <form class="form-inline" action="<?=base_url('index.php/adminpanel/budget/advance_bill_search');?>" method="GET"> 
                   <div class="input-group">
-                     <select name="year_group" class="form-control">
-                       <option value="">সিলেক্ট বয়সভিত্তিক গ্রুপ</option>
-                       <option value="1">প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)</option>
-                       <option value="2">প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)</option>
-                       <option value="3">প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)</option>
-                       <option value="4">প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)</option>
-                     </select>
+                    <select name="db_name" class="form-control">
+                      <option value="">সিলেক্ট শিশু দিবাযত্ন কেন্দ্র</option>
+                      <?php foreach ($day_care_list as $item) {  ?>
+                        <option value="<?php echo $item->database_name; ?>"><?php echo $item->title; ?></option>
+                      <?php } ?>
+                    </select>
                   </div>
                   <div class="input-group">
-                    <input type="text" name="date_dirth" class="form-control" id="datepickers" autocomplete="off" placeholder="জন্ম তারিখ"/>
+                    <input type="text" name="start_date" class="form-control" id="datepickers"placeholder="from" autocomplete="off"/>
                   </div>
                   <div class="input-group">
-                    <input type="text" name="date_joining" class="form-control" id="datepicker" autocomplete="off" placeholder="যোগদানের তারিখ" />
+                    <input type="text" name="end_date" class="form-control" id="datepicker" placeholder="to" autocomplete="off" />
                     <div class="input-group-btn">
                       <button class="btn btn-primary" type="submit">
                         <span class="glyphicon glyphicon-search"></span>
                       </button>
                     </div>
                     <div class="input-group-btn">
-                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/member/verified_request/5');?>">clear</a>
+                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/budget/advance_bill_all');?>">clear</a>
                     </div>
                   </div>
                </form>

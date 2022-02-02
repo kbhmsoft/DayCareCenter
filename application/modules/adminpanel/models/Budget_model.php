@@ -12,6 +12,12 @@ class Budget_model extends MY_Model {
       if($type != NULL){
          $this->customDB->where('budget_types_id', $type);         
       }
+
+      if ($this->input->get('start_date') && $this->input->get('end_date')) {
+        $this->customDB->where('created >=',date('Y-m-d', strtotime($this->input->get('start_date'))));
+        $this->customDB->where('created <=',date('Y-m-d', strtotime($this->input->get('end_date'))));
+      }
+
       $this->customDB->order_by('id', 'DESC');
       $query = $this->customDB->get()->result();
 
@@ -88,5 +94,14 @@ class Budget_model extends MY_Model {
 
      return TRUE;
   }
+
+  public function get_day_cares($db_name) {
+      $this->db->select('*');  
+      $this->customDB->where('day_cares.database_name',$db_name);
+      $query =  $this->db->get('day_cares');
+
+      return $query->row();
+   }
+
 
 }

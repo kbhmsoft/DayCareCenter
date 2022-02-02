@@ -252,7 +252,7 @@ class Budget extends Backend_Controller {
       $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
 
       foreach ($this->data['day_care_list'] as $item) {
-         $data_arr[$item->id] = $this->monthly_demand_search($item->database_name, 1);
+         $data_arr[$item->id] = $this->db_monthly_demand_search($item->database_name, 1);
       }
       $this->data['results'] = $data_arr;  
       // echo "<pre>"; print_r($this->data['results']); exit();  
@@ -263,22 +263,45 @@ class Budget extends Backend_Controller {
       $this->load->view('backend/_layout_main', $this->data);
    }
 
-   public function monthly_demand_search($database_other, $type){
-      // Database Load
-      $this->Budget_model->loadCustomerDatabase($database_other);
-      // $results = $this->Member_model->get_data_all(0);
-      $results = $this->Budget_model->get_data($type);
+   public function monthly_demand_search(){
 
-      return $results;
+      $this->load->model('Dashboard_model');
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+      $get_db_name = $this->input->get('db_name');
+
+      if (!empty($get_db_name)) {
+         $get_db = (object) $this->Budget_model->get_day_cares($get_db_name);
+         $data_arr[$get_db->id] = $this->db_monthly_demand_search($get_db_name, 1);
+      } else {
+         foreach ($this->data['day_care_list'] as $item) {
+            $data_arr[$item->id] = $this->db_monthly_demand_search($item->database_name, 1);
+         }
+      }
+
+      $this->data['results'] = $data_arr;  
+      // echo "<pre>"; print_r($this->data['day_care_list']); exit();  
+      
+      //Load View
+      $this->data['meta_title'] = 'মাসিক চাহিদা';
+      $this->data['subview'] = 'budget/monthly_demand_all';
+      $this->load->view('backend/_layout_main', $this->data);
    } 
+
 
    public function advance_bill_all(){     
       $this->load->model('Dashboard_model');
       $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+      $get_db_name = $this->input->get('db_name');
 
-      foreach ($this->data['day_care_list'] as $item) {
-         $data_arr[$item->id] = $this->monthly_demand_search($item->database_name, 2);
+      if (!empty($get_db_name)) {
+         $get_db = (object) $this->Budget_model->get_day_cares($get_db_name);
+         $data_arr[$get_db->id] = $this->db_monthly_demand_search($get_db_name, 2);
+      } else {
+         foreach ($this->data['day_care_list'] as $item) {
+            $data_arr[$item->id] = $this->db_monthly_demand_search($item->database_name, 2);
+         }
       }
+
       $this->data['results'] = $data_arr;  
       // echo "<pre>"; print_r($this->data['results']); exit(); 
 
@@ -288,7 +311,31 @@ class Budget extends Backend_Controller {
       $this->load->view('backend/_layout_main', $this->data);
    }
 
-   public function advance_bill_search($database_other, $type){
+   public function advance_bill_search(){
+
+      $this->load->model('Dashboard_model');
+      $this->data['day_care_list'] = $this->Dashboard_model->get_day_cares();
+      $get_db_name = $this->input->get('db_name');
+
+      if (!empty($get_db_name)) {
+         $get_db = (object) $this->Budget_model->get_day_cares($get_db_name);
+         $data_arr[$get_db->id] = $this->db_monthly_demand_search($get_db_name, 2);
+      } else {
+         foreach ($this->data['day_care_list'] as $item) {
+            $data_arr[$item->id] = $this->db_monthly_demand_search($item->database_name, 2);
+         }
+      }
+
+      $this->data['results'] = $data_arr;  
+      // echo "<pre>"; print_r($this->data['results']); exit(); 
+
+      //Load View
+      $this->data['meta_title'] = 'অগ্রিম বিল';
+      $this->data['subview'] = 'budget/advance_bill_all';
+      $this->load->view('backend/_layout_main', $this->data);
+   } 
+
+   public function db_monthly_demand_search($database_other, $type){
       // Database Load
       $this->Budget_model->loadCustomerDatabase($database_other);
       // $results = $this->Member_model->get_data_all(0);
