@@ -377,9 +377,12 @@ class Site extends Frontend_Controller {
             // finally change the password
             $user =$this->Site_model->get_info($newData['new_data']['id']);
             $identity = $user->username; //$user->{$this->config->item('identity', 'ion_auth')};
-
             // print_r($identity);exit('identity');
-            $change = $this->ion_auth->reset_password($identity, $this->input->post('password'));
+            $change = false;
+            if ($newData['new_data']['otp'] == $this->input->post('otp')) {
+               $change = $this->ion_auth->reset_password($identity, $this->input->post('password'));
+            }
+
             if ($change){
                // if the password was successfully changed
                $this->session->set_flashdata('message', $this->ion_auth->messages());

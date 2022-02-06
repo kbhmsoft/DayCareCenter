@@ -64,7 +64,7 @@
                   <div class="row form-row">
                      <div class="col-md-12">
                         <div class="form-group">
-                           <input type="submit" name="submit" value="সাবমিট করুন" class="btn btn-success pull-right" style="font-weight: bold;">
+                           <input type="submit" name="submit" value="সংরক্ষণ করুন" class="btn btn-success pull-right" style="font-weight: bold;">
                         </div>
                      </div>
                   </div>
