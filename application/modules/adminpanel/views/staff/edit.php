@@ -27,7 +27,7 @@
                <div class="row">
                   <div class="col-md-5">
                      <div class="form-group">
-                        <label>Staff Name *</label>
+                        <label>স্টাফ নাম *</label>
                         <div><?php echo form_error('child_name'); ?></div>
                         <input type="text" class="form-control" name="child_name" 
                         value="<?=set_value('child_name', $info->child_name)?>">
@@ -35,14 +35,14 @@
                   </div>
                   <div class="col-md-4">
                      <div class="form-group">
-                        <label>Moible Number *</label>
+                        <label>মোবাইল ণাম্বার *</label>
                         <div><?php echo form_error('phone'); ?></div>
                         <input type="text" class="form-control" name="phone" value="<?=set_value('phone', $info->phone)?>">
                      </div>
                   </div>
                   <div class="col-md-12">
                      <div class="form-group">
-                        <label>Image Upload</label>
+                        <label>ছবি আপলোড</label>
                         <div><?php echo form_error('userfile'); ?></div>
                         <input type="file" name="userfile">                  
                         <p class="help-block">File type jpg, png, jpeg, gif and maximun file size 1 MB.</p>
@@ -62,7 +62,7 @@
 
            <div class="box-footer">    
             <?php //echo form_input($user_id);?>        
-            <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+            <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
          </div>
          <?php echo form_close();?>
       </div>

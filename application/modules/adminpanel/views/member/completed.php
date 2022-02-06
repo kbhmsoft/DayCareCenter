@@ -44,13 +44,13 @@
                         $sl++;
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>
+                           <td><?=eng2bng($sl);?></td>
                            <td><?=$row->child_name;?></td>               
-                           <td><?=$row->completion_date;?></td> 
+                           <td><?=eng2bng($row->completion_date);?></td> 
                            <td><?=$row->child_mother_name;?></td>
                            <td><?=$row->child_mother_designation;?></td>
                            <td><?=$row->child_mother_working_institute;?></td>
-                           <td><?=$row->child_mother_total_salary;?></td>
+                           <td><?=eng2bng($row->child_mother_total_salary);?></td>
                            <td> 
                               <div class="btn-group">
                                  <a href="<?=base_url('index.php/adminpanel/member/details/'.$row->id)?>"><button type="button" class="btn btn-success btn-xs">বিস্তারিত</button></a>

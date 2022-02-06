@@ -98,9 +98,9 @@
                            $sl++;
                            ?>
                            <tr>
-                              <td><?=$sl;?></td>                
-                              <td><?=$row->child_name;?></td> 
-                              <td><?=$row->machine_id;?></td>
+                              <td><?=eng2bng($sl);?></td>                
+                              <td style="font-family: kalpurush"><?=$row->child_name;?></td> 
+                              <td><?=eng2bng($row->machine_id);?></td>
                               <td><?=date('d F Y, h:i:s A', strtotime($row->intime));?></td>
                               <td><?=$row->intime == $row->outtime?'':date('d F Y, h:i:s A', strtotime($row->outtime));?></td>
                            <?php /*

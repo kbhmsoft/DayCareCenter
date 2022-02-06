@@ -26,7 +26,7 @@
                <div class="row form-row">
                   <div class="col-md-12">
                      <div class="form-group">
-                        <label>ইমেইল এড্রেস</label>
+                        <label>ইমেইল অ্যাড্রেস</label>
                         <input type="email" name="identity" value="<?=set_value('identity')?>" class="form-control" required>
                      </div>
                   </div>

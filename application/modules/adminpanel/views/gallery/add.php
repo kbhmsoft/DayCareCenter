@@ -13,7 +13,7 @@
          <div class="box box-primary">
             <div class="box-header with-border">
                <h3 class="box-title"><?=$meta_title?></h3>
-               <a href="<?=base_url('index.php/adminpanel/gallery/all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Image</a>          
+               <a href="<?=base_url('index.php/adminpanel/gallery/all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> তালিকা</a>          
             </div>        
             <?php echo form_open_multipart("index.php/adminpanel/gallery/add");?>
             <div class="box-body">
@@ -34,7 +34,7 @@
                         <input type="radio" name="display_home" value="0" <?=set_value('display_home')=='0'?'checked':'';?>> No
                      </div> -->
                      <div class="form-group">
-                        <label>Image Upload</label>
+                        <label>ছবি আপলোড</label>
                         <div><?php echo form_error('userfile'); ?></div>
                         <input type="file" name="userfile">
                         <label style="color:red">Image Size: Width:400px, Height: 300px</label>
@@ -48,7 +48,7 @@
 
             <div class="box-footer">    
                <?php //echo form_input($user_id);?>        
-               <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+               <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
             </div>
             <?php echo form_close();?>
          </div>

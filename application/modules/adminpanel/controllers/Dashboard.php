@@ -116,7 +116,7 @@ class Dashboard extends Backend_Controller {
       // echo '<pre>';
       // print_r($this->data['results']); exit;
 
-      $this->data['meta_title'] = 'সমস্ত আবেদন তালিকা';
+      $this->data['meta_title'] = 'সমস্ত আবেদন';
       $this->data['subview'] = 'dashboard/application_list';
       $this->load->view('backend/_layout_main', $this->data);
    }  
@@ -271,13 +271,13 @@ class Dashboard extends Backend_Controller {
       { 
          // print_r($cd); exit;
          if($key == 'gtotal_sec_1'){
-            $name = 'প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)';
+            $name = 'প্রারম্ভিক উদ্দীপনা পর্যায় (৬ মাস - ১২ মাস)';
             $count = $value;
          }elseif($key == 'gtotal_sec_2'){
-            $name = 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)';
+            $name = 'প্রাক-প্রারম্ভিক শিখন পর্যায় (১২ মাস - ৩০মাস)';
             $count = $value;
          }elseif($key == 'gtotal_sec_3'){
-            $name = 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)';            
+            $name = 'প্রারম্ভিক শিখন পর্যায় (৩০ মাস - ৪৮ মাস)';            
             $count = $value;
          }elseif($key == 'gtotal_sec_4'){
             $name = 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)';

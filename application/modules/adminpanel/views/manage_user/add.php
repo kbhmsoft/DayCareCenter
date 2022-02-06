@@ -78,7 +78,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label>দিবা যত্ন কেন্দ্র</label>
+                    <label>দিবাযত্ন কেন্দ্র</label>
                     <?php 
                        $more_attr = 'class="form-control" required';
                        echo form_dropdown('day_care_id', $daycare_list, set_value('day_care_id'), $more_attr);

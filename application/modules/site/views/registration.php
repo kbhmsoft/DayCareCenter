@@ -33,7 +33,7 @@
                   <div class="row form-row">
                      <div class="col-md-6">
                         <div class="form-group">
-                           <label>ইমেইল এড্রেস <span class="required">*</span></label>
+                           <label>ইমেইল অ্যাড্রেস <span class="required">*</span></label>
                            <input type="email" name="identity" value ="<?=set_value('identity')?>" id="identity" class="form-control" placeholder="" style="text-transform: lowercase;">
                         </div>                           
                      </div>

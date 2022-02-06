@@ -44,9 +44,9 @@
                         $sl++;
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>
+                           <td><?=eng2bng($sl);?></td>
                            <td><?=$row->child_name;?></td>
-                           <td><?=$row->child_doj;?></td> 
+                           <td><?=eng2bng($row->child_doj);?></td> 
                            <td><?=$row->child_mother_name;?></td>
                            <td><?=$row->child_mother_designation;?></td>
                            <td><?=$row->child_mother_working_place;?></td>

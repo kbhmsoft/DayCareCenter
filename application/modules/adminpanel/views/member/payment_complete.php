@@ -51,21 +51,21 @@
                            </tr>
                            <tr>
                               <th class="tg-9czc">বয়স</th>
-                              <td class="tg-0pky"><?=$info->child_age?></td>
+                              <td class="tg-0pky"><?=eng2bng($info->child_age)?></td>
                               <th class="tg-9czc">পদবী</th>
                               <td class="tg-0pky"><?=$info->child_mother_designation?></td>
                            </tr>
                            <tr>
                               <th class="tg-9czc">ওজন</th>
-                              <td class="tg-0pky"><?=$info->child_weight?></td>
+                              <td class="tg-0pky"><?=eng2bng($info->child_weight)?></td>
                               <th class="tg-9czc">কর্মস্থান</th>
                               <td class="tg-0pky"><?=$info->child_mother_working_place?></td>
                            </tr>
                            <tr>
                               <th class="tg-9czc">উচ্চতা</th>
-                              <td class="tg-0pky"><?=$info->child_height?></td>
+                              <td class="tg-0pky"><?=eng2bng($info->child_height)?></td>
                               <th class="tg-9czc">মাসিক সেবামূল্য</th>
-                              <td class="tg-0pky"><?=$info->monthly_fee?></td>
+                              <td class="tg-0pky"><?=eng2bng($info->monthly_fee)?></td>
                            </tr>
                         </table>
                      </fieldset>
@@ -81,7 +81,8 @@
                         <div class="row " >
                            <div class="col-md-6" style="margin-top: 25px;margin-bottom: 25px;">
                               <fieldset class="scheduler-border" >
-                                 <legend class="scheduler-border">Child Admission Payment Completion Form</legend>
+                                 <!-- <legend class="scheduler-border">Child Admission Payment Completion Form</legend> -->
+                                 <legend class="scheduler-border">শিশু ভর্তির অর্থপ্রদান ফর্ম</legend>
                                  <div class="row form-row">
                                     <div class="col-md-6">
                                        <div class="form-group">
@@ -105,7 +106,7 @@
                             </div>
                         </div>
                            <div class="col-md-4" style="text-align:center;">
-                              <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+                              <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
                            </div>
                      </div>
                   <?php endif ?>
@@ -122,18 +123,18 @@
                            <div class="col-md-6">
                               <div class="form-group">
                                  <fieldset class="scheduler-border">
-                                    <legend class="scheduler-border">Payment</legend>
-                                    <label>Payment Status<span class='required'>*</span></label><br>
-                                    <input type="checkbox" name="payment_status" value="1"> Payment Complete
+                                    <legend class="scheduler-border">পেমেন্ট</legend>
+                                    <label>পেমেন্ট স্ট্যাটাস <span class='required'>*</span></label><br>
+                                    <input type="checkbox" name="payment_status" value="1"> পেমেন্ট সম্পূর্ণ
                                  </fieldset>
                               </div> 
-                              <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+                              <?php echo form_submit('submit', 'সংরক্ষণ করুন', "class='btn btn-primary pull-right'"); ?>
                            </div>
                            <div class="col-md-6 ">
                               <div class="container"> 
                                  <div class="form-group">
                                     <fieldset class="scheduler-border">
-                                       <label style="font-size: 25px;color: green ">Payment Receipt</label><br>
+                                       <label style="font-size: 25px;color: green ">পেমেন্ট রসিদ</label><br>
                                        <img src="<?php echo base_url('assets/images/member_img/'. $info->payment_slip);?>" />
                                        <!-- <img src="<?php echo base_url('assets/images/member_img/1638252816-dakhila2.jpg');?>" /> -->
                                     </fieldset>
@@ -147,7 +148,7 @@
                <?php endif ?>
                <?php if ($info->payment_status == 1): ?>
                   <div class="col-md-5">
-                     <h3 style="font-size: 50px; color:green; text-align:center;font-weight: bold;">ইতিমধ্যে পরিশোধ করেছে</h3>
+                     <h3 style="font-size: 50px; color:green; text-align:center;font-weight: bold;">ইতোমধ্যে পরিশোধ করেছে</h3>
                   </div>
                <?php endif ?>
                </div>

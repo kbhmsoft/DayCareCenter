@@ -294,7 +294,7 @@ class Site extends Frontend_Controller {
          // Send Message
          $name = $this->input->post('first_name').' '.$this->input->post('last_name');
          $mobile = '+88'.$this->input->post('mobile_no');
-         $message = 'প্রিয় '. $name .', শিশু দিবাযত্ন কেন্দ্রে আপনাকে স্বাগতম। আপনার ওটিপি হল - '. $otp_code .' , এই ওটিপি ব্যবহার করে  আপনার পাসওয়ার্ড সেট করুন।';
+         $message = 'প্রিয় '. $name .', শিশু দিবাযত্ন কেন্দ্রে আপনাকে স্বাগত । আপনার ওটিপি হল - '. $otp_code .' , এই ওটিপি ব্যবহার করে  আপনার পাসওয়ার্ড সেট করুন।';
          $this->send_sms($mobile, $message);
          
          // redirect them back to the admin page
@@ -837,7 +837,7 @@ class Site extends Frontend_Controller {
                
                $name = $this->input->post('first_name').' '.$this->input->post('last_name');
                $mobile = '+88'.$user->phone;
-               $message = $dc_name.' আপনার শিশু অপেক্ষমাণ তালিকাভুক্ত হয়েছে,ধন্যবাদ। শিশুর বয়স গ্রুপের উপর ভিত্তি করে মাসিক সেবা মূল্য নির্ধারণ করা হয়েছে '.$monthly_fee.'/- টাকা';
+               $message = $dc_name.' আপনার শিশু অপেক্ষমাণ তালিকাভুক্ত হয়েছে,ধন্যবাদ। শিশুর বয়স গ্রুপের উপর ভিত্তি করে মাসিক সেবা মূল্য '.$monthly_fee.'/- টাকা নির্ধারণ করা হয়েছে ।';
                $this->send_sms($mobile, $message);
 
                // print_r($mobile.','. $message);exit('fee');
@@ -1151,7 +1151,7 @@ class Site extends Frontend_Controller {
          // Dropdown
          $this->data['day_cares'] = $this->Common_model->get_daycares(); 
          // $this->data['method'] = 'newapplication'; 
-         $this->data['meta_title'] = 'আবেদন';               
+         $this->data['meta_title'] = 'ভর্তুকির আবেদন';               
          $this->data['subview'] = 'subsidy_form';
          $this->load->view('frontend/_layout_main', $this->data);
       }

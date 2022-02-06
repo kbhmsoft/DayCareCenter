@@ -49,10 +49,10 @@
                         }
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>                
+                           <td><?=eng2bng($sl);?></td>                
                            <td><?=$image;?></td>
                            <td><?=$row->child_name;?></td> 
-                           <td><?=$row->phone;?></td>               
+                           <td><?=eng2bng($row->phone);?></td>               
                            <td> 
                               <div class="btn-group">
                                  <button type="button" class="btn btn-success btn-xs">অ্যাকশন</button>
@@ -62,7 +62,7 @@
                                  </button>
                                  <ul class="dropdown-menu" role="menu">
                                     <!-- <li><a href="<?=base_url('index.php/adminpanel/staff/details/'.$row->id)?>">Details</a></li> -->
-                                    <li><a href="<?=base_url('index.php/adminpanel/staff/edit/'.$row->id)?>">Edit</a></li>
+                                    <li><a href="<?=base_url('index.php/adminpanel/staff/edit/'.$row->id)?>">সম্পাদনা করুন</a></li>
                                     <!-- <li><a href="<?=base_url('index.php/adminpanel/staff/delete/'.$row->id)?>" onclick="return confirm('Are you sure you want to delete this data?');">Delete</a></li> -->
                                  </ul>
                               </div>

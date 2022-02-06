@@ -43,17 +43,17 @@
                      <div class="col-md-12">
                         <div>
                            <h3 style="text-align: center;"><?=ucwords($this->session->userdata('first_name').' '.$this->session->userdata('last_name'));?></h3>
-                           <h4 style="text-align: center;">মাসিক চাহিদা বিবরন</h4>
+                           <h4 style="text-align: center;">মাসিক চাহিদার বিবরন</h4>
                         </div>
                         <table class="tg" align="center">
                            <tr>
-                              <th class="tg-gg7l">Budget Title</th>
+                              <th class="tg-gg7l">শিরোনাম</th>
                               <td class="tg-cly1"><?=$info->title?></td>
-                              <th class="tg-gg7l">Date</th>
-                              <td class="tg-cly1"><?=date('d, M Y', strtotime($info->created));?></td>
+                              <th class="tg-gg7l">তারিখ</th>
+                              <td class="tg-cly1"><?=eng2bng(date('d, M Y', strtotime($info->created)));?></td>
                            </tr>
                            <tr>
-                              <th class="tg-gg7l">Budget Description</th>
+                              <th class="tg-gg7l">বাজেট বিস্তারিত</th>
                               <td class="tg-cly1" colspan="3"><?=$info->description?></td>
                            </tr>
                         </table>
@@ -62,9 +62,9 @@
                         <table id="example1" class="table table-bordered table-responsive">
                            <thead>
                               <tr>
-                                 <th>SL</th>
-                                 <th>Product Name</th>
-                                 <th>Quentity</th>
+                                 <th>নং</th>
+                                 <th>আইটেম নাম</th>
+                                 <th>কুয়ান্টিটি</th>
                               </tr>
                            </thead>
                            <tbody>
@@ -74,9 +74,9 @@
                                  $sl++;
                                  ?>
                                  <tr>
-                                    <td><?=$sl;?></td>                           
-                                    <td><?=$row->item_name;?></td>                 
-                                    <td><?=$row->item_count;?></td>
+                                    <td><?=eng2bng($sl);?></td>                           
+                                    <td style="font-family: kalpurush" ><?=$row->item_name;?></td>                 
+                                    <td><?=eng2bng($row->item_count);?></td>
                                  </tr>
                                  <?php 
                               } 

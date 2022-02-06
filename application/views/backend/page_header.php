@@ -135,7 +135,7 @@
                   </a>
                   <ul class="treeview-menu">
                      <li class="<?=backend_activate_menu_method('index');?>"><a href="<?=base_url('index.php/adminpanel/member');?>"><i class="fa fa-circle-o"></i>বর্তমানে সেবা গ্রহণকারী শিশু</a></li>
-                     <li class="<?=backend_activate_menu_method('request');?>"><a href="<?=base_url('index.php/adminpanel/member/request');?>"><i class="fa fa-circle-o"></i>শিশু অপেক্ষমাণ তালিকা</a></li>
+                     <li class="<?=backend_activate_menu_method('request');?>"><a href="<?=base_url('index.php/adminpanel/member/request');?>"><i class="fa fa-circle-o"></i>অপেক্ষমাণ শিশুর তালিকা</a></li>
                      <li class="<?=backend_activate_menu_method('completed');?>"><a href="<?=base_url('index.php/adminpanel/member/completed');?>"><i class="fa fa-circle-o"></i>পূর্ববর্তী সেবা গ্রহণকারী শিশু</a></li>
                      <li class="<?=backend_activate_menu_method('subsidies');?>"><a href="<?=base_url('index.php/adminpanel/member/subsidies');?>"><i class="fa fa-circle-o"></i>ভর্তুকির আবেদনকারী শিশু</a></li>
                   </ul>
@@ -169,12 +169,12 @@
                <li class="<?=backend_activate_menu_class('gallery');?>"><a href="<?php echo base_url('index.php/adminpanel/gallery/all');?>"><i class="fa fa-circle-o"></i> <span>গ্যালারী চিত্র</span></a></li> 
 
                <li class="<?=backend_activate_menu_class('staff');?>"><a href="<?php echo base_url('index.php/adminpanel/staff');?>"><i class="fa fa-book"></i> <span>স্টাফ তালিকা</span></a></li>
-               <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care/my_day_care_center');?>"><i class="fa fa-book"></i> <span>দিবা যত্ন কেন্দ্রের তথ্য</span></a></li>  
+               <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care/my_day_care_center');?>"><i class="fa fa-book"></i> <span>দিবাযত্ন কেন্দ্রের তথ্য</span></a></li>  
 
                <?php } ?>
 
                <?php if ($this->ion_auth->in_group(array('admin'))){ ?>
-               <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care');?>"><i class="fa fa-th"></i> <span>দিবা যত্ন কেন্দ্র</span></a></li>
+               <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care');?>"><i class="fa fa-th"></i> <span>দিবাযত্ন কেন্দ্র</span></a></li>
 
                <!-- <li class="<?=backend_activate_menu_class('day_care_others');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care_others');?>"><i class="fa fa-th"></i> <span>অন্যান্য দিবা যত্ন কেন্দ্র</span></a></li> -->
                 <li class="treeview <?=backend_activate_menu_class('member');?>">

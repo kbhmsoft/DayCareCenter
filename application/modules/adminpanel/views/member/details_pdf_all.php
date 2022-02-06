@@ -114,7 +114,7 @@
 
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">জন্ম তারিখ:</td>
-                          <td class="tg-0pky"><?=$info->child_dob?></td>                
+                          <td class="tg-0pky"><?=eng2bng($info->child_dob)?></td>                
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">লিঙ্গ:</td>
@@ -122,15 +122,15 @@
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">বয়স:</td>
-                          <td class="tg-0pky"><?=$info->child_age?></td>
+                          <td class="tg-0pky"><?=eng2bng($info->child_age)?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">ওজন:</td>
-                          <td class="tg-0pky"><?=$info->child_weight?></td>
+                          <td class="tg-0pky"><?= eng2bng($info->child_weight) ?></td>
                        <!--  </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">উচ্চতা:</td>
-                          <td class="tg-0pky"><?=$info->child_height?></td>
+                          <td class="tg-0pky"><?=eng2bng($info->child_height)?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">জন্ম চিহ্ন:</td>
@@ -138,7 +138,7 @@
                        <!--  </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">জন্ম সনদপত্র নং:</td>
-                          <td class="tg-0pky"><?=$info->birth_certificate_no?></td>
+                          <td class="tg-0pky"><?= eng2bng($info->birth_certificate_no) ?></td>
                         </tr>
                       </table>
                     </fieldset>
@@ -250,7 +250,7 @@
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_national_no?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_mother_national_no) ?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">পদবী:</td>
@@ -262,19 +262,19 @@
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_ph_no?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_mother_ph_no) ?></td>
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">মোট বেতন:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_total_salary?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_mother_total_salary) ?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">বেসিক বেতন:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_basic_salary?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_mother_basic_salary) ?></td>
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">বেতন কাঠামো:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_mother_pay_scale?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_mother_pay_scale) ?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">কর্মঘণ্টা:</td>
@@ -298,15 +298,15 @@
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_father_national_no?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_father_national_no) ?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">মোট বেতন:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_father_total_salary?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_father_total_salary) ?></td>
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">বেসিক বেতন:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_father_basic_salary?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_father_basic_salary) ?></td>
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">বেতন কাঠামো:</td>
@@ -318,7 +318,7 @@
                         </tr>
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_father_ph_no?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_father_ph_no) ?></td>
                         </tr>
                       </table>
                     </fieldset>
@@ -332,12 +332,12 @@
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">ফোন নং:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_parents_ph_no?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_parents_ph_no) ?></td>
                         </tr>
 
                         <tr>
                           <td class="tg-9czc" style="font-weight: bolder;">জাতীয় পরিচয়পত্র:</td>
-                          <td class="tg-0pky" colspan="2"><?=$info->child_parents_national_no?></td>
+                          <td class="tg-0pky" colspan="2"><?= eng2bng($info->child_parents_national_no) ?></td>
                         <!-- </tr>
                         <tr> -->
                           <td class="tg-9czc" style="font-weight: bolder;">স্থায়ী ঠিকানা:</td>

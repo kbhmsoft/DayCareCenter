@@ -50,14 +50,14 @@
                            $sl++;
                            ?>
                            <tr>
-                              <td><?=$sl;?></td>
+                              <td><?= eng2bng($sl) ;?></td>
                               <td><?php echo $row->child_name;?></td>
-                              <td><?php echo $row->child_dob;?></td>
-                              <td><?php echo $row->child_doj;?></td>
+                              <td><?php echo eng2bng($row->child_dob);?></td>
+                              <td><?php echo eng2bng($row->child_doj);?></td>
                               <td><?=$row->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($row->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($row->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($row->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?>
                               </td>                
 
-                              <td><?php echo date("d/m/Y", strtotime($row->created));?></td>
+                              <td><?php echo eng2bng(date("d/m/Y", strtotime($row->created)));?></td>
                               <td><?php echo $row->child_mother_designation;?></td>
                               <td> 
                                  <div class="btn-group">

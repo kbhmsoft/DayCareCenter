@@ -47,13 +47,13 @@
                         $sl++;
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>
+                           <td><?=eng2bng($sl);?></td>
                            <td><?=$row->child_name;?></td>
-                           <td><?=$row->child_doj;?></td> 
+                           <td><?=eng2bng($row->child_doj);?></td> 
                            <td><?=$row->child_mother_name;?></td>
-                           <td><?=$row->child_mother_ph_no;?></td>
+                           <td><?=eng2bng($row->child_mother_ph_no);?></td>
                            <td><?=$row->child_mother_email;?></td>                 
-                           <td><?=$row->family_total_monthly_income;?></td>
+                           <td><?=eng2bng($row->family_total_monthly_income);?></td>
                            <td><?=$row->morther_monthly_income == 1 ? '০ - ৭,৯৯৯ টাকা':($row->morther_monthly_income == 2 ? '৮,০০০ - ১৯,৯৯৯ টাকা':($row->morther_monthly_income == 3 ? '২০,০০০ - ৩৪,৯৯৯ টাকা':($row->morther_monthly_income == 4 ? '৩৫,০০০ - ৪৯,৯৯৯ টাকা':($row->morther_monthly_income == 5 ? '৫০,০০০ অথবা ততোধিক':'')))) ;?>
                            </td>
                           

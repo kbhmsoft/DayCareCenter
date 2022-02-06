@@ -23,7 +23,7 @@
                      </select>
                   </div>
                   <div class="input-group">
-                    <input type="text" name="date_dirth" class="form-control" id="datepickers" autocomplete="off" placeholder="জন্ম তারিখ"/>
+                    <input type="text" name="date_dirth" class="form-control" id="datepickers" autocomplete="off" placeholder="শিশুর জন্ম তারিখ"/>
                   </div>
                   <div class="input-group">
                     <input type="text" name="date_joining" class="form-control" id="datepicker" autocomplete="off" placeholder="যোগদানের তারিখ" />
@@ -56,17 +56,17 @@
                      <h5 style="font-weight: bold;text-decoration: underline;"><?php echo $item->title; ?></h5>   
                      <thead style="background-color: lightblue;">
                         <tr>
-                           <th width="20">নং</th>
-                           <th>শিশুর নাম</th>
-                           <th>জন্ম তারিখ</th>
-                           <th>কবে থেকে প্রয়োজন</th>
-                           <th>বয়সভিত্তিক গ্রুপ</th>
-                           <th>মায়ের নাম</th>
-                           <th>মায়ের প্রতিষ্ঠানের নাম</th>
-                           <th>পদবী</th>
+                           <th style="text-align: center;"  width="20">নং</th>
+                           <th style="text-align: center;" >শিশুর নাম</th>
+                           <th style="text-align: center;" >জন্ম তারিখ</th>
+                           <th style="text-align: center;" >কবে থেকে প্রয়োজন</th>
+                           <th style="text-align: center;" >বয়সভিত্তিক গ্রুপ</th>
+                           <th style="text-align: center;" >মায়ের নাম</th>
+                           <th style="text-align: center;" >মায়ের প্রতিষ্ঠানের নাম</th>
+                           <th style="text-align: center;" >পদবী</th>
                           
-                           <th>ডে কেয়ার অ্যাডমিনের মন্তব্য</th>
-                           <th width="100">পদক্ষেপ</th>
+                           <th style="text-align: center;" >ডে কেয়ার অ্যাডমিনের মন্তব্য</th>
+                           <th style="text-align: center;"  width="100">পদক্ষেপ</th>
                         </tr>
                      </thead>
                      <tbody style="background-color: #f3f0f0;">
@@ -76,13 +76,13 @@
                            $sl++;
                            ?>
                            <tr>
-                              <td><?=$sl;?></td>
+                              <td><?=eng2bng($sl);?></td>
                               <td><?php echo $row->child_name;?></td>
                               <td><?php echo eng2bng($row->child_dob);?></td>
                               <td><?php echo eng2bng($row->child_doj);?></td>
                               <td><?=$row->child_admit_interest== 1 ? ' প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)':($row->child_admit_interest == 2 ? 'প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)':($row->child_admit_interest == 3 ? 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)':($row->child_admit_interest == 4 ? 'প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)': ''))) ;?>
                               </td>                
-                              <td><?php echo $row->child_mother_name;?></td>
+                              <td style="text-align: center;"><?php echo $row->child_mother_name;?></td>
                               <td><?php echo $row->child_mother_working_institute;?></td> 
                               <td><?php echo $row->child_mother_designation;?></td>
                               <td><?php echo $row->comments ? $row->comments :'কোন মন্তব্য নেই';?></td>

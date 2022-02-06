@@ -13,9 +13,9 @@
          <div class="box box-primary">
             <div class="box-header with-border">
                <h3 class="box-title"><?=$meta_title?></h3>
-               <a href="<?=base_url('index.php/adminpanel/event/all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Event</a>
-               <a href="<?=base_url('index.php/adminpanel/event/details/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Details Event</a>
-               <a href="<?=base_url('index.php/adminpanel/event/add')?>" class="btn btn-info btn-xs pull-right"> Add Event</a> 
+               <a href="<?=base_url('index.php/adminpanel/event/all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> তালিকা</a>
+               <a href="<?=base_url('index.php/adminpanel/event/details/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> বিস্তাতিত</a>
+               <a href="<?=base_url('index.php/adminpanel/event/add')?>" class="btn btn-info btn-xs pull-right"> যোগ করুন</a> 
             </div>        
             <?php echo validation_errors(); ?>
             <?php echo form_open_multipart("adminpanel/event/edit/".$info->id);?>
@@ -30,19 +30,19 @@
                <div class="row">
                   <div class="col-md-7">
                      <div class="form-group">
-                        <label>Event Title</label>
+                        <label>ইভেন্ট শিরোনাম</label>
                         <div><?php echo form_error('title'); ?></div>
                         <input type="text" class="form-control" name="title" value="<?=set_value('title',$info->title)?>">
                      </div>
 
                      <div class="form-group">
-                        <label>Event Location</label>
+                        <label>ইভেন্ট লোকেশন</label>
                         <div><?php echo form_error('location'); ?></div>
                         <input type="text" class="form-control" name="location" value="<?=set_value('location',$info->location)?>">
                      </div>
 
                      <div class="form-group">
-                        <label>Event Details</label>
+                        <label>ইভেন্ট বিস্তারিত</label>
                         <div><?php echo form_error('description'); ?></div>
                         <textarea id="editor1" name="description" rows="5" cols="98"><?=set_value('description', $info->description)?></textarea>
                      </div>
@@ -50,17 +50,17 @@
 
                   <div class="col-md-5">
                      <div class="form-group">
-                        <label>Event Datetime</label>
+                        <label>তারিখ</label>
                         <div><?php echo form_error('date'); ?></div>
                         <input type="text" name="date" value="<?=set_value('date', $info->date)?>" class="form-control datepicker" autocomplete="off">
                      </div> 
                      <div class="form-group">
-                        <label class="form-label required">Display Status</label> <br>
+                        <label class="form-label required">ডিসপ্লেয় স্ট্যাটাস</label> <br>
                         <input type="radio" name="status" value="1" <?=set_value('status', $info->status)=='1'?'checked':'checked';?>> Yes 
                         <input type="radio" name="status" value="0" <?=set_value('status', $info->status)=='0'?'checked':'';?>> No
                      </div>
                      <div class="form-group">
-                        <label>Image Upload</label>
+                        <label>ছবি আপলোড</label>
                         <div><?php echo form_error('userfile'); ?></div>
                         <input type="file" name="userfile">                  
                         <p class="help-block">File type jpg, png, jpeg, gif and maximun file size 1 MB.</p>
@@ -79,7 +79,7 @@
 
             <div class="box-footer">    
                <?php //echo form_input($user_id);?>        
-               <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+               <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
             </div>
             <?php echo form_close();?>
          </div>

@@ -60,7 +60,7 @@ class Day_care extends Backend_Controller {
       // print_r($this->data['results']); exit;
 
       //Load page
-      $this->data['meta_title'] = 'মাই ডে কেয়ার সেন্টার';
+      $this->data['meta_title'] = 'আমার দিবাযত্ন কেন্দ্র';
       $this->data['subview'] = 'day_care/my_day_care_center';
       $this->load->view('backend/_layout_main', $this->data);
       // redirect('adminpanel/news/all');
@@ -109,7 +109,7 @@ class Day_care extends Backend_Controller {
       }
 
       // Load View
-      $this->data['meta_title'] = 'Edit Day Care';
+      $this->data['meta_title'] = 'সম্পাদনা করুন';
       $this->data['subview'] = 'day_care/edit';
       $this->load->view('backend/_layout_main', $this->data);
    }

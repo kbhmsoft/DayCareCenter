@@ -198,8 +198,8 @@
                <div class="col-md-4">
                   <div class="form-group">
                      <label>২. লিঙ্গ</label><br>
-                     <input type="radio" name="members[gender]" value="Male" <?=set_value('gender')=='Male'?'checked':'checked';?>> পুরুষ 
-                     <input type="radio" name="members[gender]" value="Female" <?=set_value('gender')=='Female'?'':'';?>> মহিলা
+                     <input type="radio" name="members[gender]" value="Male" <?=set_value('gender')=='Male'?'checked':'checked';?>> ছেলে 
+                     <input type="radio" name="members[gender]" value="Female" <?=set_value('gender')=='Female'?'':'';?>> মেয়ে
                   </div>
                </div>                   
             </div>
@@ -314,7 +314,7 @@
             <div class="row form-row"> 
               <div class="col-md-8">
                 <div class="form-group">
-                  <label>ক. ঔষধের নাম ও সেবনের মাত্রা</label>
+                  <label>ক. ঔষধের নাম ও সেবনের মাত্রা ও সময়</label>
                   <input type="text" name="members[child_diseases_medicine_range]" value="<?=set_value('child_diseases_medicine_range')?>" class="form-control">
                 </div>
               </div>
@@ -335,7 +335,7 @@
 
               <div class="col-md-8">
                 <div class="form-group">
-                  <label>৯। ক)  শিশুর চোখ, কান, দাঁতের পরিক্ষা করা হয়েছে কিনা?</label>
+                  <label>৯। ক)  শিশুর চোখ, কান, দাঁতের পরীক্ষা করা হয়েছে কিনা?</label>
                   <input type="radio" name="members[describe_health_problem]" value="Yes" <?=set_value('describe_health_problem')=='Yes'?'checked':'checked';?>> হ্যাঁ 
                   <input type="radio" name="members[describe_health_problem]" value="No" <?=set_value('describe_health_problem')=='No'?'':'';?>> না
                 </div>
@@ -350,7 +350,7 @@
 
               <div class="col-md-8">
                 <div class="form-group">
-                  <label>১০। ক)  শিশুর বিশেষ কোন খাদ্যে সমস্যা/এলারজি আছে কি?</label>
+                  <label>১০। ক)  শিশুর বিশেষ কোন খাদ্যে সমস্যা/এলার্জি আছে কি?</label>
                   <input type="radio" name="members[child_allergic_food]" value="Yes" <?=set_value('child_allergic_food')=='Yes'?'checked':'checked';?>> হ্যাঁ 
                   <input type="radio" name="members[child_allergic_food]" value="No" <?=set_value('child_allergic_food')=='No'?'':'';?>> না
                 </div>
@@ -374,7 +374,7 @@
 
               <div class="col-md-8">
                 <div class="form-group">
-                  <label>১১। ক) শিশুর করোনা/জল্বসন্ত/মাম্পস/অন্যান্য কোন সংক্রামণ রোগ হয়েছিল কিনা?</label>
+                  <label>১১। ক) শিশুর করোনা/জলবসন্ত/মাম্পস/অন্যান্য কোন সংক্রামণ রোগ হয়েছিল কিনা?</label>
                   <input type="radio" name="members[child_viral_disease]" value="Yes" <?=set_value('child_viral_disease')=='Yes'?'checked':'checked';?>> হ্যাঁ 
                   <input type="radio" name="members[child_viral_disease]" value="No" <?=set_value('child_viral_disease')=='No'?'':'';?>> না
                 </div>
@@ -417,8 +417,8 @@
                   <table class="table">
                    <tr>
                   <td> <input type="checkbox" name="members[child_strong_side]" value="1"> অ্যাথলেটিক</td></td>
-                  <td> <input type="checkbox" name="members[child_strong_side]" value="1"> সহানুভুতিশিল</td>
-                  <td> <input type="checkbox" name="members[child_strong_side]" value="1"> স্নহময়</td>
+                  <td> <input type="checkbox" name="members[child_strong_side]" value="1"> সহানুভুতিশীল</td>
+                  <td> <input type="checkbox" name="members[child_strong_side]" value="1">স্নেহময়</td>
                   <td> <input type="checkbox" name="members[child_strong_side]" value="1"> আত্মসচেতন<br></td>
                    </tr>
                    <tr>
@@ -431,8 +431,8 @@
                    <tr>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> সহযোগী</td>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> উদ্যমী</td>
-                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> সঙ্গীতপ্রমী</td>
-                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> চিন্তাশিল<br></td>
+                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> সঙ্গীতপ্রেমী</td>
+                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> চিন্তাশীল<br></td>
                    </tr>
                    <tr>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> সৃজনশীল</td>
@@ -441,15 +441,15 @@
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> সুনিয়ন্ত্রিত<br></td>
                    </tr>
                    <tr>
-                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> কৌতুহলি</td>
+                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> কৌতুহলী</td>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> বন্ধুসুলভ</td>
-                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> কৌতকপূর্ণ</td>
+                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> কৌতুকপূর্ণ</td>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> হস্যোউজ্জল<br></td>
                    </tr>
                    <tr>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> সিদ্ধান্তমূলক</td>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> সৎ</td>
-                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> সম্ভাবনাময়য়</td>
+                   <td><input type="checkbox" name="members[child_strong_side]" value="1"> সম্ভাবনাময়</td>
                    <td><input type="checkbox" name="members[child_strong_side]" value="1"> মনোযোগী<br></td>
                    </tr>
                    <tr>
@@ -477,22 +477,22 @@
                 <label>১৪। আপনার শিশুর শীর্ষ তিনটি দূর্বল দিক চিহ্নিত করুন:</label><br>
                 <table class="table">
                   <tr>
-                    <td> <input type="checkbox" name="members[child_week_side]" value="1"> আগ্রাসী মনোভাব</td></td>
-                    <td> <input type="checkbox" name="members[child_week_side]" value="1"> নিয়ম ভঙ্গ</td>
+                    <td> <input type="checkbox" name="members[child_week_side]" value="1"> আক্রমণাত্মক মনোভাব</td></td>
+                    <td> <input type="checkbox" name="members[child_week_side]" value="1"> নিয়ম ভঙ্গের প্রবণতা</td>
                     <td> <input type="checkbox" name="members[child_week_side]" value="1"> শ্রবণ ক্ষমতার হ্রাস</td>
                   </tr>
                   <tr>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> বাড়িতে অন্যদের প্রতি আক্রমনাত্মক মনোভাব</td>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> জটিল</td>
-                    <td><input type="checkbox" name="members[child_week_side]" value="1"> ভাষায় বিলম্ব</td>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1"> ভাষা বিকাশে বিলম্ব</td>
                   </tr>
                   <tr>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> অস্থিরতা</td>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> প্রানির প্রতি নিষ্ঠুরতা</td>
-                    <td><input type="checkbox" name="members[child_week_side]" value="1"> সেখার অক্ষমতা</td>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1"> শেখার অক্ষমতা</td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox" name="members[child_week_side]" value="1"> উদ্বেগ/অস্বস্থি</td>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1">ভয়/উদ্বেগ/অস্বস্তি</td>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> হতাশা</td>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> কম আত্মসম্মান</td>
                   </tr>
@@ -502,7 +502,7 @@
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> মিথ্যা বলা</td>
                   </tr>
                   <tr>
-                    <td><input type="checkbox" name="members[child_week_side]" value="1"> ব্যাধি</td>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1"> ব্যাধি গ্রস্ত</td>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> সৎবেদনশীল</td>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> অবহেলা করা</td>
                   </tr>
@@ -513,7 +513,11 @@
                   </tr>
                   <tr>
                     <td><input type="checkbox" name="members[child_week_side]" value="1"> সামাজিক সমস্যা</td>
-                    <td><input type="checkbox" name="members[child_week_side]" value="1"> সহিংসতা বা ট্রমার পরে যত্নশীল<br></td>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1"> সহিংসতা বা ট্রমার পরে যত্নশীল</td>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1"> রাগী</td>
+                  </tr>
+                  <tr>
+                    <td><input type="checkbox" name="members[child_week_side]" value="1"> আসামাজিক মনভাব<br></td>
                   </tr>
                 </table>
                 <div class="col-md-8">
@@ -632,7 +636,7 @@
             <legend class="scheduler-border">পার্ট-৬: শিশুর অসুস্থতা নীতি সংক্রান্ত অঙ্গীকারনামা</legend>
             <p>•  দিবাযত্ন কেন্দ্রে আপনার সন্তান এবং অন্য শিশুদের সুস্থতার স্বার্থে আপনার শিশু রোগাক্রান্ত হলে তাকে ঘরেই রাখবেন।</p>
 
-            <p>•  যদি কোভিড-১৯ ভাইরাসে পরিবারের কোন সদস্য সংক্রমিত হয়ে থাকে তবে অবশ্যই কোয়ারেন্টাইনে থাকবেন এবং স্বাস্থ্য মন্ত্রণালয় কর্তৃক প্রদত্ত  সুস্থতার প্রত্যয়ণ পাওয়ার পর সেন্টারে শিশুকে নিয়মিত করবেন।</p>
+            <p>•  যদি কোভিড-১৯ ভাইরাসে পরিবারের কোন সদস্য সংক্রমিত হয়ে থাকে তবে অবশ্যই কোয়ারেন্টাইনে থাকবেন এবং স্বাস্থ্য মন্ত্রণালয় কর্তৃক প্রদত্ত  সুস্থতার প্রত্যয়ন পাওয়ার পর সেন্টারে শিশুকে নিয়মিত করবেন।</p>
 
             <p>•  জ্বর হলে শিশুকে দিবাযত্ন কেন্দ্রে প্রেরণ করা থেকে বিরত থাকবেন। সেক্ষেত্রে জ্বর কমে যাওয়ার পর পরবর্তী ২৪ ঘন্টা পর্যন্ত শিশুর দেহের স্বাভাবিক তাপমাত্রা (৯৮.৬ ডিগ্রি ফারেনহাইট) থাকলে তবেই তাকে দিবাযত্ন কেন্দ্রে পাঠাবেন।</p>
 
@@ -642,7 +646,7 @@
 
             <p>•  যে কোন কারণে বমি হলে শিশুর  বমি বন্ধ হওয়ার পর  ২৪ ঘন্টা পর্যবেক্ষণ করে কেন্দ্রে পাঠাবেন।</p>
 
-            <p>•  বিভিন্ন চর্মরোগ যেমন- একজিমা, স্ক্যাবিস, চুলকানী প্রভৃতি দেখা দিলে শিশুকে সুস্থ না হওয়া পর্যন্ত সেন্টারে পাঠানো থেকে বিরত থাকবেন এবং দ্রুত চিকিৎসকের পরামর্শ অনুযায়ী ব্যবস্থা নিবেন।</p>
+            <p>•  বিভিন্ন চর্মরোগ যেমন- একজিমা, স্ক্যাবিস বা চুলকানি প্রভৃতি দেখা দিলে শিশুকে সুস্থ না হওয়া পর্যন্ত সেন্টারে পাঠানো থেকে বিরত থাকবেন এবং দ্রুত চিকিৎসকের পরামর্শ অনুযায়ী ব্যবস্থা নিবেন।</p>
 
             <p>•  চিকেন পক্স অথবা জলবসন্ত হলে সুস্থ হবার (১৮-২১) দিন পর শিশুকে কেন্দ্রে নিয়মিত করবেন।</p>
 
@@ -677,11 +681,11 @@
                   <td><input type="radio" name="hello">হ্যাঁ             <input type="radio" name="hello">না</td>
                </tr>
                <tr>
-                  <td>২. দিবাযত্ন কেন্দ্রের ওয়েবসাইটে ব্যবহারের     </td><td>&nbsp;</td><td>:</td><td>&nbsp;</td>
+                  <td>২. দিবাযত্ন কেন্দ্রের ওয়েবসাইটে ব্যবহারের জন্য     </td><td>&nbsp;</td><td>:</td><td>&nbsp;</td>
                   <td><input type="radio" name="hello1">হ্যাঁ             <input type="radio" name="hello1">না</td>
                </tr>
                <tr>
-                  <td>৩. অন্যান্য অভিভাবকের ব্যবহারের     </td><td>&nbsp;</td><td>:</td><td>&nbsp;</td>
+                  <td>৩. অন্যান্য অভিভাবকের ব্যবহারের জন্য     </td><td>&nbsp;</td><td>:</td><td>&nbsp;</td>
                   <td><input type="radio" name="hello2">হ্যাঁ             <input type="radio" name="hello2">না</td>
                </tr>
                <tr>
@@ -704,8 +708,10 @@
             </p>
             <h4>(<i class="fa fa-check" aria-hidden="true"></i> চিহ্ন দিন)</h4>
 
-                  
-            <br><input type="checkbox" name="">  শিশুর পাসপোর্ট সাইজের ও ২ (দুই) কপি স্ট্যাম্প সাইজের ছবি;
+             <span>সংযুক্তি :</span>     
+            <!-- <br><input type="checkbox" name="">  শিশুর পাসপোর্ট সাইজের ও ২ (দুই) কপি স্ট্যাম্প সাইজের ছবি; -->
+            <br><input type="checkbox" name="">  পিতা-মাতা বা আভিভাবকের পাসপোর্ট সাইজের ছবি;
+            <br><input type="checkbox" name="">  শিশুর স্ট্যাম্প সাইজের ছবি;
             <div class="form-group">
               <div><?php echo form_error('userfile1'); ?></div>
               <input type="file" name="userfile1" class="wizard-required"> 
@@ -746,7 +752,7 @@
 
              <div class="form-group clearfix">
                 <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
-                <input type="submit" name="submit" class="form-wizard-submit float-right" value="Submit">
+                <input type="submit" name="submit" class="form-wizard-submit float-right" value="সংরক্ষণ করুন">
              </div>
           </fieldset> 
        </form>

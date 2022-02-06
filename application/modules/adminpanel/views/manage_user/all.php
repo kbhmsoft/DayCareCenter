@@ -25,7 +25,7 @@
                     <?php echo $this->session->flashdata('success');?>
                 </div>
             <?php endif; ?>
-            <table id="example1" class="table table-bordered table-striped table-responsive">
+            <table id="examples" class="table table-bordered table-striped table-responsive">
               <thead>
                 <tr>
                   <th>ক্রম </th>
@@ -45,7 +45,7 @@
                   $sl++;
               ?>
               <tr>
-                <td>#</td>
+                <td><?php echo eng2bng($sl); ?></td>
                 <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
                 <td><?php echo htmlspecialchars($user->last_name,ENT_QUOTES,'UTF-8');?></td>
                 <td><?php echo htmlspecialchars($user->username,ENT_QUOTES,'UTF-8');?></td>
@@ -73,3 +73,11 @@
   </div> <!-- /.row -->
 
 </section> <!-- /.content -->
+
+<script type="text/javascript">
+   $(document).ready(function() {
+      $('#examples').DataTable( {
+         "aaSorting": []
+      });
+   });
+</script>

@@ -32,7 +32,7 @@ class Gallery extends Backend_Controller {
       // print_r($this->data['results']); exit;
 
       //Load page
-      $this->data['meta_title'] = 'All Gallery';
+      $this->data['meta_title'] = 'গ্যালারীর তালিকা';
       $this->data['subview'] = 'gallery/all';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -79,7 +79,7 @@ class Gallery extends Backend_Controller {
       // $this->data['category'] = $this->Common_model->get_category_dd('gallery_category');
 
       // Load View
-      $this->data['meta_title'] = 'Add Image';
+      $this->data['meta_title'] = 'অ্যাড গ্যালারী';
       $this->data['subview'] = 'gallery/add';
       $this->load->view('backend/_layout_main', $this->data);
    }

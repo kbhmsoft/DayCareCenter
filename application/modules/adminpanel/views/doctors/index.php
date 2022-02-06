@@ -31,7 +31,7 @@
                <table id="example1" class="table table-bordered table-striped table-responsive">
                   <thead>
                      <tr>
-                        <th width="20">SL</th>
+                        <th width="20">ক্রম</th>
                         <th>ডাক্তারের নাম</th>                        
                         <th>ফোন নম্বর</th>
                         <th>প্রতিষ্ঠানের নাম</th>                        
@@ -48,9 +48,9 @@
                            $sl++;                        
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>
+                           <td><?= eng2bng($sl);?></td>
                            <td><?=$row->doctor_name;?></td>
-                           <td><?=$row->phone;?></td>
+                           <td><?=eng2bng($row->phone);?></td>
                            <td><?=$row->institute_name;?></td>                            
                            <td><?=$row->div_name_bn;?></td> 
                            <td><?=$row->dis_name_bn;?></td> 

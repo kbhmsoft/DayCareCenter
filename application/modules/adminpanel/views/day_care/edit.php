@@ -13,7 +13,7 @@
          <div class="box box-primary">
             <div class="box-header with-border">
                <h3 class="box-title"><?=$meta_title?></h3>
-               <a href="<?=base_url('index.php/adminpanel/day_care/my_day_care_center')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> মাই ডে কেয়ার সেন্টার</a>
+               <a href="<?=base_url('index.php/adminpanel/day_care/my_day_care_center')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> আমার দিবাযত্ন কেন্দ্র</a>
             </div>        
             <?php //echo validation_errors(); ?>
             <?php echo form_open_multipart("index.php/adminpanel/day_care/edit/".$info->id);?>
@@ -28,17 +28,17 @@
                <div class="row">
                   <div class="col-md-7">
                      <div class="form-group">
-                        <label>Day Care Title</label>
+                        <label>দিবাযত্ন কেন্দ্রের শিরোনাম</label>
                         <h4><?=$info->title?></h4>
                      </div>
 
                      <div class="form-group">
-                        <label>Day Care Area</label>
+                        <label>দিবাযত্ন কেন্দ্র লোকেশন </label>
                         <h4><?=$info->area?></h4>
                      </div>
 
                      <div class="form-group">
-                        <label>Day Care Details</label>
+                        <label>বিস্তারিত</label>
                         <div><?php echo form_error('description'); ?></div>
                         <textarea class="form-control" name="description" rows="5" cols="98"><?=set_value('description', $info->description)?></textarea>
                      </div>
@@ -46,12 +46,12 @@
 
                   <div class="col-md-5">  
                      <div class="form-group">
-                        <label>Officer Name *</label>
+                        <label> অফিসারের নাম *</label>
                         <div><?php echo form_error('officer_name'); ?></div>
                         <input type="text" class="form-control" name="officer_name" value="<?=set_value('officer_name', $info->officer_name)?>">
                      </div>
                      <div class="form-group">
-                        <label>Address *</label>
+                        <label>ঠিকানা *</label>
                         <div><?php echo form_error('address'); ?></div>
                         <input type="text" class="form-control" name="address" value="<?=set_value('address', $info->address)?>">
                      </div>  
@@ -59,14 +59,14 @@
                      <div class="row">
                         <div class="col-md-6">        
                            <div class="form-group">
-                              <label>Mobile Number *</label>
+                              <label>মোবাইল ণাম্বার *</label>
                               <div><?php echo form_error('mobile_no'); ?></div>
                               <input type="text" class="form-control" name="mobile_no" value="<?=set_value('mobile_no', $info->mobile_no)?>">
                            </div>
                         </div>
                         <div class="col-md-6">        
                            <div class="form-group">
-                              <label>Phone Number</label>
+                              <label>ফোন ণাম্বার</label>
                               <div><?php echo form_error('phone'); ?></div>
                               <input type="text" name="phone" value="<?=set_value('phone',  $info->phone)?>" class="form-control">
                            </div> 
@@ -74,7 +74,7 @@
                      </div>
 
                      <div class="form-group">
-                        <label>Email Address *</label>
+                        <label>ইমেইল অ্যাড্রেস *</label>
                         <div><?php echo form_error('email'); ?></div>
                         <input type="text" name="email" value="<?=set_value('email',  $info->email)?>" class="form-control">
                      </div>
@@ -82,7 +82,7 @@
                      <div class="row">
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>Latitude</label>
+                              <label>দ্রাঘিমাংশ</label>
                               <div><?php echo form_error('latitude'); ?></div>
                               <input type="text" name="latitude" value="<?=set_value('latitude',  $info->latitude)?>" class="form-control">
                            </div>  
@@ -90,7 +90,7 @@
 
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>Longitude</label>
+                              <label>দ্রাঘিমাংশ</label>
                               <div><?php echo form_error('longitude'); ?></div>
                               <input type="text" name="longitude" value="<?=set_value('longitude',  $info->longitude)?>" class="form-control">
                            </div>    
@@ -103,7 +103,7 @@
             <!-- /.box-body -->
 
             <div class="box-footer">    
-               <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+               <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
             </div>
             <?php echo form_close();?>
          </div>

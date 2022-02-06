@@ -51,7 +51,7 @@ class Budget extends Backend_Controller {
       }
 
       //Load View
-      $this->data['meta_title'] = 'মাসিক চাহিদা বিবরন';
+      $this->data['meta_title'] = 'মাসিক চাহিদার বিবরন';
       $this->data['subview'] = 'budget/monthly_demand_details';
       $this->load->view('backend/_layout_main', $this->data);
    }

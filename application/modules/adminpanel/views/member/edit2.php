@@ -102,7 +102,7 @@
                         </div>
                         */ ?>
                         <div class="col-md-4">
-                           <?php echo form_submit('submit', 'Save', "class='btn btn-primary pull-right'"); ?>
+                           <?php echo form_submit('submit', 'সংরক্ষণ', "class='btn btn-primary pull-right'"); ?>
                         </div>
                      </div>
                   </div>

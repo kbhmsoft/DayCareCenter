@@ -114,7 +114,7 @@
 
                                  <div class="col-md-3">
                                     <div class="form-group">
-                                       <label>ফাকা আসন <span class='required'>*</span></label>
+                                       <label>ফাঁকা আসন <span class='required'>*</span></label>
                                        <p><?=eng2bng($seat_limit-$seat_count);?></p>
                                     </div>  
                                  </div>

@@ -10,7 +10,7 @@
       <ul class="nav nav-tabs">
          <li class="active"><a data-toggle="tab" href="#home"><strong>আমার প্রোফাইল</strong></a></li>
          <li><a data-toggle="tab" href="#menu1"><strong>আবেদনের তালিকা</strong></a></li>
-         <li><a data-toggle="tab" href="#menu2"><strong>শিশু তালিকা ভুক্তির আবেদন</strong></a></li>
+         <li><a data-toggle="tab" href="#menu2"><strong>শিশুর তালিকা ভুক্তির আবেদন</strong></a></li>
       </ul>
 
       <div class="tab-content">
@@ -251,8 +251,8 @@
                      <tr>
                         <th>ক্রম </th>
                         <th>তারিখ</th>
-                        <th>ডে কেয়ার নাম</th>
-                        <th>শিশুর নাম</th>
+                        <th style="text-align: center;">ডে কেয়ার সেন্টারের নাম</th>
+                        <th style="text-align: center;">শিশুর নাম</th>
                         <th width="110">অ্যাকশন</th>
                      </tr>
                   </thead>
@@ -461,7 +461,7 @@
                    </ul>
 
                   <fieldset class="wizard-fieldset scheduler-border show">
-                     <legend class="scheduler-border"> সাধারণ তথ্য</legend>
+                     <legend class="scheduler-border">পার্ট ১ সাধারণ তথ্য</legend>
                      <div class="row form-row">
                         <div class="col-md-6">
                           <div class="form-group">
@@ -613,7 +613,7 @@
                         
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>মোবাইল নাম্বার</label>
+                              <label>মোবাইল নম্বর</label>
                               <input type="text" name="registrations[child_parents_ph_no]" value="<?=set_value('child_parents_ph_no')?>" class="form-control wizard-required" placeholder="">
                               <div class="wizard-form-error"></div>
                            </div>
@@ -633,7 +633,7 @@
                   </fieldset>
 
                   <fieldset class="wizard-fieldset scheduler-border">
-                     <legend class="scheduler-border">মাতা-পিতার পেশা সংক্রান্ত তথ্য (অবশ্যই পূরণীয়)</legend>
+                     <legend class="scheduler-border">পার্ট ২ মাতা-পিতার পেশা সংক্রান্ত তথ্য (অবশ্যই পূরণীয়)</legend>
                      <h5>৬. মাতার তথ্য</h5>
                      <div class="row form-row">
                         <div class="col-md-6">
@@ -662,14 +662,14 @@
                         </div>
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>প্রতিষ্ঠান নাম</label>
+                              <label>প্রতিষ্ঠানের নাম</label>
                               <input type="text" name="registrations[child_mother_working_institute]" value="<?=set_value('child_mother_working_institute')?>" class="form-control wizard-required" placeholder="">
                               <div class="wizard-form-error"></div>
                            </div>
                         </div>
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>প্রতিষ্ঠান ফোন নম্বর(যদি থাকে)</label>
+                              <label>প্রতিষ্ঠানের ফোন নম্বর(যদি থাকে)</label>
                               <input type="text" name="registrations[child_mother_work_ph_no]" value="<?=set_value('child_mother_work_ph_no')?>" class="form-control" placeholder="">
                            </div>
                         </div>
@@ -689,7 +689,7 @@
                         </div>
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>কর্মস্থল নিয়ন্ত্রণকারী কর্তৃপক্ষ ঠিকানা</label>
+                              <label>কর্মস্থল নিয়ন্ত্রণকারী কর্তৃপক্ষের ঠিকানা</label>
                               <input type="text" name="registrations[child_mother_work_md_add]" value="<?=set_value('child_mother_work_md_add')?>" class="form-control wizard-required" placeholder="">
                               <div class="wizard-form-error"></div>
                            </div>
@@ -733,14 +733,14 @@
                         </div>
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>প্রতিষ্ঠান নাম</label>
+                              <label>প্রতিষ্ঠানের নাম</label>
                               <input type="text" name="registrations[child_father_working_institute]" value="<?=set_value('child_father_working_institute')?>" class="form-control wizard-required" placeholder="">
                               <div class="wizard-form-error"></div>
                            </div>
                         </div>
                         <div class="col-md-6">
                            <div class="form-group">
-                              <label>প্রতিষ্ঠান ফোন নম্বর(যদি থাকে)</label>
+                              <label>প্রতিষ্ঠানের ফোন নম্বর(যদি থাকে)</label>
                               <input type="text" name="registrations[child_father_work_ph_no]" value="<?=set_value('child_father_work_ph_no')?>" class="form-control" placeholder="">
                            </div>
                         </div>
@@ -754,7 +754,7 @@
                         </div>
                         <div class="col-md-12">
                            <div class="form-group">
-                              <label>কর্মস্থল নিয়ন্ত্রণকারী কর্তৃপক্ষ ঠিকানা</label>
+                              <label>কর্মস্থল নিয়ন্ত্রণকারী কর্তৃপক্ষের ঠিকানা</label>
                               <input type="text" name="registrations[child_father_work_md_add]" value="<?=set_value('child_father_work_md_add')?>" class="form-control wizard-required" placeholder="">
                               <div class="wizard-form-error"></div>
                            </div>
@@ -778,20 +778,20 @@
                   </fieldset>  
                    
                   <fieldset class="wizard-fieldset scheduler-border">
-                     <legend class="scheduler-border">শিশু তালিকাভুক্তির তথ্য</legend>
+                     <legend class="scheduler-border">পার্ট ৩ শিশু তালিকাভুক্তির তথ্য</legend>
                      <div class="row form-row">
                         <div class="col-md-8">
                            <div class="form-group">
                               <label>৮. আপনি কোন বয়স গ্রুপে শিশুকে ভর্তি করতে আগ্রহী?</label><br>
-                              <input checked="true" type="radio" name="registrations[child_admit_interest]" value="1"> প্রারম্ভিক পর্যায় (৬ মাস - ১২ মাস)<br>
-                              <input type="radio" name="registrations[child_admit_interest]" value="2"> প্রাক-প্রারম্ভিক পর্যায় (১২ মাস - ৩০মাস)<br>
-                              <input type="radio" name="registrations[child_admit_interest]" value="3"> প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস)<br>
+                              <input checked="true" type="radio" name="registrations[child_admit_interest]" value="1"> প্রারম্ভিক উদ্দীপনা পর্যায় (৪ মাস - ১২ মাস)<br>
+                              <input type="radio" name="registrations[child_admit_interest]" value="2"> প্রাক-প্রারম্ভিক শিখন পর্যায় (১২ মাস - ৩০মাস)<br>
+                              <input type="radio" name="registrations[child_admit_interest]" value="3"> প্রারম্ভিক শিখন পর্যায় (৩০ মাস - ৪৮ মাস)<br>
                               <input type="radio" name="registrations[child_admit_interest]" value="4"> প্রাক-প্রাথমিক স্কুল পর্যায় (৪ বছর - ৬ বছর)<br>
                            </div>
                         </div>
 
                         <div class="col-md-8">
-                           <label>৯. এই শিশুর জন্য আপনার কখন শিশু দিবাযত্ন কেন্দ্র প্রয়োজন হবে?</label>
+                           <label>৯. এই শিশুর জন্য আপনার কখন শিশু দিবাযত্ন কেন্দ্র প্রয়োজন?</label>
                            <div class="form-group">
                               <input type="date" class="wizard-required form-control" type="text" name="registrations[child_doj]" value="<?=set_value('child_doj')?>" placeholder="" autocomplete="off">
                               <div class="wizard-form-error"></div>
@@ -821,8 +821,8 @@
 
 
                   <fieldset class="wizard-fieldset scheduler-border">
-                     <legend class="scheduler-border">শিশুর তথ্য</legend>
-                     <h5>১১. শিশু -০১</h5>
+                     <legend class="scheduler-border"> পার্ট ৪ শিশুর তথ্য</legend>
+                     <h5>১১. শিশু</h5>
                      <div class="row form-row">
                         <div class="col-md-12">
                            <div class="form-group">
@@ -855,7 +855,7 @@
                   </fieldset> 
 
                   <fieldset class="wizard-fieldset scheduler-border">
-                     <legend class="scheduler-border">প্রয়োজনীয় সংযুক্তিসমূহ</legend>
+                     <legend class="scheduler-border">পার্ট ৫ প্রয়োজনীয় সংযুক্তিসমূহ</legend>
                      <div class="row form-row">
                         <div class="col-md-12">
                            <div class="form-group">
@@ -875,7 +875,7 @@
 
                      <div class="form-group clearfix">
                         <a href="javascript:;" class="form-wizard-previous-btn float-left">পূর্ববর্তী</a>
-                        <input type="submit" name="submit" class="form-wizard-submit float-right" value="Submit">
+                        <input type="submit" name="submit" class="form-wizard-submit float-right" value="সংরক্ষণ করুন">
                      </div>
                   </fieldset> 
                </form>

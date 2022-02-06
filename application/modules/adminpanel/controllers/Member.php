@@ -47,7 +47,7 @@ class Member extends Backend_Controller {
 
       //Load page
       // $this->data['meta_title'] = 'Member Request/Application';
-      $this->data['meta_title'] = 'শিশু অপেক্ষমাণ তালিকা';
+      $this->data['meta_title'] = 'অপেক্ষমাণ শিশুর তালিকা';
       $this->data['subview'] = 'member/request';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -73,27 +73,27 @@ class Member extends Backend_Controller {
 
       }elseif ($status == 5){
 
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র অ্যাডমিন দ্বারা প্রত্যাখ্যাত শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে অ্যাডমিন দ্বারা প্রত্যাখাত শিশুদের তালিকা';
          $this->data['subview'] = 'member/reject_application_list';
 
       }elseif ($status == 2){
 
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র ছেড়ে যাওয়া শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্র ছেড়ে যাওয়া শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_complete_list';
 
       }elseif ($status == 1){
 
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে সেবা গ্রহণকারী শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_running_list';
 
       }elseif ($status == 4){
 
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_complete_pending_list';
 
       }elseif ($status == 0){
 
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে সমস্ত আবেদন শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে সমস্ত আবেদন শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_complete_pending_list';
 
       }
@@ -226,7 +226,7 @@ class Member extends Backend_Controller {
       }
 
       // $this->data['meta_title'] = 'Member Edit';
-      $this->data['meta_title'] = 'শিশু সম্পাদনা করুন';
+      $this->data['meta_title'] = 'শিশুর সম্পাদনা করুন';
       $this->data['subview'] = 'member/edit2';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -404,7 +404,7 @@ class Member extends Backend_Controller {
             redirect('index.php/adminpanel/member/request');
          }
       }
-      $this->data['meta_title'] = 'শিশু অনুমোদন ফরম';
+      $this->data['meta_title'] = 'শিশুর অনুমোদন ফরম';
       $this->data['subview'] = 'member/approve';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -441,7 +441,7 @@ class Member extends Backend_Controller {
       }
 
       // $this->data['meta_title'] = 'Member Approve';
-      $this->data['meta_title'] = 'শিশু চুড়ান্ত অনুমোদিত ফর্ম';
+      $this->data['meta_title'] = 'শিশুর চুড়ান্ত অনুমোদিত ফর্ম';
       $this->data['subview'] = 'member/final_approve';
       $this->load->view('backend/_layout_main', $this->data);
 
@@ -466,7 +466,7 @@ class Member extends Backend_Controller {
       $this->data['info'] = $this->Member_model->get_info_all($id, $dcID);
       // echo"<pre>";print_r($this->data['info']);exit('ali');
       // $this->data['meta_title'] = 'Member Details';
-      $this->data['meta_title'] = 'শিশু বিস্তারিত';
+      $this->data['meta_title'] = 'শিশুর বিস্তারিত তথ্য';
       $this->data['subview'] = 'member/details';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -476,7 +476,7 @@ class Member extends Backend_Controller {
       $this->data['info'] = $this->Member_model->get_info($id);
       // echo"<pre>";print_r($this->data['info']->is_paid);exit('ali');
       // $this->data['meta_title'] = 'Member Details';
-      $this->data['meta_title'] = 'শিশু বিস্তারিত';
+      $this->data['meta_title'] = 'শিশুর বিস্তারিত তথ্য';
       $this->data['subview'] = 'member/details';
       $this->load->view('backend/_layout_main', $this->data);
    }
@@ -598,12 +598,12 @@ class Member extends Backend_Controller {
       if ($gender == "Male") {
 
          $this->data['subview'] = 'member/male_list';
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র ছেলে শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে ছেলে শিশুদের তালিকা';
 
       }elseif ($gender == "Female"){
 
          $this->data['subview'] = 'member/female_list';
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র মেয়ে শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে মেয়ে শিশুদের তালিকা';
 
       }
       // echo "<pre>"; print_r($this->data); exit;    
@@ -627,11 +627,11 @@ class Member extends Backend_Controller {
 
       }elseif ($status == 2){
 
-         $this->data['meta_title'] = 'প্রারম্ভিক পর্যায় (৬ মাস - 30 মাস) তালিকা';
+         $this->data['meta_title'] = 'প্রারম্ভিক পর্যায় (১২ মাস - ৩০ মাস) তালিকা';
 
       }elseif ($status == 3){
 
-         $this->data['meta_title'] = 'প্রারম্ভিক পর্যায় (30 মাস - 48 মাস) তালিকা';
+         $this->data['meta_title'] = 'প্রারম্ভিক পর্যায় (৩০ মাস - ৪৮ মাস) তালিকা';
 
       }elseif ($status == 4){
 
@@ -676,22 +676,22 @@ class Member extends Backend_Controller {
 
       //Load page
       if ($status == 1) {
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র সেবা গ্রহণকারী শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে সেবা গ্রহণকারী শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_running_list';
       } elseif ($status == 2){
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র ছেড়ে যাওয়া শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্র ছেড়ে যাওয়া শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_complete_list';
 
       } elseif ($status == 3) {
-         $this->data['meta_title'] = 'ভর্তির জন্য উপযুক্ত আবেদন কৃত শিশুর তালিকা';
+         $this->data['meta_title'] = 'ভর্তির জন্য উপযুক্ত আবেদনকৃত শিশুর তালিকা';
          $this->data['subview'] = 'member/verified_application_list';
 
       } elseif ($status == 4){
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে ভর্তির জন্য উপযুক্ত অপেক্ষমান শিশুদের তালিকা';
          $this->data['subview'] = 'member/final_complete_pending_list';
 
       } elseif ($status == 5){
-         $this->data['meta_title'] = 'দিবা যত্ন কেন্দ্র অ্যাডমিন দ্বারা প্রত্যাখ্যাত শিশুদের তালিকা';
+         $this->data['meta_title'] = 'দিবাযত্ন কেন্দ্রে অ্যাডমিন দ্বারা প্রত্যাখ্যাত শিশুদের তালিকা';
          $this->data['subview'] = 'member/reject_application_list';
       }
 

@@ -39,7 +39,7 @@
 
     <?php echo form_open("index.php/adminpanel/login");?>
       <div class="form-group has-feedback"style="border-radius: 100px;">
-        <label style="font-family: BenSenHandwriting;">ইউজারনেম</label>
+        <label style="font-family: BenSenHandwriting;">ইউজারনাম</label>
         <?php echo form_input($identity);?>        
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>

@@ -79,7 +79,7 @@
          <div class="small-box bg-red">
             <div class="inner">
                <h3><?=eng2bng($dc_child_interest['total_sec_1'])?></h3>
-               <p>প্রারম্ভিক পর্যায়<br> (৬ মাস - ১২ মাস)</p>
+               <p>প্রারম্ভিক উদ্দীপনা পর্যায়<br> (৬ মাস - ১২ মাস)</p>
             </div>
             <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/1')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
@@ -90,7 +90,7 @@
          <div class="small-box bg-yellow">
             <div class="inner">
                <h3><?=eng2bng($dc_child_interest['total_sec_2'])?></h3>
-               <p>প্রাক-প্রারম্ভিক পর্যায়<br> (১২ মাস - ৩০মাস)</p>
+               <p>প্রাক-প্রারম্ভিক শিখন পর্যায়<br> (১২ মাস - ৩০মাস)</p>
             </div>
             <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/2')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>
@@ -102,7 +102,7 @@
          <div class="small-box bg-aqua">
             <div class="inner">
                <h3><?=eng2bng($dc_child_interest['total_sec_3'])?></h3>
-               <p>প্রারম্ভিক পর্যায়<br> (৩০ মাস - ৪৮ মাস)</p>
+               <p>প্রারম্ভিক শিখন পর্যায়<br> (৩০ মাস - ৪৮ মাস)</p>
             </div>
             <div class="icon"> <i class="fa fa-users"></i> </div>
             <a href="<?php echo base_url('index.php/adminpanel/member/get_child_admit_interest_list_by_status/3')?>" class="small-box-footer">আরও <i class="fa fa-arrow-circle-right"></i></a>

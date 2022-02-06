@@ -15,9 +15,9 @@
                <h3 class="box-title"><?=$meta_title; ?></h3>
                <!-- <a href="<?=base_url('index.php/adminpanel/event/edit/'.$info->id)?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> Edit Event</a>           -->
                <?php if ($this->ion_auth->in_group(array('dc_admin'))){ ?>
-                  <a href="<?=base_url('index.php/adminpanel/budget/advance_bill')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Data</a>  
+                  <a href="<?=base_url('index.php/adminpanel/budget/advance_bill')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> তালিকা</a>  
                <?php } elseif ($this->ion_auth->in_group(array('admin'))) { ?>
-                  <a href="<?=base_url('index.php/adminpanel/budget/advance_bill_all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> All Data</a>                   
+                  <a href="<?=base_url('index.php/adminpanel/budget/advance_bill_all')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;"> তালিকা</a>                   
                <?php }?>  
                <a href="javascript:void();" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;" onclick="printDiv('printableArea')"> Print </a> 
             </div>        
@@ -64,7 +64,7 @@
                         <br><br>
                         <div style="text-align: left;">বিষয়ঃ <?=$info->title?></div>
                         <br>
-                        <div style="text-align: left;">মহিলা বিষয়ক অধিদপ্তরাধীন " ২০ টি শিশু দিবা যত্ন কেন্দ্র স্থাপন" শীর্ষক প্রকল্পের ধানমন্ডি ডে কেয়ার সেন্টারের নিন্মোক্ত বিল বাবদ প্রতিমাসে খরচ হয়- </div>
+                        <div style="text-align: left;">মহিলা বিষয়ক অধিদপ্তরাধীন " ২০ টি শিশু দিবা যত্ন কেন্দ্র স্থাপন" শীর্ষক প্রকল্পের কর্ম কমিশন ডে কেয়ার সেন্টারের নিন্মোক্ত বিল বাবদ প্রতিমাসে খরচ হয়- </div>
 
                         <table id="example1" class="table table-bordered table-responsive">
                            <thead>
@@ -83,9 +83,9 @@
                                  $total += $row->amount;
                                  ?>
                                  <tr>
-                                    <td><?=$sl;?></td>                           
+                                    <td><?=eng2bng($sl);?></td>                           
                                     <td><?=$row->item_name;?></td>                 
-                                    <td align="right"><?=$row->amount;?></td>
+                                    <td align="right"><?=eng2bng($row->amount);?></td>
                                  </tr>
                                  <?php 
                               } 
@@ -94,7 +94,7 @@
                            <tfoot>
                               <tr>
                                  <td colspan="2" align="right"><b>সর্বমোট</b></td>
-                                 <td align="right"><b><?=$total;?></b></td>
+                                 <td align="right"><b><?=eng2bng($total);?></b></td>
                               </tr>
                            </tfoot>
                         </table>          

@@ -30,7 +30,7 @@
                   </div>
                <?php endif; ?>
                <fieldset>
-                  <legend><?=$results->title;?>  এর বিস্তারিত</legend>
+                  <legend><?=$results->title;?> এর বিস্তারিত তথ্য ।</legend>
                   <table id="example1" class="table" style="font-size: medium;">
                     
                         

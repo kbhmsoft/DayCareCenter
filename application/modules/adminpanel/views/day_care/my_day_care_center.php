@@ -44,15 +44,15 @@
                         <dt>ঠিকানা</dt>
                         <dd><?=$info->address?></dd>
                         <dt>মোবাইল নাম্বার</dt>
-                        <dd><?=$info->mobile_no?></dd>
+                        <dd><?= eng2bng($info->mobile_no) ?></dd>
                         <dt>ফোন নম্বর</dt>
-                        <dd><?=$info->phone?></dd>
+                        <dd><?= eng2bng($info->phone) ?></dd>
                         <dt>ইমেইল</dt>
                         <dd><?=$info->email?></dd>
                         <dt>অক্ষাংশ</dt>
-                        <dd><?=$info->latitude?></dd>        
+                        <dd><?=eng2bng($info->latitude)?></dd>        
                         <dt>দ্রাঘিমাংশ</dt>
-                        <dd><?=$info->longitude?></dd>          
+                        <dd><?=eng2bng($info->longitude)?></dd>          
                      </dl>
 
                   </div>

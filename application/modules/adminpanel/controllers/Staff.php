@@ -95,7 +95,7 @@ class Staff extends Backend_Controller {
       }
 
       // Load View
-      $this->data['meta_title'] = 'Edit Staff';
+      $this->data['meta_title'] = 'স্টাফ সম্পাদনা করুন';
       $this->data['subview'] = 'staff/edit';
       $this->load->view('backend/_layout_main', $this->data);
    }

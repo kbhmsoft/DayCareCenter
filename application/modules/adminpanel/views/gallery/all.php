@@ -47,7 +47,7 @@
                         }
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>                
+                           <td><?= eng2bng($sl);?></td>                
                            <td><?=$image;?></td>
                            <td> 
                               <div class="btn-group">

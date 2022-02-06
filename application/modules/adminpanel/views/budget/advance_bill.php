@@ -46,13 +46,13 @@
                         // $status = $row->status==1?'<span class="pull-right badge bg-green">Enable</span>':'<span class="badge bg-yellow">Disable</span>';
                         ?>
                         <tr>
-                           <td><?=$sl;?></td>
-                           <td><?=date('d, M Y', strtotime($row->created));?></td> 
+                           <td><?=eng2bng($sl);?></td>
+                           <td><?=date_bangla_calender_format(date('d-m-Y', strtotime($row->created)));?></td> 
                            <td><?=$row->title;?></td>
-                           <td><?=$row->total_item_count;?></td>                 
-                           <td><?=$row->total_amount;?></td>                 
+                           <td><?=eng2bng($row->total_item_count);?></td>                 
+                           <td><?=eng2bng($row->total_amount);?></td>                 
                            <td> 
-                           <a href="<?=base_url('index.php/adminpanel/budget/advance_bill_details/'.$row->id)?>" class="btn btn-success btn-xs">Details</a>
+                           <a href="<?=base_url('index.php/adminpanel/budget/advance_bill_details/'.$row->id)?>" class="btn btn-success btn-xs">বিস্তারিত</a>
                            <!-- <a href="<?=base_url('index.php/adminpanel/budget/edit/'.$row->id)?>"  class="btn btn-success btn-xs">Print</a> -->
                            </td>
                         </tr>
