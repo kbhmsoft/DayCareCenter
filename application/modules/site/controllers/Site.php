@@ -10,6 +10,7 @@ class Site extends Frontend_Controller {
 
       $this->img_path = realpath(APPPATH . '../assets/images/member_img/');
       $this->img_path_payment = realpath(APPPATH . '../assets/images/member_img');
+      $this->img_path_receipt = realpath(APPPATH . '../assets/images/receipt_img');
 
       $this->test_img_path = realpath(APPPATH . '../assets/images/test');
 
@@ -571,7 +572,7 @@ class Site extends Frontend_Controller {
          }
          $this->data['seat_count'] = $data_arr;
          // echo '<pre>';
-         // print_r($this->data['seat_count']); exit;
+         // print_r($this->data['user_info']); exit;
 
          // Update Basic Info
          if($this->input->post('hide_update_info') == '11111'){
@@ -607,6 +608,56 @@ class Site extends Frontend_Controller {
                redirect('index.php/my-profile');
             }
          }
+          //100 tk entry fee module
+         if($this->input->post('hide_app_info') == '33333'){
+             if(@$_FILES['userfile']['size'] > 0){
+
+               $this->form_validation->set_rules('userfile', '', 'callback_file_check');
+            }
+
+            $form_data = array('is_verified' => 1);
+            // Image Upload
+               if($_FILES['userfile']['size'] > 0){
+                  $new_file_name = time().'-'.$_FILES["userfile"]['name'];
+                  $config['allowed_types']= 'jpg|png|jpeg';
+                  $config['upload_path']  = $this->img_path_receipt;
+                  $config['file_name']    = $new_file_name;
+                  $config['max_size']     = 600;
+
+                  $this->load->library('upload', $config);
+                  //upload file to directory
+                  if($this->upload->do_upload('userfile')){
+                     $uploadData = $this->upload->data();
+                     $config = array(
+                        'source_image' => $uploadData['full_path'],
+                        'new_image' => $this->img_path_receipt,
+                        'maintain_ratio' => TRUE,
+                        'width' => 300,
+                        'height' => 300
+                        );
+                     $this->load->library('image_lib',$config);
+                     $this->image_lib->initialize($config);
+                     $this->image_lib->resize();
+
+                     $uploadedFile = $uploadData['file_name'];
+                     // print_r($uploadedFile);exit('ali');
+                  }else{
+                     $this->data['message'] = $this->upload->display_errors();
+                  }
+               }
+
+               if($_FILES['userfile']['size'] > 0){
+                  $form_data['money_receipt'] = $uploadedFile;
+               }
+
+               $this->Common_model->edit('users', $this->userSessID, 'id', $form_data);
+               // Message
+               $this->session->set_flashdata('success', 'আপনার নিবন্ধন সম্পূর্ণ হয়েছে। ধন্যবাদ');
+               redirect('index.php/my-profile');
+
+
+         }
+
 
          if($this->input->post('hide_app_info') == '22222'){
             

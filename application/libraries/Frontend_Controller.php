@@ -29,13 +29,13 @@ class Frontend_Controller extends MY_Controller
       // $this->data['address_footer'] = $this->Site_model->get_footer_address_show('contact');
 
 
-      $this->data['meta_title'] = '২০টি শিশু দিবাযন্ত কেন্দ্র স্থাপন প্রকল্প';
-      $this->data['meta_keywords'] = '২০টি শিশু দিবাযন্ত কেন্দ্র স্থাপন প্রকল্প';
-      $this->data['meta_description'] = '২০টি শিশু দিবাযন্ত কেন্দ্র স্থাপন প্রকল্প';
+      $this->data['meta_title'] = '২০টি শিশু দিবাযত্ন কেন্দ্র স্থাপন প্রকল্প';
+      $this->data['meta_keywords'] = '২০টি শিশু দিবাযত্ন কেন্দ্র স্থাপন প্রকল্প';
+      $this->data['meta_description'] = '২০টি শিশু দিবাযত্ন কেন্দ্র স্থাপন প্রকল্প';
 
       $this->data['contact_email'] = 'pddcdwa@gmail.com';
       $this->data['contact_phone'] = '0255138540';
-      $this->data['domain_title'] = 'শিশু দিবাযন্ত কেন্দ্র';
+      $this->data['domain_title'] = 'শিশু দিবাযত্ন কেন্দ্র';
       $this->data['method'] = '';
    }
 }

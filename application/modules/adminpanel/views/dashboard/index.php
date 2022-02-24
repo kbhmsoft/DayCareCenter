@@ -137,7 +137,7 @@
          <div class="col-md-4 col-sm-6 spacing-bottom-sm spacing-bottom">
             <div class="tiles white added-margin new new1">
                <div class="tiles-body">
-                  <div class="tiles-title"> বাংলাদেশ সরকারি কর্ম কমিশন শিশু দিবাযত্ন কেন্দ্র</div>
+                  <div class="tiles-title"> মতিঝিল শিশু দিবাযত্ন কেন্দ্র</div>
                   <div class="heading"> মোট শিশু <span class="" data-value="" data-animation-duration="500"><?=eng2bng($result_dc[1]['total_child'])?></span> </div>
 
                   <div style="border-bottom:1px solid #fff; margin-bottom: 10px"></div>

@@ -22,25 +22,31 @@ class Manage_user extends Backend_Controller {
             redirect('index.php/adminpanel/dashboard');
         }elseif (!$this->ion_auth->is_admin()){
             // redirect them to the home page because they must be an administrator to view this
-            return show_error('You must be an administrator to view this page.');
+                $this->data['users'] = $this->Common_model->get_parents('users', 'DESC');
+                $this->data['meta_title'] = 'সমস্ত ব্যবহারকারীর তালিকা';
+                $this->data['subview'] = 'manage_user/parents';
+                $this->load->view('backend/_layout_main', $this->data);
+            // return show_error('You must be an administrator to view this page.');
+
+        }else{
+
+            // set the flash data error message if there is one
+            $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
+
+            //list the users
+            // $this->data['users'] = $this->ion_auth->users()->result();
+            $this->data['users'] = $this->Common_model->get_data('users', 'DESC');
+            // print_r($this->data['users']);exit;
+
+            foreach ($this->data['users'] as $k => $user){
+                $this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
+            }
+
+            //Load page
+            $this->data['meta_title'] = 'সমস্ত ব্যবহারকারীর তালিকা';
+            $this->data['subview'] = 'manage_user/all';
+            $this->load->view('backend/_layout_main', $this->data);
         }
-
-        // set the flash data error message if there is one
-        $this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
-
-        //list the users
-        // $this->data['users'] = $this->ion_auth->users()->result();
-        $this->data['users'] = $this->Common_model->get_data('users', 'DESC');
-
-
-        foreach ($this->data['users'] as $k => $user){
-            $this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
-        }
-
-        //Load page
-        $this->data['meta_title'] = 'সমস্ত ব্যবহারকারীর তালিকা';
-        $this->data['subview'] = 'manage_user/all';
-        $this->load->view('backend/_layout_main', $this->data);
     }
 
 
@@ -182,6 +188,51 @@ class Manage_user extends Backend_Controller {
         }
     }
 
+    public function details($id){
+        if(!$this->ion_auth->is_admin()){
+            $this->data['info'] = $this->Common_model->get_parents_details($id);
+        }else{
+            $this->data['info'] = $this->ion_auth->user($id)->row();
+        }
+        // echo "<pre>";print_r($this->data['info']);exit('alis');
+
+        $this->data['meta_title'] = 'ব্যবহারকারীর বিবরণ';
+        $this->data['subview'] = 'manage_user/details';
+        $this->load->view('backend/_layout_main', $this->data);
+
+    }
+
+    // edit a user nibondhon_status
+    public function nibondhon_status($id){
+        if(!$this->ion_auth->is_admin()){
+            $this->data['info'] = $this->Common_model->get_parents_details($id);
+        }else{
+            $this->data['info'] = $this->ion_auth->user($id)->row();
+        }
+
+         $this->form_validation->set_rules('is_verified', 'verify', 'required');
+            if ($this->form_validation->run() === TRUE){
+                $data = array(
+                    'is_verified'      => $this->input->post('is_verified'),
+                );
+            // print_r($data);exit('alis');
+                if($this->Common_model->update_parents_data($id, $data)){
+                    $this->session->set_flashdata('success', 'আপনার নিবন্ধন যাচাই সম্পূর্ণ হয়েছে। ধন্যবাদ');
+                    redirect('index.php/adminpanel/manage_user/all');
+                }else{
+                    $this->session->set_flashdata('success', 'আপনার নিবন্ধন যাচাই সম্পূর্ণ হয়নি ।');
+                    redirect('index.php/adminpanel/manage_user/all');
+                }       
+            }
+
+        // echo "<pre>";print_r($this->data['info']);exit('alis');
+
+        $this->data['meta_title'] = 'ব্যবহারকারীর বিবরণ';
+        $this->data['subview'] = 'manage_user/nibondhon_status';
+        $this->load->view('backend/_layout_main', $this->data);
+
+    }
+
     // edit a user
     public function edit_user($id){
         if (!$this->ion_auth->logged_in() || (!$this->ion_auth->is_admin() && !($this->ion_auth->user()->row()->id == $id))){
@@ -200,6 +251,7 @@ class Manage_user extends Backend_Controller {
 
         if (isset($_POST) && !empty($_POST)){
             // do we have a valid request?
+            // print_r($_POST);exit;
             if ($this->_valid_csrf_nonce() === FALSE || $id != $this->input->post('id')){
                 show_error($this->lang->line('error_csrf'));
             }
@@ -216,8 +268,9 @@ class Manage_user extends Backend_Controller {
                     'last_name'  => $this->input->post('last_name'),
                     'company'    => $this->input->post('company'),
                     'phone'      => $this->input->post('phone'),
+                    'is_verified'      => $this->input->post('is_verified'),
                 );
-
+                // print_r($data);exit;
                 // update the password if it was posted
                 if ($this->input->post('password')){
                     $data['password'] = $this->input->post('password');
@@ -236,7 +289,7 @@ class Manage_user extends Backend_Controller {
                     }
                 }
 
-            // check to see if we are updating the user
+                // check to see if we are updating the user
                if($this->ion_auth->update($user->id, $data)){
                     // redirect them back to the admin page if admin, or to the base url if non admin
                     $this->session->set_flashdata('message', $this->ion_auth->messages() );
@@ -297,6 +350,14 @@ class Manage_user extends Backend_Controller {
             'autocomplete' => 'off',
             'value' => $this->form_validation->set_value('phone', $user->phone),
         );
+        /*$this->data['is_verified'] = array(
+            'name'  => 'is_verified',
+            'id'    => 'is_verified',
+            'type'  => 'radio',
+            'class' => 'form-control',
+            'autocomplete' => 'off',
+            'value' => $this->form_validation->set_value('is_verified', $user->is_verified),
+        );*/
         $this->data['password'] = array(
             'name' => 'password',
             'id'   => 'password',
@@ -309,7 +370,7 @@ class Manage_user extends Backend_Controller {
             'class' => 'form-control',
             'type' => 'password'
         );
-
+        // print_r($data);exit;
         //Load Page
         $this->data['title'] = $this->lang->line('edit_user_heading');
         $this->data['meta_title'] = 'ব্যবহারকারীর বিবরণ সম্পাদনা করুন';

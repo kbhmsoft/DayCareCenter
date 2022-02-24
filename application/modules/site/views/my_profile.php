@@ -123,105 +123,132 @@
                   </tbody>
                </table> 
             </div>
+            <?php if($user_info->is_verified == 0) {?>
+               <div class="col-md-12">
+                  <form method="post" action="<?php echo base_url('index.php/my-profile/') ?>" role="form" enctype="multipart/form-data">
+                     <h4 style="color: green;">তথ্য দেখার জন্য ১০০ টাকা নিবন্ধন ফি এর রিসিট আপলোড করুন .</h4><div><?php echo form_error('userfile'); ?></div>
+                     <input type="file" name="userfile" >
+                     <input type="submit" name="submit" class="btn btn-success pull-right" value="সংরক্ষণ করুন">
+                                          
+                     <input type="hidden" name="hide_app_info" value="33333">
+                  </form>
+               </div>
+            
+            <?php }elseif($user_info->is_verified == 3) {?>
+               <div class="col-md-12">
+                  <form method="post" action="<?php echo base_url('index.php/my-profile/') ?>" role="form" enctype="multipart/form-data">
+                     <h4 style="color: green;">আপনার দয়া তথ্যটি ভুল ছিল নিবন্ধন ফি এর রিসিট পুনরায় আপলোড করুন .</h4><div><?php echo form_error('userfile'); ?></div>
+                     <input type="file" name="userfile" >
+                     <input type="submit" name="submit" class="btn btn-success pull-right" value="সংরক্ষণ করুন">
+                                          
+                     <input type="hidden" name="hide_app_info" value="33333">
+                  </form>
+               </div>
+            <?php }elseif($user_info->is_verified == 1) {?>
+               <div class="col-md-12 text-center"><h4 style="color: green;">আপনার তথ্য যাচাই এর জন্য অপেক্ষমান রয়েছে</h4></div>
+            <?php }else {?>
+               <div class="col-md-12">
+                  <table class="table table-bordered table-striped table-responsive">
+                     <h5 style="font-weight: bold;text-decoration: underline; ">  মতিঝিল শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     
+                     <tbody style="background-color: #f3f0f0;">
+                        <?php 
+                        $sl=0;                     
+                        // foreach ($seat_count as $row) { 
+                           
+                           ?>
+                           <tr>
+                              <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
+                              <th style="background-color: lightblue;">আসন বাকি</th>
+                           </tr>
+                           <tr>
+                              <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
+                              <td><?php echo 6-$seat_count[1]['total_sec_1'];?></td>
+                           </tr>
+                           <tr>   
+                              <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
+                              <td><?php echo 12-$seat_count[1]['total_sec_2'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
+                              <td><?php echo 18-$seat_count[1]['total_sec_3'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
+                              <td><?php echo 24-$seat_count[1]['total_sec_4'];?></td> 
+                           </tr>
+                          
+                     </tbody>
+                  </table>
+                  <table class="table table-bordered table-striped table-responsive">
+                     <h5 style="font-weight: bold;text-decoration: underline; "> ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     
+                     <tbody style="background-color: #f3f0f0;">
+                        <?php 
+                        $sl=0;                     
+                        // foreach ($seat_count as $row) { 
+                           
+                           ?>
+                           <tr>
+                              <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
+                              <th style="background-color: lightblue;">আসন বাকি</th>
+                           </tr>
+                           <tr>
+                              <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
+                              <td><?php echo 6-$seat_count[2]['total_sec_1'];?></td>
+                           </tr>
+                           <tr>   
+                              <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
+                              <td><?php echo 12-$seat_count[2]['total_sec_2'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
+                              <td><?php echo 18-$seat_count[2]['total_sec_3'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
+                              <td><?php echo 24-$seat_count[2]['total_sec_4'];?></td> 
+                           </tr>
+                          
+                     </tbody>
+                  </table>
+                  <table class="table table-bordered table-striped table-responsive">
+                     <h5 style="font-weight: bold;text-decoration: underline; "> গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     
+                     <tbody style="background-color: #f3f0f0;">
+                        <?php 
+                        $sl=0;                     
+                        // foreach ($seat_count as $row) { 
+                           
+                           ?>
+                           <tr>
+                              <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
+                              <th style="background-color: lightblue;">আসন বাকি</th>
+                           </tr>
+                           <tr>
+                              <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
+                              <td><?php echo 6-$seat_count[11]['total_sec_1'];?></td>
+                           </tr>
+                           <tr>   
+                              <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
+                              <td><?php echo 12-$seat_count[11]['total_sec_2'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
+                              <td><?php echo 18-$seat_count[11]['total_sec_3'];?></td>
+                           </tr>   
+                           <tr>   
+                              <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
+                              <td><?php echo 24-$seat_count[11]['total_sec_4'];?></td> 
+                           </tr>
+                          
+                     </tbody>
+                  </table>
+               </div>
+            <?php }?>
 
-            <div class="col-md-12">
-               <table class="table table-bordered table-striped table-responsive">
-                  <h5 style="font-weight: bold;text-decoration: underline; "> বাংলাদেশ সরকারি কর্ম কমিশন শিশু দিবাযত্ন কেন্দ্র</h5>   
-                  
-                  <tbody style="background-color: #f3f0f0;">
-                     <?php 
-                     $sl=0;                     
-                     // foreach ($seat_count as $row) { 
-                        
-                        ?>
-                        <tr>
-                           <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
-                           <th style="background-color: lightblue;">আসন বাকি</th>
-                        </tr>
-                        <tr>
-                           <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
-                           <td><?php echo 6-$seat_count[1]['total_sec_1'];?></td>
-                        </tr>
-                        <tr>   
-                           <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
-                           <td><?php echo 12-$seat_count[1]['total_sec_2'];?></td>
-                        </tr>   
-                        <tr>   
-                           <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
-                           <td><?php echo 18-$seat_count[1]['total_sec_3'];?></td>
-                        </tr>   
-                        <tr>   
-                           <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
-                           <td><?php echo 24-$seat_count[1]['total_sec_4'];?></td> 
-                        </tr>
-                       
-                  </tbody>
-               </table>
-               <table class="table table-bordered table-striped table-responsive">
-                  <h5 style="font-weight: bold;text-decoration: underline; "> ভূমি ভবন শিশু দিবাযত্ন কেন্দ্র</h5>   
-                  
-                  <tbody style="background-color: #f3f0f0;">
-                     <?php 
-                     $sl=0;                     
-                     // foreach ($seat_count as $row) { 
-                        
-                        ?>
-                        <tr>
-                           <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
-                           <th style="background-color: lightblue;">আসন বাকি</th>
-                        </tr>
-                        <tr>
-                           <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
-                           <td><?php echo 6-$seat_count[2]['total_sec_1'];?></td>
-                        </tr>
-                        <tr>   
-                           <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
-                           <td><?php echo 12-$seat_count[2]['total_sec_2'];?></td>
-                        </tr>   
-                        <tr>   
-                           <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
-                           <td><?php echo 18-$seat_count[2]['total_sec_3'];?></td>
-                        </tr>   
-                        <tr>   
-                           <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
-                           <td><?php echo 24-$seat_count[2]['total_sec_4'];?></td> 
-                        </tr>
-                       
-                  </tbody>
-               </table>
-               <table class="table table-bordered table-striped table-responsive">
-                  <h5 style="font-weight: bold;text-decoration: underline; "> গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র</h5>   
-                  
-                  <tbody style="background-color: #f3f0f0;">
-                     <?php 
-                     $sl=0;                     
-                     // foreach ($seat_count as $row) { 
-                        
-                        ?>
-                        <tr>
-                           <th style="background-color: lightblue;">বয়স ভিত্তিক গ্রূপের নাম</th>
-                           <th style="background-color: lightblue;">আসন বাকি</th>
-                        </tr>
-                        <tr>
-                           <td>প্রারম্ভিক উদ্দীপনা পর্যায় ( ৪ মাস - ১২ মাস )</td>
-                           <td><?php echo 6-$seat_count[11]['total_sec_1'];?></td>
-                        </tr>
-                        <tr>   
-                           <td>প্রাক-প্রারম্ভিক শিখন পর্যায় ( ১২ মাস - ৩০ মাস)</td>
-                           <td><?php echo 12-$seat_count[11]['total_sec_2'];?></td>
-                        </tr>   
-                        <tr>   
-                           <td>প্রারম্ভিক শিখন পর্যায় (৩০ মাস – ৪৮ মাস)</td>
-                           <td><?php echo 18-$seat_count[11]['total_sec_3'];?></td>
-                        </tr>   
-                        <tr>   
-                           <td>প্রাক-প্রাথমিক স্কুল পর্যায় ( ৪ বছর - ৬ বছর )</td>
-                           <td><?php echo 24-$seat_count[11]['total_sec_4'];?></td> 
-                        </tr>
-                       
-                  </tbody>
-               </table>
-            </div>
+
+            
          </div>
          <!-- /home -->
 

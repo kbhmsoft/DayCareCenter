@@ -57,6 +57,41 @@ class Common_model extends CI_Model {
       }
    }
 
+   public function get_parents_details($id) {
+      $this->db->select('*');
+      $this->db->from('users');
+      $this->db->where('id', $id);
+      
+      return $this->db->get()->row();
+   }
+
+
+   public function update_parents_data($id, $data) {
+      $this->db->where('id', $id);
+      $this->db->update('users', $data);
+      
+      return TRUE;
+   }
+
+   public function get_parents($table, $orderBy=NULL) {
+      $this->db->select('u.*');
+      $this->db->from('users u');
+      $this->db->join('users_groups ug','ug.user_id = u.id');
+      $this->db->where("ug.group_id",3);
+      if($orderBy != NULL){
+         // ASC, DESC
+         $this->db->order_by('u.id', $orderBy);
+      }
+      $query =  $this->db->get();
+
+
+      if($query->num_rows() > 0){
+         return $query->result();
+      }else{
+         return FALSE;
+      }
+   }
+
    public function get_three_dc_data($table, $orderBy=NULL) {
       $where_in = array('1','2','11');
       $this->db->select('*');
@@ -125,7 +160,7 @@ class Common_model extends CI_Model {
       $this->db->join('day_cares d', 'd.id = u.day_care_id', 'LEFT');
       $this->db->where('u.id', $id);
       $query = $this->db->get()->row();        
-
+      
       return $query;
    }
 

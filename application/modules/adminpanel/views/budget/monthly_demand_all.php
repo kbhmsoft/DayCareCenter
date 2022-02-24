@@ -22,17 +22,17 @@
                     </select>
                   </div>
                   <div class="input-group">
-                    <input type="text" name="start_date" class="form-control" id="datepickers" autocomplete="off" placeholder="from"/>
+                    <input type="text" name="start_date" class="form-control" id="datepickers" autocomplete="off" placeholder="থেকে"/>
                   </div>
                   <div class="input-group">
-                    <input type="text" name="end_date" class="form-control" id="datepicker" autocomplete="off" placeholder="to" />
+                    <input type="text" name="end_date" class="form-control" id="datepicker" autocomplete="off" placeholder="পর্যন্ত" />
                     <div class="input-group-btn">
                       <button class="btn btn-primary" type="submit">
                         <span class="glyphicon glyphicon-search"></span>
                       </button>
                     </div>
                     <div class="input-group-btn">
-                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/budget/monthly_demand_all');?>">clear</a>
+                      <a class="btn btn-warning" href="<?=base_url('index.php/adminpanel/budget/monthly_demand_all');?>">মুছুন </a>
                     </div>
                   </div>
                </form>
@@ -67,12 +67,12 @@
                            $sl++;
                            ?>
                            <tr>
-                           <td><?=$sl;?></td>
-                           <td><?=date('d, M Y', strtotime($row->created));?></td> 
+                           <td><?=eng2bng($sl);?></td>
+                           <td><?=eng2bng(date('Y-m-d', strtotime($row->created)));?></td> 
                            <td><?=$row->title;?></td>
-                           <td><?=$row->total_item_count;?></td>                 
+                           <td><?=eng2bng($row->total_item_count);?></td>                 
                            <td> 
-                           <a href="<?=base_url('index.php/adminpanel/budget/monthly_demand_details/'.$row->id.'/'.$item->database_name)?>" class="btn btn-success btn-xs">Details</a>
+                           <a href="<?=base_url('index.php/adminpanel/budget/monthly_demand_details/'.$row->id.'/'.$item->database_name)?>" class="btn btn-success btn-xs">বিস্তারিত </a>
                            </td>
                            </tr>
                         <?php } ?>

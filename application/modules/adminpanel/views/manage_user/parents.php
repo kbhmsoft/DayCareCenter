@@ -13,7 +13,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title"><?=$meta_title; ?> </h3>
-          <a href="<?=base_url('index.php/adminpanel/manage_user/add')?>" class="btn btn-info btn-xs pull-right" style="margin-left: 15px;">নতুন ব্যবহারকারী</a> 
+         
           <!-- <a href="<?=base_url('admin/manage_user/create_group')?>" class="btn btn-info btn-xs pull-right"> Create Group</a>  -->
         </div>        
 
@@ -54,12 +54,9 @@
                   <?php echo ($user->active) ? anchor("index.php/adminpanel/manage_user/deactivate/".$user->id, 'এক্টিভ' , array('class' => 'btn btn-warning btn-flat btn-xs')) : anchor("index.php/adminpanel/manage_user/activate/". $user->id, 'ইনএক্টিভ' , array('class' => 'btn btn-danger btn-flat btn-xs'));?>
                 </td>
                 <td>
-                  <?php foreach ($user->groups as $group):?>
-                    <?php //echo anchor("adminpanel/manage_user/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8'), array('class' => 'btn  bg-maroon btn-flat btn-xs')) ;?>
-                    <span class="btn bg-maroon btn-flat btn-xs"><?php echo htmlspecialchars($group->description,ENT_QUOTES,'UTF-8'); ?></span>
-                  <?php endforeach?>
+                  <button style="background-color: #d81b60 !important;">Parents</button>
                 </td>
-                <!-- <td><?php echo anchor("index.php/adminpanel/manage_user/edit_user/".$user->id, 'সম্পাদনা করুন', array('class' => 'btn btn-success btn-xs')) ;?></td> -->
+                
                 <td> 
                     <div class="btn-group">
                        <button type="button" class="btn btn-success btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">পদক্ষেপ &nbsp;
@@ -67,7 +64,6 @@
                           <span class="sr-only">Toggle Dropdown</span>
                        </button>
                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="<?=base_url('index.php/adminpanel/manage_user/edit_user/'.$user->id)?>">সম্পাদনা করুন</a></li>
                           <li><a href="<?=base_url('index.php/adminpanel/manage_user/nibondhon_status/'.$user->id)?>">নিবন্ধন যাচাই করুন</a></li>
                           
                            <li><a href="<?=base_url('index.php/adminpanel/manage_user/details/'.$user->id)?>">বিস্তারিত</a></li>

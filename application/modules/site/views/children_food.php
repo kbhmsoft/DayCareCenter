@@ -21,7 +21,7 @@ i{color: red;font-size: 11px !important;}
      <td>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><img src="<?=base_url();?>assets/11.jpg" alt="children" width="110"><br><br>
-           <span class="box">প্রারম্ভিক উদ্দীপনা <br>পর্যায়ের শিশু সেবা <br>৬ মাস -১২ মাস</span>
+           <span class="box">প্রারম্ভিক উদ্দীপনা <br>পর্যায়ের শিশু সেবা <br>৪ মাস -১২ মাস</span>
           </button>
           <ul class="dropdown-menu">
             <li><a href="<?=base_url('index.php/six-to-twelve-children-day-care')?>"><i class="fa fa-square" aria-hidden="true"></i> দিবাকালীন যত্ন</li>
@@ -63,7 +63,7 @@ i{color: red;font-size: 11px !important;}
      <td>
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><img src="<?=base_url();?>assets/33.jpg" alt="children" width="110"><br><br>
-           <span class="box">প্রারম্ভিক শিখন<br> পর্যায়ের শিশু সেবা<br> ২ বছর ৬ মাস  -৪ বছর</span>
+           <span class="box">প্রারম্ভিক শিখন<br> পর্যায়ের শিশু সেবা<br> ৩০ মাস - ৪৮ মাস </span>
           </button>
           <ul class="dropdown-menu">
 

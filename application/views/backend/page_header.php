@@ -169,7 +169,9 @@
                <li class="<?=backend_activate_menu_class('gallery');?>"><a href="<?php echo base_url('index.php/adminpanel/gallery/all');?>"><i class="fa fa-circle-o"></i> <span>গ্যালারী চিত্র</span></a></li> 
 
                <li class="<?=backend_activate_menu_class('staff');?>"><a href="<?php echo base_url('index.php/adminpanel/staff');?>"><i class="fa fa-book"></i> <span>স্টাফ তালিকা</span></a></li>
-               <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care/my_day_care_center');?>"><i class="fa fa-book"></i> <span>দিবাযত্ন কেন্দ্রের তথ্য</span></a></li>  
+               <li class="<?=backend_activate_menu_class('day_care');?>"><a href="<?php echo base_url('index.php/adminpanel/day_care/my_day_care_center');?>"><i class="fa fa-book"></i> <span>দিবাযত্ন কেন্দ্রের তথ্য</span></a></li> 
+
+               <li class="<?=backend_activate_menu_class('support');?>"><a href="<?php echo base_url('index.php/adminpanel/support/index');?>"><i class="fa fa-phone"></i> <span> যোগাযোগ </span></a></li> 
 
                <?php } ?>
 
@@ -203,6 +205,10 @@
                </li>  
 
                <li class="<?=backend_activate_menu_class('doctors');?>"><a href="<?php echo base_url('index.php/adminpanel/doctors');?>"><i class="fa fa-th"></i> <span> ডাক্তারের তালিকা </span></a></li>
+  
+
+               
+               <?php } ?>
 
                <li class="treeview <?=backend_activate_menu_class('manage_user');?>">
                   <a href="javascript:void();">
@@ -214,7 +220,6 @@
                   </ul>
                </li>               
 
-               <?php } ?>
 
             </ul>
          </section>
