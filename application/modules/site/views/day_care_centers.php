@@ -80,12 +80,8 @@
             <div class="pdln" id="marquee4">
             
                 <?php foreach ($day_care_list as $value) { ?>
-                     <?php if($value->id == 1){ 
-                        $title = 'ধানমন্ডি দিবাযত্ন কেন্দ্র';
-                     }else{ 
-                        $title = $value->title;
-                        ?> 
-                     <?php } ?>
+                     <?php $title = $value->title;?> 
+                    
                     <ul>
                        <li><a href="<?=base_url('index.php/day-care-details/'.$value->id)?>"><?=$title?> </a> </li>
                     </ul>
