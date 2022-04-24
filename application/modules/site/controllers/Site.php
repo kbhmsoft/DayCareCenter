@@ -1628,7 +1628,9 @@ class Site extends Frontend_Controller {
          // $this->loadCustomerDatabase('daycare_1');
 
          // echo '<pre>';
-         $this->data['staffs'] =  $this->Site_model->get_staff_data($id);  // exit;
+         $this->data['staffs'] =  $this->Site_model->get_staff_data($id); 
+         $this->data['galleries'] =  $this->Site_model->get_gallery_client($id);
+          // exit;
          
          // print_r($this->data['staffs']); exit;      
 

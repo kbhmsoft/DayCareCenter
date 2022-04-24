@@ -12,14 +12,14 @@
 
 		<?php foreach ($day_care_detail as $item) {?>                
 
-			<section class="introduce">
+		<section class="introduce">
 			<?php if($item->id == 1){ ?>
 				<h4 class="heading-int">ধানমন্ডি ডে-কেয়ার সেন্টার</h4>
 			<?php }else{ ?> 
 				<h4 class="heading-int"><?=$item->title?></h4>
 			<?php } ?>
 				<p><?=nl2br($item->description)?></p>
-				<img src="<?=base_url('assets/daycare1.jpg')?>" width="720">
+				<img src="<?=base_url('assets/daycare/'.$item->database_name.'.jpg')?>" width="720">
 			</section>
 		<?php } ?>
 
@@ -62,7 +62,7 @@
 					.tg .tg-61xu{background-color:#cbcefb;border-color:inherit;text-align:left;vertical-align:top;font-weight: bold;}
 					.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
 					</style>
-					<table class="table table-striped" width="100%">
+					<table class="table table-bordered" width="100%">
 					<thead class="thead-dark">
 					  <tr>
 					    <th scope="col">ক্রমিক নং</th>
@@ -99,7 +99,7 @@
 				</div>
 			</div>
 		</section>
-<?php /*
+		<?php /*
 		<section class="events-heading" style="margin-top: 15px;">
 			<div class="row">
 				<div class="col-md-12">
@@ -143,92 +143,40 @@
 			<h4 class="heading-int">গ্যালারী</h4>
 
 			<div class='list-group gallery'>
-					<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/1.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/1.jpg"/>
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/2.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/2.jpg"/>
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> --> 
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/3.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/3.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div>  -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/5.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/5.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/7.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/7.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/10.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/10.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/13.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/13.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/14.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/14.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/16.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/16.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
-				<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
-					<a class="thumbnail fancybox" rel="ligthbox" href="<?=base_url();?>assets/images/gallery/17.JPG">
-						<img class="img-responsive" alt="" src="<?=base_url();?>assets/images/gallery/small/17.jpg" />
-						<!-- <div class='text-right'>
-							<small class='text-muted'>Image Title</small>
-						</div> -->
-					</a>
-				</div> <!-- col-6 / end -->
+
+		
+									
+				
+						<?php
+							foreach ($galleries as $img) { 
+										$path = base_url().'assets/images/gallery_img/';
+								if($img->image != NULL){
+									
+									$img_url=$path.$img->image;
+								}else{
+									$img_url=$path.'no-image.png';
+									
+								}
+						?>		
+							<div class='col-sm-4 col-xs-6 col-md-4 col-lg-4'>
+								<a class="thumbnail fancybox" rel="ligthbox" href="<?=$img_url?>">
+									<img class="img-responsive" alt="" src="<?=$img_url?>"/>
+									<!-- <div class='text-right'>
+										<small class='text-muted'>Image Title</small>
+									</div> -->
+								</a>
+							</div> <!-- col-6 / end -->
+									
+						<?php } ?>
+
 			</div> <!-- list-group / end -->
 
 		</section>
-	</div>
 
-	
+
+
+
+	<div>
 </div>
 
 <script type="text/javascript">
