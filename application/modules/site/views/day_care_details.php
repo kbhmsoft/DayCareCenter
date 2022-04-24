@@ -13,11 +13,10 @@
 		<?php foreach ($day_care_detail as $item) {?>                
 
 		<section class="introduce">
-			<?php if($item->id == 1){ ?>
-				<h4 class="heading-int">ধানমন্ডি ডে-কেয়ার সেন্টার</h4>
-			<?php }else{ ?> 
+			
+				 
 				<h4 class="heading-int"><?=$item->title?></h4>
-			<?php } ?>
+		
 				<p><?=nl2br($item->description)?></p>
 				<img src="<?=base_url('assets/daycare/'.$item->database_name.'.jpg')?>" width="720">
 			</section>
