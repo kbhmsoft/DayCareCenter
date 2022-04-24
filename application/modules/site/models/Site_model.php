@@ -482,6 +482,7 @@ class Site_model extends MY_Model {
         return ($query->num_rows()==1);
     }
 
+
     public function get_staff_data($day_care) {
         $this->loadCustomerDatabase('daycare_1');
       // count query
@@ -495,6 +496,21 @@ class Site_model extends MY_Model {
       return $query;
    } 
 
+
+   public function get_gallery_client($day_care) {
+   
+    $dbName = 'daycare_'.$day_care;
+    // exit($dbName);
+    $this->loadCustomerDatabase($dbName);
+
+    $this->customDB->select('id, image');
+    $this->customDB->from('galleries');        
+    $this->customDB->where('status', '1');
+    $this->customDB->where('day_cares_id',$day_care);         
+    $query = $this->customDB->get()->result();        
+
+    return $query;
+}
 
    public function get_student_details($dcID, $appID) {
      $dbName = 'daycare_'.$dcID;
