@@ -9,8 +9,10 @@
    <div class="col-md-9 main-content" style="padding: 15px 15px 15px 15px"> 
       <ul class="nav nav-tabs">
          <li class="active"><a data-toggle="tab" href="#home"><strong>আমার প্রোফাইল</strong></a></li>
-         <li><a data-toggle="tab" href="#menu1"><strong>আবেদনের তালিকা</strong></a></li>
-         <li><a data-toggle="tab" href="#menu2"><strong>শিশুর তালিকা ভুক্তির আবেদন</strong></a></li>
+         <?php if($user_info->is_verified == 2) {?>
+            <li><a data-toggle="tab" href="#menu1"><strong>আবেদনের তালিকা</strong></a></li>
+            <li><a data-toggle="tab" href="#menu2"><strong>শিশুর তালিকা ভুক্তির আবেদন</strong></a></li>
+         <?php }?>
       </ul>
 
       <div class="tab-content">
@@ -213,7 +215,7 @@
                      </tbody>
                   </table>
                   <table class="table table-bordered table-striped table-responsive">
-                     <h5 style="font-weight: bold;text-decoration: underline; "> গোপালগঞ্জ শিশু দিবাযত্ন কেন্দ্র</h5>   
+                     <h5 style="font-weight: bold;text-decoration: underline; "> বাংলাদেশ সরকারি কর্ম কমিশন</h5>   
                      
                      <tbody style="background-color: #f3f0f0;">
                         <?php 

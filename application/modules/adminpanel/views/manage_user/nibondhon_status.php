@@ -88,7 +88,7 @@
                           <?php }?>
                     </fieldset>  
                   <?php }else{?>  
-                    <div class="text-center"><h3 style="color:green;">এখনো নিবন্ধন ফি এর রিসিট আপলোড করে নি। </h3></div>
+                    <div class="text-center"><h3 style="color:red;">এখনো নিবন্ধন ফি এর রিসিট আপলোড করে নি। </h3></div>
                   <?php }?>  
                 </div>
                 <!-- /.box-body -->
