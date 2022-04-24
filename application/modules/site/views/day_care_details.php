@@ -78,7 +78,7 @@
 					  foreach ($staffs as $row) { 
 					  	$path = base_url().'assets/images/staff_img/';
                   if($row->image_file != NULL){
-                    $img_url = '<img src="'.$path.$row->image_file.'" height="100" style="border: 1px solid #716d6d;padding: 3px;">';
+                    $img_url = '<img src="'.$path.$row->image_file.'" height="100" width="100" style="border: 1px solid #716d6d;padding: 3px;">';
                   }else{
                     $img_url = '<img src="'.$path.'no-image.png" height="100" style="border: 1px solid #716d6d;padding: 3px;">';
                   }
