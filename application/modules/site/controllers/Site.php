@@ -610,13 +610,13 @@ class Site extends Frontend_Controller {
          }
           //100 tk entry fee module
          if($this->input->post('hide_app_info') == '33333'){
-             if(@$_FILES['userfile']['size'] > 0){
 
-               $this->form_validation->set_rules('userfile', '', 'callback_file_check');
-            }
+            $this->form_validation->set_rules('userfile', 'file required', 'callback_file_check');
+           
+            if ($this->form_validation->run() == true) {
 
-            $form_data = array('is_verified' => 1);
-            // Image Upload
+              
+                  // Image Upload
                if($_FILES['userfile']['size'] > 0){
                   $new_file_name = time().'-'.$_FILES["userfile"]['name'];
                   $config['allowed_types']= 'jpg|png|jpeg';
@@ -648,6 +648,7 @@ class Site extends Frontend_Controller {
 
                if($_FILES['userfile']['size'] > 0){
                   $form_data['money_receipt'] = $uploadedFile;
+                  $form_data['is_verified'] = 1;
                }
 
                $this->Common_model->edit('users', $this->userSessID, 'id', $form_data);
@@ -655,8 +656,8 @@ class Site extends Frontend_Controller {
                $this->session->set_flashdata('success', 'আপনার নিবন্ধন সম্পূর্ণ হয়েছে। ধন্যবাদ');
                redirect('index.php/my-profile');
 
-
-         }
+               }
+            }
 
 
          if($this->input->post('hide_app_info') == '22222'){
@@ -1628,9 +1629,9 @@ class Site extends Frontend_Controller {
          // $this->loadCustomerDatabase('daycare_1');
 
          // echo '<pre>';
-         $this->data['staffs'] =  $this->Site_model->get_staff_data($id); 
+         $this->data['staffs'] =  $this->Site_model->get_staff_data($id);        
          $this->data['galleries'] =  $this->Site_model->get_gallery_client($id);
-          // exit;
+  // exit;
          
          // print_r($this->data['staffs']); exit;      
 
