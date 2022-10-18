@@ -97,10 +97,9 @@ class Site extends Frontend_Controller {
 
       public function under_construction()
    {
-      // Load View
 
-      $this->data['meta_title'] = 'হোম';
-      $this->data['subview'] = 'fixing';
+      $this->data['meta_title'] = 'শিশু দিবাযত্ন কেন্দ্র আইন, ২০২১';
+      $this->data['subview'] = 'construction_home';
       $this->load->view('frontend/_layout_main', $this->data);
    }
 
