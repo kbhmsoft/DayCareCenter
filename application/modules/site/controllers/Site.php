@@ -95,7 +95,7 @@ class Site extends Frontend_Controller {
       $this->load->view('frontend/_layout_main', $this->data);
    }
 
-      public function under_construction()
+   public function under_construction()
    {
 
       $this->data['meta_title'] = 'শিশু দিবাযত্ন কেন্দ্র আইন, ২০২১';

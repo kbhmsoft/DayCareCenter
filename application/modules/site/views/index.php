@@ -55,6 +55,31 @@
 
    /*a:hover .button_btn{}*/
 </style>
+
+   <!-- video load when page load -->
+   <div id="notice" class="modal" role="dialog" style="margin-top: 50px;">
+       <div class="modal-dialog modal-m">
+           <div class="modal-content">
+               <div class="modal-header" style="padding: 3px 20px; border-bottom: 0px !important;">
+                   <span class="close" data-dismiss="modal">&times;</span>
+               </div>
+               <div class="modal-body" style="padding: 0px 20px 15px !important">
+                  <video id="myVideo" style="width:100%" src="<?=base_url('assets/video/daycare1.mp4')?>" poster="<?=base_url('assets/video/daycare1.mp4')?>" controls autoplay="" muted="" loop="" playsinline=""></video>
+               </div>
+           </div>
+       </div>
+   </div>
+
+   <script type="text/javascript">
+      $(window).load(function(){
+          $('#notice').modal('show');
+      });
+
+      $('body').on('hide.bs.modal', function () {
+          $('#myVideo').trigger('pause');
+      })
+  </script>
+
 <div class="row">
    <?php $this->load->view('frontend/right_side_bar'); ?>   
    
